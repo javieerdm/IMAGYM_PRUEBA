@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+* { margin:0px; padding:0px;}
+
+/* section página de pedidos*/
+
+#articulos {width: 100%; overflow:hidden; /*background: purple;*/}
+
+.volver img:hover {box-shadow: 0 4px 16px; border-radius:15px;}
+.volver img {width:30px; margin-top:10px;}
+
+h1 {text-align: center; margin-top: 50px;}
+
+h5{text-align:right;}
+
+#celdas { margin-left: 5%;}

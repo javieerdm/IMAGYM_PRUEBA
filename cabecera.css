@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+* { margin:0px; padding:0px;}
+
+#header {width:100%; height: 150px; margin:auto; /*background: yellow;*/}
+
+	#principio p{width:100%; margin:auto; font-size: 0.8em; /*background:red;*/}
+	
+	#principio img{width:25px;}
+
+	#camion {margin-left: 32%;}
+
+	#cabecera_alta {width: 100%; height: 80%; /*background: grey;*/}
+		
+		#logo {width: 15%; height: 100%; float: left;  margin-left: 10%; /*background: orange;*/}			
+			
+			#imagen {width: 100%; height:100%; margin: auto; background:url(imagenes/logo.jpg) center center;
+				background-size: 100% 100%; }
+				
+		#caja2 {width: 60%; height: 100%; float: right; /*background-color: purple;*/}
+		
+			#usuario {width: 100%; height: 50%; float:right; /*background-color: silver;*/}
+			
+				#usuario form {width:70%; height:100%; float:right; font-size:1em; /*background:yellow;*/}				
+						
+				#usuario .boton {margin-top: 10px;
+							margin-left:10px;
+							border-radius: 20px;
+							border: 3px solid white;
+							border-style: outset;
+							font-size: 0.8em;
+							text-align: center;
+							padding: 2px 5px 2px 5px;
+							text-decoration: none;}
+				
+				#usuario .boton a{text-decoration: none;}
+					
+				#usuario .boton:hover {box-shadow: 0 4px 16px;
+				transition: all 0.2s ease;}
+					
+			.linea1 {width: 90%; margin-left: 2em;}
+			
+			#contacto {width: 70%; height: 48%; float: right; /*background-color: pink;*/}
+			
+				#A {margin:auto; width:500px;
+				font-family:arial;}
+						
+				#A ul a{text-decoration: none;							
+						display:block;
+						padding:0px 10px;
+						margin-top:5px;
+				font-size: 1em; color: black;}
+
+				#A ul li a:hover {color: blue; text-decoration: underline;}
+										
+				#A ul  {list-style:none;}
+							
+				#A ul > li {float:left;}
+							
+				#A ul img {width: 25px; height: 25px;}
+
+	#cabecera_baja {width: 100%; height: 20%; float:left; background: #28abe1; float:left;}
+	
+		#B {margin-left: 20%;} 
+	
+		#B li a{background: #28abe1;
+				text-decoration:none;
+				padding: 4px 15px 3px 5px;
+		display:block;color: black;}
+				
+		#B > li {float:left; list-style: none; font-size:1em; }		
+		
+		#B li a:hover {color: white; text-decoration: underline;}

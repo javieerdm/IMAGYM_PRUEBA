@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+* { margin:0px; padding:0px; bottom:0px;}
+
+#footer {width:100%; overflow:hidden; font-size:12px; background: #28abe1; }
+
+#pies{width:100%; overflow:hidden; /*background:pink;*/}
+			
+	#pie1 {width: 30%; float: left; /*background: grey;*/}
+								
+	#pie2 {width: 30%; float: left; /*background: blue;*/}
+				
+	#pie3 {width:40%; float:left; /*background: green;*/}
+				
+	#pie1 ul li, #pie2 ul li, #pie3 ul li{list-style: none;	margin-left: 30%; color: red;}	
+					 
+	#pie1 ul li a, #pie2 ul li a, #pie3 ul li a{text-decoration: none; color: black;}
+	
+	#pie1 ul li a:hover, #pie2 ul li a:hover, #pie3	ul li a:hover {color: white; text-decoration: underline;}
+
+#creador{width:50%; margin:auto; /*background:yellow;*/}
+
+#mcs {font-size: 12px;}
