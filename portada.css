@@ -6,17 +6,18 @@ section { width: 100%; height:673px;/*background: red;*/}
 
 #section1 {width: 100%; height:50%;}
 
-	#maquinas {width: 40%; height: 80%; 
-	background: url(imagenes/bici.png)center center no-repeat; 
+	#ropa {width: 40%; height: 80%; 
+	background: url(imagenes/portada/ropa-deportiva.jpeg)center center no-repeat; 
 	background-size: 100% 100%;float: left; margin-left: 7%; margin-top: 2%;}
+	
 
-	#maquinas:hover {transform:scale(1.1);
+	#ropa:hover {transform:scale(1.1);
 					border: 1px solid black;
 					box-shadow: 10px 5px 30px  black;
 	border-radius: 30px;}
 
 	#material {width: 40%; height: 80%; float: left; 
-	background:url(imagenes/barra.png) center center no-repeat; 
+	background:url(imagenes/portada/material.png) center center no-repeat; 
 	background-size: 100% 100%; margin-left: 7%; margin-top: 2%;}
 	
 	#material:hover {transform:scale(1.1);
@@ -28,17 +29,17 @@ section { width: 100%; height:673px;/*background: red;*/}
 
 #section2 {width: 100%; height:50%;}
 
-	#ropa {width: 40%; height: 80%; 
-	background:url(imagenes/joma.png) center center no-repeat; 
+	#maquinas {width: 40%; height: 80%; 
+	background:url(imagenes/portada/maquinas.jpeg) center center no-repeat; 
 	background-size: 100% 100%; float: left; margin-left: 7%; margin-top: 2%;}
 	
-	#ropa:hover {transform:scale(1.1);
+	#maquinas:hover {transform:scale(1.1);
 					border: 1px solid black;
 					box-shadow: 10px 5px 30px  black;
 	border-radius: 30px;}
 
 	#suplementos {width: 40%; height: 80%; float: left; 
-	background:url(imagenes/creatina1000.png) center center no-repeat; 
+	background:url(imagenes/portada/suplementacion.jpg) center center no-repeat; 
 	background-size: 100% 100%; margin-left: 7%; margin-top: 2%;}
 	
 	#suplementos:hover {transform:scale(1.1);
