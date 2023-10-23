@@ -6,44 +6,44 @@ section { width: 100%; height:673px;/*background: red;*/}
 
 #section1 {width: 100%; height:50%;}
 
-	#bañadores {width: 40%; height: 80%; 
-	background: url(imagenes/portada/banadores.jpg)center center no-repeat; 
+	#maquinas {width: 40%; height: 80%; 
+	background: url(imagenes/bici.png)center center no-repeat; 
 	background-size: 100% 100%;float: left; margin-left: 7%; margin-top: 2%;}
 
-	#bañadores:hover {transform:scale(1.1);
+	#maquinas:hover {transform:scale(1.1);
 					border: 1px solid black;
 					box-shadow: 10px 5px 30px  black;
 	border-radius: 30px;}
 
-	#equipacion {width: 40%; height: 80%; float: left; 
-	background:url(imagenes/portada/equipamiento.jpg) center center no-repeat; 
+	#material {width: 40%; height: 80%; float: left; 
+	background:url(imagenes/barra.png) center center no-repeat; 
 	background-size: 100% 100%; margin-left: 7%; margin-top: 2%;}
 	
-	#equipacion:hover {transform:scale(1.1);
+	#material:hover {transform:scale(1.1);
 					border: 1px solid black;
 					box-shadow: 10px 5px 30px  black;
 	border-radius: 30px;}
 
-	#bañadores, #equipacion {display: inline-block;}
+	#maquinas, #material {display: inline-block;}
 
 #section2 {width: 100%; height:50%;}
 
-	#entrenamiento {width: 40%; height: 80%; 
-	background:url(imagenes/portada/entrenamiento.jpg) center center no-repeat; 
+	#ropa {width: 40%; height: 80%; 
+	background:url(imagenes/joma.png) center center no-repeat; 
 	background-size: 100% 100%; float: left; margin-left: 7%; margin-top: 2%;}
 	
-	#entrenamiento:hover {transform:scale(1.1);
+	#ropa:hover {transform:scale(1.1);
 					border: 1px solid black;
 					box-shadow: 10px 5px 30px  black;
 	border-radius: 30px;}
 
-	#aguas {width: 40%; height: 80%; float: left; 
-	background:url(imagenes/portada/aguasabiertas.jpg) center center no-repeat; 
+	#suplementos {width: 40%; height: 80%; float: left; 
+	background:url(imagenes/creatina1000.png) center center no-repeat; 
 	background-size: 100% 100%; margin-left: 7%; margin-top: 2%;}
 	
-	#aguas:hover {transform:scale(1.1);
+	#suplementos:hover {transform:scale(1.1);
 					border: 1px solid black;
 					box-shadow: 10px 5px 30px  black;
 	border-radius: 30px;}
 
-	#entrenamiento, #aguas {display: inline-block;}
+	#ropa, #suplementos {display: inline-block;}
