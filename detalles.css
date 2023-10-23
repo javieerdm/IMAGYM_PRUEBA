@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+* { margin:0px; padding:0px;}
+
+/* section página de bañadores*/
+
+#articulos {width: 100%; overflow:hidden; /*background: purple;*/}
+	
+	#derecha {width: 80%; float:left; margin-left:10%;/*background: green;*/}
+
+		#titulo {width: 100%; float:left; /*background:orange;*/}
+
+			h1 {text-align: center; margin-top: 10px;}
+			
+			h5{color:red; font-size:1em; text-align:center; /*background:orange;*/}
+			
+			.volver img:hover{box-shadow: 0 4px 16px; border-radius:15px;}
+			.volver img{width:30px; margin-top:10px;}
+			
+		#producto {width:100%; height:650px; float:left; /*background:red;*/}
+		
+		#producto1 {width: 40%; float:left; 
+			/*border: 1px solid black;*/  /*background:yellow;*/}
+			
+				.referencia {font-size: 1em;}
+				
+				#comprar {margin-left:50%;
+					margin-top: 10px;
+					border-radius: 20px;
+					border: 3px solid white;
+					border-style: outset;
+					font-size: 1em;
+					text-align: center;
+					padding: 20px 10px 20px 10px;
+				text-decoration: none;}
+				
+				#comprar:hover {box-shadow: 0 4px 16px;
+				transition: all 0.2s ease;}
+				
+				#detalles p {font-size:1.2em; padding:0px 50px 0px;}
+				
+				#prenda img{width: 100%;}
+				
+				#detalles{width: 60%; float:left; /*background:purple;*/}
+				
+				#producto1, #detalles {display:inline;}
+				
+				#art{width: 100%; float:left; /*background:orange;*/
+					font-size:1.2em;
+					margin:10% 10% 10%;}
+					
+				#precio{width: 100%; /*background:pink;*/
+					font-size:1em;
+					margin:5% 5% 5% 20%;
+					color:blue;}
+					
+				#rebajado{width: 100%; /*background:pink;*/
+					font-size:1.2em;
+					margin:5% 5% 5% 20%;
+					color:red;}
+					
+				#detalle{width: 100%; /*background:green;*/
+					font-size:1em;
+					margin:20% 10%;}
+					
+	
+
+
+		

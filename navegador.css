@@ -1,0 +1,37 @@
+/*section navegador*/
+
+#izquierda {width: 20%; float:left; /*background: blue;*/}
+	
+	#buscador {width: 80%; float: left; background:#aedef0;
+			border: 1px solid black; margin-left: 20px; 
+			margin-top: 10px;
+			margin-bottom: 10px;
+			padding-top:10px;
+			box-shadow: 5px 5px 10px  black;
+			border-radius: 30px;}
+
+	.ordenar {margin-left: 20px; margin-top: 10px;}
+	
+	.ordenar > li {list-style: none;}	
+	
+	.ordenar a{text-decoration:none;}	
+	
+	.ordenar a:link{color:black;}
+
+	.ordenar a:visited{color:black;}
+	
+	.ordenar a:hover{color: blue; text-decoration: underline;}
+	
+	#ofertas{width: 80%; float: left; background:#aedef0;
+			border: 1px solid black; margin-left: 20px; 
+			margin-top: 50px;
+			margin-bottom: 10px;
+			padding-top:10px;
+			box-shadow: 5px 5px 10px  black;
+			border-radius: 30px;
+			font-size:1.5em;
+			}
+	
+	#ofertas a{text-decoration:none; color:red;}
+	
+	h4 {text-align: center; margin-top: 10px;}

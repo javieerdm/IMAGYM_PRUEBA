@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+* { margin:0px; padding:0px;}
+
+/* section página de pedidos*/
+
+#articulos {width: 100%; overflow:hidden; /*background: purple;*/}
+
+h1 {text-align: center; margin-top: 50px;}
+
+#izquierda {width: 30%; min-height:420px; float:left; /*background: orange;*/}
+
+#derecha {width: 70%; min-height:420px; float:left; /*background: green;*/}
+
+.bloque1{width:70%; margin:auto auto;}
+
+.bloque{width:100%; margin:auto auto; /*background: yellow;*/}
+
+.bloque1 ul{list-style: none; margin-left: 5%;}
+
+td{border-bottom: 1px solid #ccc;}
+

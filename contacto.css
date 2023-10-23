@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+* { margin:0px; padding:0px; }	
+
+#section {width: 100%; height:673px; /*background: red;*/}
+
+/* section página de contacto*/
+
+#contactos {width: 40%; height: 100%; float: left; /*background:orange;*/}
+	
+	#formu {margin: auto; width: 80%; margin-top: 20%;}
+	
+	#formu .cont {margin-left: 30px;}
+	
+	#formu .boton {margin-top: 20px; margin-bottom: 20px;
+		margin-left: 150px;
+		border-radius: 20px;
+		border: 3px solid white;
+		border-style: outset;
+		font-size: 1em;
+		text-align: center;
+		padding: 5px 15px 5px 15px;
+	text-decoration: none;}		
+		
+	#formu .boton:hover {box-shadow: 0 4px 16px;
+	transition: all 0.2s ease;}
+
+#localizacion {width: 60%; height: 100%; float: left; /*background:blue;*/}
+
+.direccion {font-size: 12px; margin-top: 10%; margin-left: 20px;}
+
+iframe { margin-left: 20px; width: 70%; height: 60%;}

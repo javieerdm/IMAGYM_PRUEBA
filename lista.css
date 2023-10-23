@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+* { margin:0px; padding:0px;}
+
+/* section derecha*/
+
+#articulos {width: 100%; overflow:hidden; /*background: purple;*/}	
+	
+	#derecha {width: 80%; float:left; /*background: green;*/}
+
+		#titulo {width: 100%; float:left; /*background:orange;*/}
+
+			h1 {text-align: center; margin-top: 10px;}
+			
+			.volver img:hover{box-shadow: 0 4px 16px; border-radius:15px;}
+			.volver img{width:30px; margin-top:10px;}
+			
+		#producto {width:25%; float:left; /*background:red;*/}
+		
+		#producto a{text-decoration:none;}
+		
+		#producto1 {width: 90%; height:30%; float:left; margin:15px 0px;
+			border: 1px solid black; /*background:yellow;*/}
+			
+			#producto1:hover {box-shadow: 0 4px 16px;
+			transition: all 0.2s ease;}
+						
+				#talla {margin-left: 5%;}
+				
+				#boton {margin-left:30%;
+					margin-top: 10px;
+					border-radius: 20px;
+					border: 3px solid white;
+					border-style: outset;
+					font-size: 1em;
+					text-align: center;
+					padding: 2px 10px 2px 10px;
+				text-decoration: none;}
+				
+				#boton:hover {box-shadow: 0 4px 16px;
+				transition: all 0.2s ease;}
+				
+				p{text-align: center; /*background:yellow;*/
+				font-size:0.8em; padding:0px 20px 0px;}	
+
+				h5{color:red; font-size:1em; text-align:center; /*background:orange;*/}
+				
+				#prenda {width: 60%; height:120px; margin:auto; margin-top:10px; /*background:green;*/}
+				
+				#prenda img{width: 100%; height: 100%; }
+				
+				#prenda img:hover{transform: scale(1.8,2); margin-top:80px; box-shadow: 0 4px 16px;}
+				
+				#art{width: 95%; height:60px; margin-top: 20px; text-align: center; /*background:orange;*/}
+				
+				#coste{width: 100%; height:50px; /*background:green;*/}
+				
+				#precio{width: 80%; margin: auto;  /*height:50px;*/ text-align: center; /*background:blue;*/}
+				
+				.rebajado{color:red; font-size:1em; text-align:center;}

@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+* { margin:0px; padding:0px;}
+
+section { width: 100%; height:673px;/*background: red;*/}
+
+#section1 {width: 100%; height:50%;}
+
+	#bañadores {width: 40%; height: 80%; 
+	background: url(imagenes/portada/banadores.jpg)center center no-repeat; 
+	background-size: 100% 100%;float: left; margin-left: 7%; margin-top: 2%;}
+
+	#bañadores:hover {transform:scale(1.1);
+					border: 1px solid black;
+					box-shadow: 10px 5px 30px  black;
+	border-radius: 30px;}
+
+	#equipacion {width: 40%; height: 80%; float: left; 
+	background:url(imagenes/portada/equipamiento.jpg) center center no-repeat; 
+	background-size: 100% 100%; margin-left: 7%; margin-top: 2%;}
+	
+	#equipacion:hover {transform:scale(1.1);
+					border: 1px solid black;
+					box-shadow: 10px 5px 30px  black;
+	border-radius: 30px;}
+
+	#bañadores, #equipacion {display: inline-block;}
+
+#section2 {width: 100%; height:50%;}
+
+	#entrenamiento {width: 40%; height: 80%; 
+	background:url(imagenes/portada/entrenamiento.jpg) center center no-repeat; 
+	background-size: 100% 100%; float: left; margin-left: 7%; margin-top: 2%;}
+	
+	#entrenamiento:hover {transform:scale(1.1);
+					border: 1px solid black;
+					box-shadow: 10px 5px 30px  black;
+	border-radius: 30px;}
+
+	#aguas {width: 40%; height: 80%; float: left; 
+	background:url(imagenes/portada/aguasabiertas.jpg) center center no-repeat; 
+	background-size: 100% 100%; margin-left: 7%; margin-top: 2%;}
+	
+	#aguas:hover {transform:scale(1.1);
+					border: 1px solid black;
+					box-shadow: 10px 5px 30px  black;
+	border-radius: 30px;}
+
+	#entrenamiento, #aguas {display: inline-block;}
