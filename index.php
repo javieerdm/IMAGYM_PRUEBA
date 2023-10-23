@@ -20,6 +20,9 @@
 					<div id="section2">
 						<a href="maquinas.php"><div id="maquinas"></div></a>
 						<a href="suplementos.php"><div id="suplementos"></div></a>
+					</div>
+					<div>
+						<img src="./imagenes/chache.jpg" />
 					</div>					
 			</section>
 			
