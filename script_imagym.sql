@@ -21,7 +21,7 @@ DROP TABLE IF EXISTS Usuarios, Categorias, Generos, Productos, Facturas, Product
 CREATE TABLE Usuarios (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     Nombre VARCHAR(255) NOT NULL,
-    Email VARCHAR(255) NOT NULL UNIQUE,
+    Email VARCHAR(100) NOT NULL UNIQUE,
     Contraseña VARCHAR(255) NOT NULL,
     Rol ENUM('administrador', 'cliente') NOT NULL
 );
@@ -55,14 +55,14 @@ INSERT INTO Generos (Nombre) VALUES
     ('Camisetas'),
     ('Pantalones'),
     ('Zapatillas'),
-    ('Mancuernas')
-	('Gomas')
-	('Barras')
-	('Fitness Cardio')
-	('Rack')
-	('Musculación')
-	('Proteina')
-	('Creatina')
+    ('Mancuernas'),
+	('Gomas'),
+	('Barras'),
+	('Fitness Cardio'),
+	('Rack'),
+	('Musculación'),
+	('Proteina'),
+	('Creatina'),
 	('Pre-Entreno');
 	
 
