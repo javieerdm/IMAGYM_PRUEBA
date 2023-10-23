@@ -1,5 +1,5 @@
 <?php
-$conexion = new mysqli('localhost', 'root', '', 'base de datos');
+$conexion = new mysqli('localhost', 'root', '', 'script_imagym');
 if ($conexion->connect_error) {
     die('Error en la conexión' . $conexion->connect_error);
 }
