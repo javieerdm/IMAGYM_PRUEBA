@@ -16,12 +16,12 @@
 				<br>
 				<h1 id="politica">Política de privacidad</h1>
 				<hr class="linea2"><br>
-				<p>Tienda Swimmer informa a los usuarios del sitio web sobre su política respecto 
+				<p>IMAGYM informa a los usuarios del sitio web sobre su política respecto 
 				del tratamiento y protección de los datos de carácter personal de los usuarios
 				y clientes que puedan ser recabados por la navegación o contratación de 
 				servicios a través de su sitio web.</p>
 				<br>
-				<p>En este sentido, Empresa A garantiza el cumplimiento de la normativa 
+				<p>En este sentido, IMAGYM garantiza el cumplimiento de la normativa 
 				vigente en materia de protección de datos personales, reflejada en la Ley 
 				Orgánica 15/1999 de 13 de diciembre, de Protección de Datos de Carácter 
 				Personal y en el Real Decreto 1720/2007, de 21 diciembre, por el que se 
@@ -31,7 +31,7 @@
 				<br>
 				<p><b>Recogida, finalidad y tratamientos de datos</p></b>
 				<br>
-				<p>Tienda Swimmer tiene el deber de informar a los usuarios de su sitio web 
+				<p>IMAGYM tiene el deber de informar a los usuarios de su sitio web 
 				acerca de la recogida de datos de carácter personal que pueden llevarse a 
 				cabo, bien sea mediante el envío de correo electrónico o al cumplimentar 
 				los formularios incluidos en el sitio web. En este sentido, Tienda Swimmer 
@@ -51,7 +51,7 @@
 				serie de derechos relacionados con el tratamiento de sus datos personales</p>
 				<br>
 				<p>En tanto en cuanto los datos del usuario son objeto de tratamiento por 
-				parte de Tienda Swimmer. Los usuarios podrán ejercer los derechos de acceso, 
+				parte de IMAGYM. Los usuarios podrán ejercer los derechos de acceso, 
 				rectificación, cancelación y oposición de acuerdo con lo previsto en la 
 				normativa legal vigente en materia de protección de datos personales.</p>
 				<br>
