@@ -14,12 +14,12 @@
 			
 			<section>			
 					<div id="section1">
-						<a href="ropa-deportiva.php"><div id="ropa"></div></a>
-						<a href="material.php"><div id="material"></div></a>
+						<a href="producto.php?categoria=1"><div id="ropa"></div></a>
+						<a href="producto.php?categoria=2"><div id="material"></div></a>
 					</div>
 					<div id="section2">
-						<a href="maquinas.php"><div id="maquinas"></div></a>
-						<a href="suplementos.php"><div id="suplementos"></div></a>
+						<a href="producto.php?categoria=3"><div id="maquinas"></div></a>
+						<a href="producto.php?categoria=4"><div id="suplementos"></div></a>
 					</div>
 					<div>
 						<img src="./imagenes/chache.jpg" />

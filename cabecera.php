@@ -100,11 +100,11 @@
 				<div id="cabecera_baja">
 					<nav>
 						<ul id="B">							
-							<li><a href="vertodo.php">Ver todos</a></li>
-							<li><a href="ropa-deportiva.php">Ropa deportiva</a></li>
-							<li><a href="suplementos.php">Suplementos</a></li>
-							<li><a href="material.php">Material </a></li>
-							<li><a href="maquinas.php">Máquinas</a></li>
+							<li><a href="producto.php">Ver todos</a></li>
+							<li><a href="producto.php?categoria=1">Ropa deportiva</a></li>
+							<li><a href="producto.php?categoria=4">Suplementos</a></li>
+							<li><a href="producto.php?categoria=2">Material </a></li>
+							<li><a href="producto.php?categoria=3">Máquinas</a></li>
 						</ul>
 					</nav>				
 				</div>
