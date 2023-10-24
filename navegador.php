@@ -40,13 +40,6 @@
             </form>
 
         </div>
-        <div id="ofertas">
-            <a href="rebajados.php">
-                <h1>OUTLET</h1>
-                <h4>Artículos rebajados hasta el 50%</h4>
-            </a>
-            <br>
-        </div>
     </div>
 </body>
 

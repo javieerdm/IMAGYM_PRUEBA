@@ -20,10 +20,7 @@
 					<div id="section2">
 						<a href="producto.php?categoria=3"><div id="maquinas"></div></a>
 						<a href="producto.php?categoria=4"><div id="suplementos"></div></a>
-					</div>
-					<div>
-						<img src="./imagenes/chache.jpg" />
-					</div>					
+					</div>				
 			</section>
 			
 			<?php include('pie.php');?>		
