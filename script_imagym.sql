@@ -16,7 +16,7 @@
 	
 
 
-DROP TABLE IF EXISTS Usuarios, Categorias, Generos, Productos, Facturas, ProductosEnFacturas CASCADE;
+DROP TABLE IF EXISTS Usuarios, Categorias, Contacto, Generos, Productos, Facturas, ProductosEnFacturas CASCADE;
 
 CREATE TABLE Usuarios (
     ID INT PRIMARY KEY AUTO_INCREMENT,
@@ -42,6 +42,16 @@ INSERT INTO Categorias (Nombre) VALUES
     ('Material deportivo'),
     ('Máquinas'),
     ('Suplementos');
+
+    CREATE TABLE Contacto (
+  `ORDEN` int(11) NOT NULL,
+  `NOMBRE` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `CORREO` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `MENSAJE` varchar(1000) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+INSERT INTO Contacto (`ORDEN`, `NOMBRE`, `CORREO`, `MENSAJE`) VALUES
+(0, 'jorge', 'jorgebecu@gmail.com', 'bienvenidos');
 
 	
 -- Crear la tabla de géneros
