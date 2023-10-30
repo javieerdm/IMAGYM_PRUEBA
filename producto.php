@@ -33,18 +33,18 @@
                         $generos = $_GET['genero'];
                         $categoria = $_GET['categoria'];
                         $consultalista = "SELECT *
-						FROM productos where GeneroID='$generos' && CategoriaID='$categoria'";
+                        FROM productos where GeneroID='$generos' && CategoriaID='$categoria'";
                     } else if (isset($_GET['genero'])) {
                         $generos = $_GET['genero'];
                         $consultalista = "SELECT *
-						FROM productos where GeneroID='$generos'";
+                        FROM productos where GeneroID='$generos'";
                     } else if (isset($_GET['categoria'])) {
                         $categoria = $_GET['categoria'];
                         $consultalista = "SELECT *
-						FROM productos where CategoriaID='$categoria'";
+                        FROM productos where CategoriaID='$categoria'";
                     } else {
                         $consultalista = "SELECT *
-						FROM productos";
+                        FROM productos";
                     }
 
                     $resultadolista = mysqli_query($conexion, $consultalista);
@@ -62,13 +62,15 @@
                     <?php while ($registrolista = mysqli_fetch_row($resultadolista)) { ?>
                         <div id="producto">
 
-                            <a href="detalles.php?ProductoID=<?php echo $registrolista[0]; ?>">
+                           
                                 <div id="producto1">
 
                                     <!--Muestra la imagen del articulo-->
+                                    <a href="detalles.php?ProductoID=<?php echo $registrolista[0]; ?>">
                                     <div id="prenda">
                                         <img src="<?php echo $registrolista[2]; ?>"></img>
                                     </div>
+                                    </a>
                                     <br>
 
                                     <!--Muestra  el nombre del articulo-->
@@ -83,12 +85,26 @@
                                             <b>Precio: <?php echo $registrolista[3] . " €"; ?></b>
                                         </div>                                        
                                     </div>
-                                    <button id="boton" type="submit">
-                                        <a href='comprar.php?referencia=<?php echo $registrolista[5]; ?>'>Comprar</a>
-                                    </button>
+                                    <form method='POST' <?php if (isset($_SESSION['usuario'])) { ?> action='PHP/añadir-cesta.php?ProductoID=<?php echo $registrolista[0]; ?>' <?php } else { ?> action='login.php' <?php } ?>target='_self'>
+                                    <label>
+                                        Cantidad
+                                    </label>
+                                    <input type='number' name='cantidad' min='<?php if ($registrolista[4] > 0) {
+                                                                                    echo "1";
+                                                                                } else {
+                                                                                    echo "0";
+                                                                                } ?>' max='<?php echo $registrolista[4]; ?>' value='<?php if ($registrolista[4] > 0) {
+                                                                                                                                        echo "1";
+                                                                                                                                    } else {
+                                                                                                                                        echo "0";
+                                                                                                                                    } ?>' />
+                                   
+                                    <input type="submit" id="boton" value="COMPRAR">
+                                   
+                                </form>
                                     <br><br>
                                 </div>
-                            </a>
+                            
                         </div>
                     <?php } ?>
                 </div>
@@ -104,3 +120,4 @@
 </body>
 
 </html>
+
