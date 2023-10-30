@@ -5,7 +5,7 @@ session_start();
 <?php
 
 include('conexion.php');
-$producto_id = $_GET['referencia'];
+$producto_id = $_GET['ProductoID'];
 $cantidad = $_GET['cantidad'];
 
 if (isset($_SESSION['carrito'])) {
