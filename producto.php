@@ -62,7 +62,7 @@
                     <?php while ($registrolista = mysqli_fetch_row($resultadolista)) { ?>
                         <div id="producto">
 
-                            <a href="detalles.php?referencia=<?php echo $registrolista[0]; ?>">
+                            <a href="detalles.php?ProductoID=<?php echo $registrolista[0]; ?>">
                                 <div id="producto1">
 
                                     <!--Muestra la imagen del articulo-->
