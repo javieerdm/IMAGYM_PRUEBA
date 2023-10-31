@@ -42,7 +42,7 @@
 									<button class='boton' type='submit'>Entrar</button>";									
 								}
 								if(isset($_SESSION["cliente"])){
-									if($_SESSION["administrador"]=='SI'){
+									if($_SESSION["rol"]=='administrador'){
 										echo "Administrador";
 										echo "<button class='boton'><a href='cerrar.php'>Cerrar sesión</a></button>";
 										echo "<button class='boton'><a href='basedatos/crud.php'>Base de datos</a></button>";
