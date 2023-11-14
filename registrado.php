@@ -36,11 +36,11 @@
 					<div id="datos">
 						<form id="formregistro" method="POST">
 							<label class="reg1">Nombre</label>
-							<input type="text" name="NOMBRE" placeholder="NOMBRE"value="<?php echo $registro[3]; ?>"><br>
+							<input type="text" name="NOMBRE" placeholder="NOMBRE"value="<?php echo $registro[1]; ?>"><br>
 							<label class="reg1">Email</label>
-							<input type="email" name="EMAIL" placeholder="EMAIL" value="<?php echo $registro[1]; ?>"><br>
+							<input type="email" name="EMAIL" placeholder="EMAIL" value="<?php echo $registro[2]; ?>"><br>
 							<label class="reg1">Contraseña</label>
-							<input type="password" name="CONTRASEÑA" placeholder="CONTRASEÑA" value="<?php echo $registro[2]; ?>"><br>
+							<input type="password" name="CONTRASEÑA" placeholder="CONTRASEÑA" value="<?php echo $registro[3]; ?>"><br>
 								
 							<button class='botonreg' type='submit'><a href="producto.php">Ir a tienda</a></p>
 						</form>

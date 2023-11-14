@@ -81,9 +81,9 @@
 										 		 $registrop=mysqli_fetch_row($resultadop);
 												
 										 		echo "<li><a href='carrito.php'><img src='imagenes/carrito.png'>Mi cesta </a><li>";												
-										 		//  if($registrop[0]!=0){
-										 		// 	echo "<li><a href='pedidos.php'><img src='imagenes/pedido.jpg'> Mis pedidos</a><li>";
-										 		//  }else{}
+										 		  if($registrop!=0){
+										 		 	echo "<li><a href='pedidos.php'><img src='imagenes/pedido.jpg'> Mis pedidos</a><li>";
+										 		  }else{}
 										 		
 										}
 									
