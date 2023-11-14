@@ -16,12 +16,12 @@
 
 				<?php
 				
-					if(!isset($_SESSION['ID'])){
+					if(!isset($_SESSION['codusuario'])){
 						header("location:index.php");
 					}
 					else{
 						
-						$condicion=$_SESSION['ID'];
+						$condicion=$_SESSION['codusuario'];
 						
 						$consulta="select * from Usuarios where ID='$condicion'";
 						$resultado=mysqli_query($conexion,$consulta); 

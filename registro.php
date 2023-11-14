@@ -30,7 +30,7 @@
 						if($registroemail==1){
 							echo "<script  type='text/javascript'>alert('El email ya existe');</script>";
 						}else{						
-							$consultainsertar="insert into Usuarios (NOMBRE, EMAIL, CONTRASEÑA,Rol)
+							$consultainsertar="insert into Usuarios (NOMBRE, EMAIL, CONTRASEÑA, Rol)
 							values ('$NOMBRE','$EMAIL', '$CONTRASEÑA', 'cliente')";						
 							$resultadoinsertar=mysqli_query ($conexion, $consultainsertar);	
 							

@@ -65,29 +65,28 @@
 								<ul>
 									<li><a href="contacto.php"><img src="imagenes/sobre.png"> Contacto</a><li>
 									<li><a href="registro.php"><img src="imagenes/usuario.png"> Registro</a><li>
-									<?php 
-									
-										if(isset($_SESSION["codusuario"])){
-											if($_SESSION["administrador"]=='SI'){}										
-											else{												
-												$cliente=$_SESSION["codusuario"];
+									<?php
+
+										if(isset($_SESSION["codusuario"]) && isset($_SESSION["rol"]) && $_SESSION["rol"] == 'cliente') {
+									 			$cliente=$_SESSION["codusuario"];
 												
-												$consultac="Select NºPEDIDO from carro where CODUSU='$cliente'";
-												$resultadoc=mysqli_query($conexion, $consultac);
-												$nregistroc=mysqli_num_rows($resultadoc);
+										// 		// $consultac="Select NºPEDIDO from carro where ID='$cliente'";
+										// 		// $resultadoc=mysqli_query($conexion, $consultac);
+										// 		// $nregistroc=mysqli_num_rows($resultadoc);
 												
 												
 
-												$consultap="Select NºFACTURA from pedidos where CODUSU='$cliente'";
-												$resultadop=mysqli_query($conexion, $consultap);
-												$registrop=mysqli_fetch_row($resultadop);
+										 		 $consultap="Select ID from facturas where ClienteID='$cliente'";
+										 		 $resultadop=mysqli_query($conexion, $consultap);
+										 		 $registrop=mysqli_fetch_row($resultadop);
 												
-												echo "<li><a href='carrito.php'><img src='imagenes/carrito.png'>Mi cesta ($nregistroc)</a><li>";												
-												if($registrop[0]!=0){
-													echo "<li><a href='pedidos.php'><img src='imagenes/pedido.jpg'> Mis pedidos</a><li>";
-												}else{}
-											}
+										 		echo "<li><a href='carrito.php'><img src='imagenes/carrito.png'>Mi cesta </a><li>";												
+										 		//  if($registrop[0]!=0){
+										 		// 	echo "<li><a href='pedidos.php'><img src='imagenes/pedido.jpg'> Mis pedidos</a><li>";
+										 		//  }else{}
+										 		
 										}
+									
 									?>
 								</ul>
 							</nav>						

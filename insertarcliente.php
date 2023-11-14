@@ -17,15 +17,13 @@
 			
 			$fila=mysqli_fetch_row($resultadoinsertarcliente);
 			$nom=$fila[1];
-			$admin=$fila[0];
-			$codusu=$fila[0];
+			$ID=$fila[0];
 			$rol=$fila[4];
 
 			
 			session_start();
-			$_SESSION["usua"]=$usu;
 			$_SESSION["cliente"]=$nom;
-			$_SESSION["ID"]=$ID;
+			$_SESSION["codusuario"]=$ID;
 			$_SESSION["rol"]=$rol;
 			header("location:registrado.php");
 		}		
