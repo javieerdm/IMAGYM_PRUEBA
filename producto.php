@@ -85,7 +85,7 @@
                                             <b>Precio: <?php echo $registrolista[3] . " €"; ?></b>
                                         </div>                                        
                                     </div>
-                                    <form method='POST' <?php if (isset($_SESSION['usua'])) { ?> action='PHP/añadir-cesta.php?ProductoID=<?php echo $registrolista[0]; ?>' <?php } else { ?> action='login.php' <?php } ?>target='_self'>
+                                    <form method='POST' <?php if (isset($_SESSION['cliente'])) { ?> action='./añadir-cesta.php?ProductoID=<?php echo $registrolista[0]; ?>' <?php } else { ?> action='login.php' <?php } ?>target='_self'>
                                     <label>
                                         Cantidad
                                     </label>
