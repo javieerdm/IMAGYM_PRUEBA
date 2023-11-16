@@ -42,22 +42,36 @@
 									</div>";
                 } else {
 
-                    $carrito = $_COOKIE['carrito'];
+                    $carritoaux = $_COOKIE['carrito'];
+                    $carrito = unserialize($carritoaux);
+
+                    echo "<p>", sizeof($carrito), "</p>";
 
                     echo "<h2>Carrito de Compras</h2>";
+
+                    echo "<table border='1'>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                        </tr>";
+
                     foreach ($carrito as $producto_id => $cantidad) {
-                        $consulta = "select * from productos where ID=$producto_ID";
+                        $consulta = "select * from productos where ID=$producto_id";
                         $resultado = $conexion->query($consulta);
 
                         while ($registro = $resultado->fetch_assoc()) {
 
                             echo "<tr>";
-                            echo "<td>" . $registro['Imagen'] . "</td>";
+                            echo "<td> <img src=".$registro['Imagen']."></img></td>";
                             echo "<td>" . $registro['Nombre'] . "</td>";
                             echo "<td>" . $registro['Precio'] . "</td>";
                             echo "<td>" . $carrito[$registro['ID']] . "</td>";
                         }
                     }
+
+                    echo "</table>";
 
 
                     echo "<div id='articulos'>
