@@ -49,12 +49,13 @@
 
                     echo "<h2>Carrito de Compras</h2>";
 
-                    echo "<table border='1'>
+                    echo "<table id='celdas' width='90%' border='1' align='center'>
                         <tr>
                             <th>Producto</th>
                             <th>Nombre</th>
-                            <th>Precio</th>
+                            <th>Precio Unitario</th>
                             <th>Cantidad</th>
+                            <th>Precio Total</th>
                         </tr>";
 
                     foreach ($carrito as $producto_id => $cantidad) {
@@ -63,11 +64,17 @@
 
                         while ($registro = $resultado->fetch_assoc()) {
 
-                            echo "<tr>";
-                            echo "<td> <img src=".$registro['Imagen']."></img></td>";
+                            echo "<tr align='center'>";
+                            echo "<td> <img width='70' src=".$registro['Imagen']."></img></td>";
                             echo "<td>" . $registro['Nombre'] . "</td>";
-                            echo "<td>" . $registro['Precio'] . "</td>";
+                            echo "<td>" . $registro['Precio'] . " € </td>";
                             echo "<td>" . $carrito[$registro['ID']] . "</td>";
+                            echo "<td>" . $registro['Precio']*$carrito[$registro['ID']] . " € </td>";
+                            echo "<td>
+														<a href=./borrar-cesta.php?productoId=".$producto_id.">
+															<button id='botonx' type='reset' title='eliminar'><img width='20' src='imagenes/papelera.jpg'></button>
+														</a>
+													</td>";
                         }
                     }
 
