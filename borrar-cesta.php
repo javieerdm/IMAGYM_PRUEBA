@@ -11,7 +11,7 @@ $producto_id = $_GET['productoId'];
 $carrito = $_COOKIE['carrito'];
 
 $carrito = unserialize($carrito);
-$carrito[$producto_id] = 0;
+unset($carrito[$producto_id]);
 
 setcookie('carrito', serialize($carrito), time() + 3600, '/');
 $_SESSION['carrito'] = $carrito;
