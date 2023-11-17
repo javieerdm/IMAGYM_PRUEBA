@@ -6,7 +6,6 @@
     <title>Añade productos a tu cesta </title>
     <link rel="stylesheet" href="principal.css">
     <link rel="stylesheet" href="carrito.css">
-
 </head>
 
 <body>
@@ -26,17 +25,15 @@
             else {
                 $cliente = $_SESSION["codusuario"];
 
-                $tam_carrito=0;
+                $tam_carrito = 0;
 
-                if(isset($_COOKIE['carrito'])){
+                if (isset($_COOKIE['carrito'])) {
                     $carritoaux = $_COOKIE['carrito'];
                     $carrito = unserialize($carritoaux);
                     $tam_carrito = sizeof($carrito);
                 }
 
-
-
-                if ($tam_carrito==0) {
+                if ($tam_carrito == 0) {
                     echo "<div class='CARRITO VACIO'>
 										<h1>Tu carrito está vacío....</h1>
 										<br>
@@ -49,11 +46,6 @@
 										</div>
 									</div>";
                 } else {
-
-                    
-
-                    //echo "<p>", sizeof($carrito), "</p>";
-
                     echo "<h2>Carrito de Compras</h2>";
 
                     echo "<table id='celdas' width='90%' border='1' align='center'>
@@ -70,15 +62,14 @@
                         $resultado = $conexion->query($consulta);
 
                         while ($registro = $resultado->fetch_assoc()) {
-
                             echo "<tr align='center'>";
-                            echo "<td> <img width='70' src=".$registro['Imagen']."></img></td>";
+                            echo "<td> <img width='70' src=" . $registro['Imagen'] . "></img></td>";
                             echo "<td>" . $registro['Nombre'] . "</td>";
                             echo "<td>" . $registro['Precio'] . " € </td>";
                             echo "<td>" . $carrito[$registro['ID']] . "</td>";
-                            echo "<td>" . $registro['Precio']*$carrito[$registro['ID']] . " € </td>";
+                            echo "<td>" . $registro['Precio'] * $carrito[$registro['ID']] . " € </td>";
                             echo "<td>
-														<a href=./borrar-cesta.php?productoId=".$producto_id.">
+														<a href=./borrar-cesta.php?productoId=" . $producto_id . ">
 															<button id='botonx' type='reset' title='eliminar'><img width='20' src='imagenes/papelera.jpg'></button>
 														</a>
 													</td>";
@@ -87,21 +78,43 @@
 
                     echo "</table>";
 
-                    echo "<p>
-													<a class='terminar' href='validarcompra.php'>
-														<button id='boton' type='reset'>Terminar mi pedido</button>
-													</a>
-												</p>";
+                    // Calcular la cantidad total
+                    $total_amount = 0;
+
+                    foreach ($carrito as $producto_id => $cantidad) {
+                        $consulta = "select * from productos where ID=$producto_id";
+                        $resultado = $conexion->query($consulta);
+
+                        while ($registro = $resultado->fetch_assoc()) {
+                            $total_amount += $registro['Precio'] * $carrito[$registro['ID']];
+                        }
+                    }
+
+                    echo "<form action='https://www.sandbox.paypal.com/cgi-bin/webscr' method='post' id='form_pay'>
+                        <!-- Valores requeridos -->
+                        <input type='hidden' name='business' value='sb-gngo228196001@business.example.com'>
+                        <input type='hidden' name='cmd' value='_xclick'>
+                        <input type='hidden' name='currency_code' value='EUR'>
+                        <input type='hidden' name='return' value='http://localhost/COMERCIO/IMAGYM/pagoconexito.php'>
+                        <input type='hidden' name='cancel_return' value='http://localhost/COMERCIO/IMAGYM/pago_cancelado.php'>
+                        
+                        <!-- Valores calculados -->
+                        <input type='hidden' name='item_name' value='Productos en el carrito'>
+                        <input type='hidden' name='amount' value='$total_amount'>
+                        <input type='hidden' name='quantity' value='1'>
+                        
+                        <hr>
+                        <button id='boton' class='terminar' type='submit'>Pagar ahora con Paypal</button>
+                    </form>";
                 }
             }
 
             echo "<br>";
             echo "<br>";
 
-
             ?>
-
         </section>
+
         <?php include('pie.php'); ?>
     </div>
 </body>

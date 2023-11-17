@@ -30,11 +30,13 @@ curl_setopt($request, CURLOPT_HTTPHEADER, array("Host: $paypal_hostname"));
 $response = curl_exec($request);
 curl_close($request);
 
-if (!$response) {
+/*if (!$response) {
     //HTTP ERROR
     echo "SE QUEDA EN LÍNEA 35";
     return;
 }
+
+*/
 
 // Dividimos $response por líneas
 $lines = explode("\n", trim($response));
