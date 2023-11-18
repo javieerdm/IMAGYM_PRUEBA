@@ -1,6 +1,40 @@
-<?php
-$baseUrl = 'http://localhost/paypal-pdt-php/buy_now_button';
-?>
+<!DOCTYPE html>
+<html lang="es">
 
-<h2>Pedido cancelado</h2>
-<p>El pedido fue cancelado, vuelve a la página de compra dando clic <a href="<?= $baseUrl ?>/formulario.php">aquí</a></p>
+<head>
+    <meta charset="UTF-8">
+    <title>Añade productos a tu cesta </title>
+    <link rel="stylesheet" href="principal.css">
+    <link rel="stylesheet" href="carrito.css">
+
+    <style>
+        h1 {
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: black;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="body">
+
+        <?php include('cabecera.php'); ?>
+
+        <h1>Pedido cancelado</h1> <br>
+        <h2>El pedido fue cancelado, vuelve a la página de compra haciendo click en el siguiente botón </h2>
+
+
+        <form action="index.php" method="post">
+            <button id='boton' type="submit" name="finalizar">Finalizar</button>
+        </form>
+
+    </div>
+</body>
+
+</html>

@@ -76,6 +76,8 @@
                         }
                     }
 
+                    
+
                     echo "</table>";
 
                     // Calcular la cantidad total
@@ -108,6 +110,11 @@
                     </form>";
                 }
             }
+
+            echo "<tr>
+                       <td colspan='4' align='right'><b>Total:</b></td>
+                            <td><b>" . $total_amount . " € </b></td>
+                              </tr>";
 
             echo "<br>";
             echo "<br>";
