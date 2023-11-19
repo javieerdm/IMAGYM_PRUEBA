@@ -3,75 +3,49 @@ session_start();
 ?>
 
 <?php
-
 // Incluir la conexión y la clase
+//include('crear-factura.php');
 
 include('conexion.php');
 
-class CrearFactura
-{
-    private $conexion;
+//$productoID = $_GET['ProductoID'];
+$clienteID = $_SESSION['codusuario'];
+//$cantidad =$_GET['cantidad'];
 
-    public function __construct($conexion)
-    {
-        $this->conexion = $conexion;
-    }
 
-    public function crearFactura($cliente)
-    {
-        // Obtener datos del carrito desde la cookie
-        if (isset($_SESSION['carrito'])) {
-            $carritoaux = $_SESSION['carrito'];
-            $carrito = unserialize($carritoaux);
+if (isset($_COOKIE['carrito'])) {
+	$carritoaux = $_COOKIE['carrito'];
+    $carrito = unserialize($carritoaux);
 
-            // Insertar datos en la tabla Facturas
-            $fechaCompra = date('Y-m-d');
-            $precioTotal = $this->calcularPrecioTotal($carrito);
-            $insertFactura = "INSERT INTO Facturas (ClienteID, FechaCompra, PrecioTotal) VALUES ('$cliente', '$fechaCompra', '$precioTotal')";
-            $this->conexion->query($insertFactura);
+	// Insertar datos en la tabla Facturas
+	$fechaCompra = date('Y-m-d');
 
-            // Obtener el ID de la factura recién creada
-            $facturaID = $this->conexion->insert_id;
+	$total_amount = 0;
 
-            // Insertar datos en la tabla ProductosEnFacturas
-            foreach ($carrito as $productoID => $cantidad) {
-                $insertProductosEnFacturas = "INSERT INTO ProductosEnFacturas (FacturaID, ProductoID, Cantidad) VALUES ('$facturaID', '$productoID', '$cantidad')";
-                $this->conexion->query($insertProductosEnFacturas);
-            }
+	foreach ($carrito as $producto_id => $cantidad) {
+		$consulta = "select * from productos where ID=$producto_id";
+		$resultado = $conexion->query($consulta);
 
-            // Eliminar la cookie del carrito después de crear la factura
-            setcookie('carrito', serialize($carrito), time() + 3600, '/');
-        }
-    }
+		while ($registro = $resultado->fetch_assoc()) {
+			$total_amount += $registro['Precio'] * $carrito[$registro['ID']];
+		}
+	}
+	//$precioTotal = calcularPrecioTotal($carrito);
+	$insertFactura = "INSERT INTO Facturas (ClienteID, FechaCompra, PrecioTotal) VALUES ('$clienteID', '$fechaCompra', '$total_amount')";
+	$resultado2 = $conexion->query($insertFactura);
 
-    private function calcularPrecioTotal($carrito)
-    {
-        $total_amount = 0;
+	// Obtener el ID de la factura recién creada
+	$facturaID = mysql_insert_id();
 
-        foreach ($carrito as $productoID => $cantidad) {
-            $consulta = "SELECT Precio FROM productos WHERE ID = '$productoID'";
-            $resultado = $this->conexion->query($consulta);
-
-            if ($registro = $resultado->fetch_assoc()) {
-                $total_amount += $registro['Precio'] * $cantidad;
-            }
-        }
-
-        return $total_amount;
-    }
+	// Insertar datos en la tabla ProductosEnFacturas
+	foreach ($carrito as $producto_id => $cantidad) {
+		$insertProductosEnFacturas = "INSERT INTO ProductosEnFacturas (FacturaID, ProductoID, Cantidad) VALUES ('$facturaID', '$producto_id', '$cantidad')";
+		$resultado3 = $conexion->query($insertProductosEnFacturas);
+	}
 }
 
-// include('conexion.php');
-include('crear-factura.php');
-
-// Crear una instancia de la clase
-$crearFactura = new CrearFactura($conexion);
-
-// Obtener el ID del cliente desde la sesión
-$clienteID = $_SESSION['codusuario'];
-
-// Llamar al método para crear la factura
-$crearFactura->crearFactura($clienteID);
+// Eliminar la cookie del carrito después de crear la factura
+setcookie('carrito', serialize($carrito), time() + 3600, '/');
 
 // Actualizar la variable de sesión
 $_SESSION['carrito'] = $carrito;
