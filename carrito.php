@@ -97,8 +97,8 @@
                         <input type='hidden' name='business' value='sb-gngo228196001@business.example.com'>
                         <input type='hidden' name='cmd' value='_xclick'>
                         <input type='hidden' name='currency_code' value='EUR'>
-                        <input type='hidden' name='return' value='http://localhost/COMERCIO/IMAGYM/pagoconexito.php'>
-                        <input type='hidden' name='cancel_return' value='http://localhost/COMERCIO/IMAGYM/pago_cancelado.php'>
+                        <input type='hidden' name='return' value='http://localhost/IMAGYM/crear-factura.php'>
+                        <input type='hidden' name='cancel_return' value='http://localhost/IMAGYM/pago_cancelado.php'>
                         
                         <!-- Valores calculados -->
                         <input type='hidden' name='item_name' value='Productos en el carrito'>
@@ -108,13 +108,15 @@
                         <hr>
                         <button id='boton' class='terminar' type='submit'>Pagar ahora con Paypal</button>
                     </form>";
-                }
-            }
 
-            echo "<tr>
+                    echo "<tr>
                        <td colspan='4' align='right'><b>Total:</b></td>
                             <td><b>" . $total_amount . " € </b></td>
                               </tr>";
+                }
+            }
+
+            
 
             echo "<br>";
             echo "<br>";

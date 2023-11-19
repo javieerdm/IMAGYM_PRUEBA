@@ -35,7 +35,7 @@ if (isset($_COOKIE['carrito'])) {
 	$resultado2 = $conexion->query($insertFactura);
 
 	// Obtener el ID de la factura recién creada
-	$facturaID = mysql_insert_id();
+	$facturaID = $conexion->insert_id;
 
 	// Insertar datos en la tabla ProductosEnFacturas
 	foreach ($carrito as $producto_id => $cantidad) {
