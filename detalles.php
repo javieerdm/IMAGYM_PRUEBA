@@ -54,7 +54,21 @@
 								
 								
 								<button id="comprar" type="submit">
-									<a href='comprar.php?ProductoID=<?php echo $registrodetalles[1];?>'>Comprar</a>
+									<form method='POST' <?php if (isset($_SESSION['cliente'])) { ?> action='./añadir-cesta.php?ProductoID=<?php echo $registrodetalles[0]; ?>' <?php } else { ?> action='login.php' <?php } ?>target='_self'>
+									<label>
+                                        Cantidad
+                                    </label>
+                                    <input type='number' name='cantidad' min='<?php if ($registrodetalles[4] > 0) {
+                                                                                    echo "1";
+                                                                                } else {
+                                                                                    echo "0";
+                                                                                } ?>' max='<?php echo $registrodetalles[4]; ?>' value='<?php if ($registrodetalles[4] > 0) {
+                                                                                                                                        echo "1";
+                                                                                                                                    } else {
+                                                                                                                                        echo "0";
+                                                                                                                                    } ?>' />
+                                   
+                                    <input type="submit" id="boton" value="COMPRAR">
 								</button>
 							</div>
 							<br><br>	
