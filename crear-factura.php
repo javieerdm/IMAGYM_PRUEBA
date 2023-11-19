@@ -23,7 +23,7 @@ if (isset($_COOKIE['carrito'])) {
 	$total_amount = 0;
 
 	foreach ($carrito as $producto_id => $cantidad) {
-		$consulta = "select * from productos where ID=$producto_id";
+		$consulta = "SELECT * FROM Productos where ID=$producto_id";
 		$resultado = $conexion->query($consulta);
 
 		while ($registro = $resultado->fetch_assoc()) {
@@ -45,10 +45,10 @@ if (isset($_COOKIE['carrito'])) {
 }
 
 // Eliminar la cookie del carrito después de crear la factura
-setcookie('carrito', serialize($carrito), time() + 3600, '/');
+setcookie('carrito', serialize($carrito), time() - 3600, '/');
 
 // Actualizar la variable de sesión
-$_SESSION['carrito'] = $carrito;
+//$_SESSION['carrito'] = $carrito;
 
 // Redirigir a una página de éxito 
 header('Location: pagoconexito.php');
