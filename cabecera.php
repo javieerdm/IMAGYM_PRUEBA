@@ -45,7 +45,7 @@
 									if($_SESSION["rol"]=='administrador'){
 										echo "Administrador";
 										echo "<button class='boton'><a href='cerrar.php'>Cerrar sesión</a></button>";
-										echo "<button class='boton'><a href='basedatos/crud.php'>Base de datos</a></button>";
+										echo "<button class='boton'><a href='http://localhost/phpmyadmin/index.php?route=/database/structure&db=script_imagym'>Base de datos</a></button>";
 									}																
 									else{
 										echo "Hola " . $_SESSION["cliente"];

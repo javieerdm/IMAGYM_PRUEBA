@@ -37,7 +37,7 @@
                     echo "<div class='CARRITO VACIO'>
 										<h1>Tu carrito está vacío....</h1>
 										<br>
-										<h1>A qué esperas caraculo... <br>Encuentra tus artículos favoritos entre las mejores ofertas</h1>									
+										<h1>¿A qué esperas? <br>Encuentra tus artículos favoritos entre las mejores ofertas</h1>									
 										<div id='etiquetas'>											
 											<a href='bañadores.php'><div id='bañador' title='Ir a la tienda'></div></a>
 											<a href='equipacion.php'><div id='equipo' title='Ir a la tienda'></div></a>										

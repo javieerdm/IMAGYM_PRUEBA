@@ -27,7 +27,7 @@
         <?php include('cabecera.php'); ?>
 
         <h1>¡SU PEDIDO HA SIDO PROCESADO!</h1> <br>
-        <h2>Su pedido ha sido realizado con éxito. ¡Gracias por confiar en nosotros!</h2>
+        <h2>Su pedido ha sido realizado con éxito. ¡Gracias por confiar en nosotros! Su pedido llegará en 3-4 días laborables.</h2>
 
 
         <form action="index.php" method="post">
