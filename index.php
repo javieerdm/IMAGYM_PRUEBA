@@ -20,7 +20,20 @@
 					<div id="section2">
 						<a href="producto.php?categoria=3"><div id="maquinas"></div></a>
 						<a href="producto.php?categoria=4"><div id="suplementos"></div></a>
-					</div>				
+					</div>
+					<script>
+<script>
+window.embeddedChatbotConfig = {
+chatbotId: "BvNu_1MgdthT_wsQMHZ_j",
+domain: "www.chatbase.co"
+}
+</script>
+<script
+src="https://www.chatbase.co/embed.min.js"
+chatbotId="BvNu_1MgdthT_wsQMHZ_j"
+domain="www.chatbase.co"
+defer>
+</script>
 			</section>
 			
 			<?php include('pie.php');?>		

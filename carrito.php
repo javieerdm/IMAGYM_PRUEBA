@@ -16,12 +16,12 @@
         <section>
             <?php
 
-            //Si no existe el cliente, muestra cesta vacía
+            //Si no existe el cliente
             if (!isset($_SESSION['codusuario'])) {
                 echo "<script type='text/javascript'>alert('Debes registrarte o iniciar sesión para realizar una compra');</script>";
                 echo "<script type='text/javascript'>window.location.href='registro.php';</script>";
             }
-            //Si existe el cliente, muestra la compra
+            //Si existe el cliente
             else {
                 $cliente = $_SESSION["codusuario"];
 
@@ -32,7 +32,7 @@
                     $carrito = unserialize($carritoaux);
                     $tam_carrito = sizeof($carrito);
                 }
-
+                //SI EL CARRITO ESTA VACIO
                 if ($tam_carrito == 0) {
                     echo "<div class='CARRITO VACIO'>
 										<h1>Tu carrito está vacío....</h1>
@@ -57,24 +57,56 @@
                             <th>Precio Total</th>
                         </tr>";
 
-                    foreach ($carrito as $producto_id => $cantidad) {
-                        $consulta = "select * from productos where ID=$producto_id";
-                        $resultado = $conexion->query($consulta);
+                    // foreach ($carrito as $producto_id => $cantidad) {
+                    //     $consulta = "select * from productos where ID=$producto_id";
+                    //     $resultado = $conexion->query($consulta);
 
-                        while ($registro = $resultado->fetch_assoc()) {
-                            echo "<tr align='center'>";
-                            echo "<td> <img width='70' src=" . $registro['Imagen'] . "></img></td>";
-                            echo "<td>" . $registro['Nombre'] . "</td>";
-                            echo "<td>" . $registro['Precio'] . " € </td>";
-                            echo "<td>" . $carrito[$registro['ID']] . "</td>";
-                            echo "<td>" . $registro['Precio'] * $carrito[$registro['ID']] . " € </td>";
-                            echo "<td>
-														<a href=./borrar-cesta.php?productoId=" . $producto_id . ">
-															<button id='botonx' type='reset' title='eliminar'><img width='20' src='imagenes/papelera.jpg'></button>
-														</a>
-													</td>";
-                        }
-                    }
+                    //     while ($registro = $resultado->fetch_assoc()) {
+                    //         echo "<tr align='center'>";
+                    //         echo "<td> <img width='70' src=" . $registro['Imagen'] . "></img></td>";
+                    //         echo "<td>" . $registro['Nombre'] . "</td>";
+                    //         echo "<td>" . $registro['Precio'] . " € </td>";
+                    //         echo "<td>" . $carrito[$registro['ID']] . "</td>";
+                    //         echo "<td>" . $registro['Precio'] * $carrito[$registro['ID']] . " € </td>";
+                    //         echo "<td>
+					// 									<a href=./borrar-cesta.php?productoId=" . $producto_id . ">
+					// 										<button id='botonx' type='reset' title='eliminar'><img width='20' src='imagenes/papelera.jpg'></button>
+					// 									</a>
+					// 								</td>";
+                    //     }
+                    // }
+                    
+foreach ($carrito as $producto_id => $cantidad) {
+    $consulta = "select * from productos where ID=$producto_id";
+    $resultado = $conexion->query($consulta);
+
+    while ($registro = $resultado->fetch_assoc()) {
+        echo "<tr align='center'>";
+        echo "<td> <img width='70' src=" . $registro['Imagen'] . "></img></td>";
+        echo "<td>" . $registro['Nombre'] . "</td>";
+        echo "<td>" . $registro['Precio'] . " € </td>";
+        echo "<td>";
+        echo "<form method='post' action='actualizar-carrito.php'>";
+        echo "<input type='hidden' name='producto_id' value='" . $registro['ID'] . "'>";
+        echo "<input type='hidden' name='accion' value='incrementar'>";
+        echo "<button type='submit' name='submit'>+</button>";
+        echo "</form>";
+        echo $carrito[$registro['ID']];
+        echo "<form method='post' action='actualizar-carrito.php'>";
+        echo "<input type='hidden' name='producto_id' value='" . $registro['ID'] . "'>";
+        echo "<input type='hidden' name='accion' value='decrementar'>";
+        echo "<button type='submit' name='submit'>-</button>";
+        echo "</form>";
+        echo "</td>";
+        echo "<td>" . $registro['Precio'] * $carrito[$registro['ID']] . " € </td>";
+        echo "<td>
+                <a href=./borrar-cesta.php?productoId=" . $producto_id . ">
+                    <button id='botonx' type='reset' title='eliminar'><img width='20' src='imagenes/papelera.jpg'></button>
+                </a>
+            </td>";
+        echo "</tr>";
+    }
+}
 
                     
 
@@ -108,7 +140,7 @@
                         <hr>
                         <button id='boton' class='terminar' type='submit'>Pagar ahora con Paypal</button>
                     </form>";
-
+                    
                     echo "<tr>
                        <td colspan='4' align='right'><b>Total:</b></td>
                             <td><b>" . $total_amount . " € </b></td>
