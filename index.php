@@ -14,12 +14,12 @@
 			
 			<section>			
 					<div id="section1">
-						<a href="producto.php?categoria=1"><div id="ropa"></div></a>
-						<a href="producto.php?categoria=2"><div id="material"></div></a>
+						<a href="producto.php?categoria=1"><div id="ropa"><span>Ropa deportiva</span></div></a>
+						<a href="producto.php?categoria=2"><div id="material"><span>Material</span></div></a>
 					</div>
 					<div id="section2">
-						<a href="producto.php?categoria=3"><div id="maquinas"></div></a>
-						<a href="producto.php?categoria=4"><div id="suplementos"></div></a>
+						<a href="producto.php?categoria=3"><div id="maquinas"><span>Máquinas</span></div></a>
+						<a href="producto.php?categoria=4"><div id="suplementos"><span>Suplementos</span></div></a>
 					</div>
 					<script>
 <script>
