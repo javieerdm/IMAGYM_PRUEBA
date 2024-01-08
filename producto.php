@@ -49,9 +49,6 @@
 
                     $resultadolista = mysqli_query($conexion, $consultalista);
 
-                  //  $total_registros = mysqli_num_rows($resultadolista);
-
-
                     ?>
                     <div id="productos">
                         <h1>
@@ -80,28 +77,11 @@
 
                                     <div id="coste">
 
-                                        <!--Muesta el precio original tachado si está rebajado-->
+                                        <!--Muesta el precio -->
                                         <div id="precio">
                                             <b>Precio: <?php echo $registrolista[3] . " €"; ?></b>
                                         </div>                                        
                                     </div>
-                                    <form method='POST' <?php if (isset($_SESSION['cliente'])) { ?> action='./añadir-cesta.php?ProductoID=<?php echo $registrolista[0]; ?>' <?php } else { ?> action='registro.php' <?php } ?>target='_self'>
-                                    <label>
-                                        Cantidad
-                                    </label>
-                                    <input type='number' name='cantidad' min='<?php if ($registrolista[4] > 0) {
-                                                                                    echo "1";
-                                                                                } else {
-                                                                                    echo "0";
-                                                                                } ?>' max='<?php echo $registrolista[4]; ?>' value='<?php if ($registrolista[4] > 0) {
-                                                                                                                                        echo "1";
-                                                                                                                                    } else {
-                                                                                                                                        echo "0";
-                                                                                                                                    } ?>' />
-                                   
-                                    <input type="submit" id="boton" value="COMPRAR">
-                                   
-                                </form>
                                     <br><br>
                                 </div>
                             

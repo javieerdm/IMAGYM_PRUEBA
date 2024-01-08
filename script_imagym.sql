@@ -16,7 +16,7 @@
 	
 
 
-DROP TABLE IF EXISTS Usuarios, Categorias, Contacto, Generos, Productos, Facturas, ProductosEnFacturas CASCADE;
+DROP TABLE IF EXISTS Usuarios, Categorias, Contacto, Generos, Productos, Facturas, ProductosEnFacturas, Tallas, ProductoTallas CASCADE;
 
 CREATE TABLE Usuarios (
     ID INT PRIMARY KEY AUTO_INCREMENT,
@@ -115,6 +115,40 @@ VALUES
 	('Creatina Monohidrato 1kg','./imagenes/creatina1000.png', 14.99, 300, 4, 11),
 	('Pre-Entreno MyProtein','./imagenes/preentreno.png', 14.99, 300, 4, 12),
 	('Pre-Entreno Million','./imagenes/lambo.png', 14.99, 300, 4, 12);
+
+CREATE TABLE Tallas (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    Talla VARCHAR(10) NOT NULL
+);
+
+INSERT INTO Tallas (Talla) VALUES ('39');
+INSERT INTO Tallas (Talla) VALUES ('40');
+INSERT INTO Tallas (Talla) VALUES ('41');
+INSERT INTO Tallas (Talla) VALUES ('42');
+INSERT INTO Tallas (Talla) VALUES ('S');
+INSERT INTO Tallas (Talla) VALUES ('M');
+INSERT INTO Tallas (Talla) VALUES ('L');
+INSERT INTO Tallas (Talla) VALUES ('XL');
+
+CREATE TABLE ProductoTallas (
+    ProductoID INT,
+    TallaID INT,
+    FOREIGN KEY (ProductoID) REFERENCES Productos(ID),
+    FOREIGN KEY (TallaID) REFERENCES Tallas(ID),
+    PRIMARY KEY (ProductoID, TallaID)
+);
+
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (1, 6); 
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (1, 7); 
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (2, 8); 
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (3, 9); 
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (4, 6); 
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (4, 8); 
+
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (5, 2); 
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (5, 4);
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (6, 1); 
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (6, 3);  
 	
 
 -- Crear la tabla de facturas

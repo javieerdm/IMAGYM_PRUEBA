@@ -24,7 +24,7 @@
 			
 				.referencia {font-size: 1em;}
 				
-				#comprar {margin-left:50%;
+				#comprar {margin-left:18%;
 					margin-top: 10px;
 					border-radius: 20px;
 					border: 3px solid white;
@@ -51,19 +51,12 @@
 					
 				#precio{width: 100%; /*background:pink;*/
 					font-size:1em;
-					margin:5% 5% 5% 20%;
+					margin:10% 10% 10% 10%;
 					color:blue;}
 					
-				#rebajado{width: 100%; /*background:pink;*/
-					font-size:1.2em;
-					margin:5% 5% 5% 20%;
-					color:red;}
 					
 				#detalle{width: 100%; /*background:green;*/
 					font-size:1em;
 					margin:20% 10%;}
 					
 	
-
-
-		

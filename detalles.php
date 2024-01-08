@@ -54,22 +54,29 @@
 								
 								
 								<button id="comprar" type="submit">
-									<form method='POST' <?php if (isset($_SESSION['cliente'])) { ?> action='./añadir-cesta.php?ProductoID=<?php echo $registrodetalles[0]; ?>' <?php } else { ?> action='login.php' <?php } ?>target='_self'>
-									<label>
-                                        Cantidad
-                                    </label>
-                                    <input type='number' name='cantidad' min='<?php if ($registrodetalles[4] > 0) {
-                                                                                    echo "1";
-                                                                                } else {
-                                                                                    echo "0";
-                                                                                } ?>' max='<?php echo $registrodetalles[4]; ?>' value='<?php if ($registrodetalles[4] > 0) {
-                                                                                                                                        echo "1";
-                                                                                                                                    } else {
-                                                                                                                                        echo "0";
-                                                                                                                                    } ?>' />
-                                   
-                                    <input type="submit" id="boton" value="COMPRAR">
-								</button>
+								<form method='POST' action='<?php echo isset($_SESSION['cliente']) ? "./añadir-cesta.php?ProductoID=" . $registrodetalles[0] : "registro.php"; ?>' target='_self'>
+   							 <label>Cantidad</label>
+    							<input type='number' name='cantidad' min='<?php echo ($registrodetalles[4] > 0) ? "1" : "0"; ?>' max='<?php echo $registrodetalles[4]; ?>' value='<?php echo ($registrodetalles[4] > 0) ? "1" : "0"; ?>' />
+    
+									<!-- Sección de tallas -->
+									<?php
+									$consultaTallas = "SELECT Talla FROM Tallas INNER JOIN ProductoTallas ON Tallas.ID = ProductoTallas.TallaID WHERE ProductoTallas.ProductoID = $ProductoID";
+									$resultadoTallas = mysqli_query($conexion, $consultaTallas);
+
+									if (mysqli_num_rows($resultadoTallas) > 0) { // Comprueba si hay tallas disponibles
+										echo "<label for='talla'>Talla:</label>";
+										echo "<select name='talla' id='talla'>";
+										while ($talla = mysqli_fetch_assoc($resultadoTallas)) {
+											echo "<option value='{$talla['Talla']}'>{$talla['Talla']}</option>";
+										}
+										echo "</select>";
+									}
+									?>
+
+									<input type="submit" id="boton" value="COMPRAR">
+								</form>
+
+
 							</div>
 							<br><br>	
 						</div>											
