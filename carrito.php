@@ -40,7 +40,7 @@
 										<h1>¿A qué esperas? <br>Encuentra tus artículos favoritos entre las mejores ofertas</h1>									
 									</div>";
                 } else {
-                    echo "<h1>Carrito de Compras</h>";
+                    echo "<h1>Carrito de Compras</h1>";
 
                     echo "<table id='celdas' width='90%' border='1' align='center'>
                         <tr>
