@@ -38,15 +38,9 @@
 										<h1>Tu carrito está vacío....</h1>
 										<br>
 										<h1>¿A qué esperas? <br>Encuentra tus artículos favoritos entre las mejores ofertas</h1>									
-										<div id='etiquetas'>											
-											<a href='bañadores.php'><div id='bañador' title='Ir a la tienda'></div></a>
-											<a href='equipacion.php'><div id='equipo' title='Ir a la tienda'></div></a>										
-											<a href='material.php'><div id='entreno' title='Ir a la tienda'></div></a>
-											<a href='aguasabiertas.php'><div id='neopreno' title='Ir a la tienda'></div></a>												
-										</div>
 									</div>";
                 } else {
-                    echo "<h2>Carrito de Compras</h2>";
+                    echo "<h1>Carrito de Compras</h>";
 
                     echo "<table id='celdas' width='90%' border='1' align='center'>
                         <tr>
@@ -56,25 +50,6 @@
                             <th>Cantidad</th>
                             <th>Precio Total</th>
                         </tr>";
-
-                    // foreach ($carrito as $producto_id => $cantidad) {
-                    //     $consulta = "select * from productos where ID=$producto_id";
-                    //     $resultado = $conexion->query($consulta);
-
-                    //     while ($registro = $resultado->fetch_assoc()) {
-                    //         echo "<tr align='center'>";
-                    //         echo "<td> <img width='70' src=" . $registro['Imagen'] . "></img></td>";
-                    //         echo "<td>" . $registro['Nombre'] . "</td>";
-                    //         echo "<td>" . $registro['Precio'] . " € </td>";
-                    //         echo "<td>" . $carrito[$registro['ID']] . "</td>";
-                    //         echo "<td>" . $registro['Precio'] * $carrito[$registro['ID']] . " € </td>";
-                    //         echo "<td>
-					// 									<a href=./borrar-cesta.php?productoId=" . $producto_id . ">
-					// 										<button id='botonx' type='reset' title='eliminar'><img width='20' src='imagenes/papelera.jpg'></button>
-					// 									</a>
-					// 								</td>";
-                    //     }
-                    // }
                     
 foreach ($carrito as $producto_id => $cantidad) {
     $consulta = "select * from productos where ID=$producto_id";

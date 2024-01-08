@@ -2,22 +2,40 @@
 
 * { margin:0px; padding:0px; bottom:0px;}
 
-#footer {width:100%; overflow:hidden; font-size:12px; background: #28abe1; }
+#footer {width:100%; overflow:hidden; font-size:14px; background: #333; color: #fff;}
 
-#pies{width:100%; overflow:hidden; /*background:pink;*/}
-			
-	#pie1 {width: 30%; float: left; /*background: grey;*/}
-								
-	#pie2 {width: 30%; float: left; /*background: blue;*/}
-				
-	#pie3 {width:40%; float:left; /*background: green;*/}
-				
-	#pie1 ul li, #pie2 ul li, #pie3 ul li{list-style: none;	margin-left: 30%; color: red;}	
-					 
-	#pie1 ul li a, #pie2 ul li a, #pie3 ul li a{text-decoration: none; color: black;}
-	
-	#pie1 ul li a:hover, #pie2 ul li a:hover, #pie3	ul li a:hover {color: white; text-decoration: underline;}
+#pies {width:100%; overflow:hidden;}
 
-#creador{width:50%; margin:auto; /*background:yellow;*/}
+#pie1, #pie2, #pie3 {
+    width: 30%;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box; /* Asegura que el padding no cambie el ancho */
+}
+
+#pie1 ul li, #pie2 ul li, #pie3 ul li {
+    list-style: none;
+    margin-bottom: 10px; /* Espaciado entre elementos */
+    color: #fff; /* Color de la lista */
+}
+
+#pie1 ul li a, #pie2 ul li a, #pie3 ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease; /* Suaviza la transición del color */
+}
+
+#pie1 ul li a:hover, #pie2 ul li a:hover, #pie3 ul li a:hover {
+    color: #28abe1; /* Color al pasar el mouse */
+    text-decoration: underline;
+}
+
+#creador {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 12px;
+    border-top: 1px solid #444; /* Borde superior */
+}
 
 #mcs {font-size: 12px;}

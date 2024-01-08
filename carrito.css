@@ -2,71 +2,76 @@
 
 * { margin:0px; padding:0px;}
 
-/* section página de bañadores*/
-
-#articulos {width: 100%; overflow:hidden; /*background: purple;*/}
+#articulos {width: 100%; overflow:hidden;}
 
 .linea2 {width: 85%; margin-left: 90px;}
 
-#derecha {width: 100%; min-height:500px; float:left; /*background: green;*/}
+#derecha {width: 100%; min-height:500px; float:left;}
 
-#derecha a{text-decoration:none; color:black;}
+#derecha a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.2s;
+}
 
-#derecha a:hover{text-decoration:underline;}
+#derecha a:hover {
+    text-decoration: underline;
+    color: #28abe1; /* color que coincide con el esquema del sitio */
+}
 
 #celdas { margin-left: 5%;}
 
-h1 {text-align: center; margin-top: 50px;}
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Roboto', sans-serif; /* cambio de fuente */
+}
 
 .vacía {width:100%; height:570px;}
 
-#etiquetas{margin:auto; width:80%; height: 100px; margin-top:5%; /*background:blue;*/}
+#etiquetas {
+    margin: auto;
+    width: 80%;
+    height: 100px;
+    margin-top: 5%;
+}
 
-	#bañador {width: 20%; height: 100%; 
-	background: url(imagenes/portada/banadores.jpg)center center no-repeat; 
-	background-size: 100% 100%;float: left; margin-left: 4%;}
+#bañador, #equipo, #entreno, #neopreno {
+    width: 20%;
+    height: 100%;
+    float: left;
+    background-size: cover; /* cambio para una mejor visualización */
+    margin-left: 4%;
+    border-radius: 10px; /* bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra suave */
+}
 	
-	#equipo {width: 20%; height: 100%; float: left; 
-	background:url(imagenes/portada/equipamiento.jpg) center center no-repeat; 
-	background-size: 100% 100%; margin-left: 4%;}
-	
-	#entreno {width: 20%; height: 100%; 
-	background:url(imagenes/portada/entrenamiento.jpg) center center no-repeat; 
-	background-size: 100% 100%; float: left; margin-left: 4%;}
-	
-	#neopreno {width: 20%; height: 100%; float: left; 
-	background:url(imagenes/portada/aguasabiertas.jpg) center center no-repeat; 
-	background-size: 100% 100%; margin-left: 4%;}
 
-#boton {margin-left:40%;
-			margin-top: 10px;
-			border-radius: 20px;
-			border: 3px solid white;
-			border-style: outset;
-			font-size: 1em;
-			text-align: center;
-			padding: 5px 10px;
-			text-decoration: none;}
-			
-#botonx {margin-top: 10px;
-			border-radius: 20px;
-			border: 3px solid white;
-			border-style: outset;
-			font-size: 1em;
-			text-align: center;
-			padding: 5px 10px;
-			text-decoration: none;}	
-			
-#boton:hover, #botonx:hover {box-shadow: 0 4px 16px;
-		transition: all 0.2s ease;}
 
-		
-	
+
 .seguir {margin-left: 5%;}
-
 .factura{margin-left:70%;}
+.envio{margin-left:100px;}
 
-.envio{margin-left:100px};
+#boton, #botonx {
+	border-radius: 20px;
+	border: 2px solid #28abe1;
+	font-size: 1em;
+	text-align: center;
+	padding: 5px 10px;
+	background-color: white;
+	color: #28abe1;
+	text-decoration: none;
+	transition: all 0.2s ease;
+	margin-left:40%;
+
+}
+
+#boton:hover, #botonx:hover {
+box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+background-color: #28abe1;
+color: white;
+}
 
 
 

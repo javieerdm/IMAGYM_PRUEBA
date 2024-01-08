@@ -13,7 +13,7 @@
         <?php include('cabecera.php'); ?>
 
         <section>
-            <h2>Mis Pedidos</h2>
+            <h1>Mis Pedidos</h1>
 
             <?php
             // Obtener los pedidos del cliente desde la base de datos

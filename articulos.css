@@ -2,74 +2,92 @@
 
 * { margin:0px; padding:0px;}
 
-/* section derecha*/
+#articulos {width: 100%; overflow:hidden;}
 
-#articulos {width: 100%; overflow:hidden; /*background: purple;*/}	
-	
-	#derecha {width: 80%; float:left; /*background: green;*/}
+#derecha {width: 80%; float:left;}
 
-		#titulo {width: 100%; float:left; /*background:orange;*/}
+#titulo {width: 100%; float:left;}
+h1 {text-align: center; margin-top: 10px; font-family: 'Roboto', sans-serif;}
+.outlet {color:red;}
+.volver img:hover{box-shadow: 0 4px 16px; border-radius:15px;}
+.volver img{width:30px; margin-top:10px;}
 
-			h1 {text-align: center; margin-top: 10px;}
-			
-			.outlet {color:red;}
-			
-			.volver img:hover{box-shadow: 0 4px 16px; border-radius:15px;}
-			.volver img{width:30px; margin-top:10px;}
-			
-		#producto {width:25%; float:left; /*background:red;*/}
-		
-		#producto a{text-decoration:none; color:blue;}
-		
-		#producto1 {width: 90%; height:30%; float:left; margin:15px 0px;
-			border: 1px solid black; /*background:yellow;*/}
-			
-			#producto1:hover {box-shadow: 0 4px 16px;
-			transition: all 0.2s ease;}
-						
-				#talla {margin-left: 5%;}
-				
-				#boton {margin-left:30%;
-					margin-top: 10px;
-					border-radius: 20px;
-					border: 3px solid white;
-					border-style: outset;
-					font-size: 1em;
-					text-align: center;
-					padding: 2px 10px 2px 10px;
-				text-decoration: none;}
-				
-				#boton:hover {box-shadow: 0 4px 16px;
-				transition: all 0.2s ease;}
-				
-				p{text-align: center; /*background:yellow;*/
-				font-size:0.8em; padding:0px 20px 0px;}	
+#producto {width:25%; float:left;}
+#producto a{text-decoration:none; color:blue;}
 
-				h5{color:red; font-size:1em; text-align:center; /*background:orange;*/}
-				
-				#prenda {width: 50%; height:110px; margin:auto; margin-top:10px; /*background:green;*/}
-				
-				#prenda img{width: 100%; height: 100%;}
-				
-				#prenda img:hover{transform: scale(2.2,2.5); margin-top:50px; box-shadow: 0 4px 16px;}				
-				
-				#art{width: 95%; height:60px; margin-top: 20px; font-size:0.8em; text-align: center; /*background:orange;*/}
-				
-				#coste{width: 100%; height:50px; /*background:green;*/}
-				
-				#precio{width: 80%; margin: auto;  font-size:0.8em;/*height:50px;*/ text-align: center; /*background:blue;*/}
-				
-				.paginacion{font-size:15px;}
-				
-				.paginacion a{color:black; text-decoration:none; font-size:15px; cursor:pointier;}
-				
-				.paginacion a:visited{ text-decoration:none; color:black; font-size:30px;}
-				
-				.paginacion a:hover{text-decoration:underline; color:red; }
-				
-				.paginacion a:active{text-decoration:underline; color:red;}		
-				
-				
-				
-				.rebajado{color:red; font-size:1em; text-align:center;}
-				
+#producto1 {
+    width: 90%;
+    height:30%;
+    float:left;
+    margin:15px 0px;
+    border: 1px solid #ddd; /* bordes más sutiles */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra más suave */
+    transition: all 0.2s ease;
+}
+#producto1:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+#talla {margin-left: 5%;}
+#boton {
+    margin-left:30%;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: 2px solid #28abe1; /* bordes más estilizados */
+    font-size: 1em;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: white;
+    color: #28abe1; /* colores coherentes con el tema */
+    text-decoration: none;
+}
+#boton:hover {
+    box-shadow: 0 4px 16px;
+    background-color: #28abe1;
+    color: white;
+}
+
+p, h5 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size:0.9em;
+}
+
+#prenda {width: 50%; height:110px; margin:auto; margin-top:10px;}
+#prenda img{
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease; /* transición más suave */
+}
+#prenda img:hover{
+    transform: scale(1.1);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+#art, #coste, #precio {
+    width: 95%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size:0.8em;
+}
+
+.paginacion {
+    font-size:15px;
+    text-align: center;
+}
+.paginacion a {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+.paginacion a:hover {
+    text-decoration: underline;
+    color: #28abe1;
+}
+
+.rebajado {
+    color: red;
+    font-size: 1em;
+    text-align: center;
+}
