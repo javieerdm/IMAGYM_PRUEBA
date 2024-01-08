@@ -121,6 +121,7 @@ CREATE TABLE Tallas (
     Talla VARCHAR(10) NOT NULL
 );
 
+INSERT INTO Tallas (Talla) VALUES ('38');
 INSERT INTO Tallas (Talla) VALUES ('39');
 INSERT INTO Tallas (Talla) VALUES ('40');
 INSERT INTO Tallas (Talla) VALUES ('41');
@@ -139,15 +140,28 @@ CREATE TABLE ProductoTallas (
 );
 
 INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (1, 6); 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (1, 7); 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (2, 8); 
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (1, 7);
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (1, 8); 
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (1, 9);
+
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (2, 6); 
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (2, 7);
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (2, 8);  
+
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (3, 6);
 INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (3, 9); 
+
 INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (4, 6); 
 INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (4, 8); 
 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (5, 2); 
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (5, 1); 
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (5, 2);
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (5, 3); 
 INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (5, 4);
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (5, 5); 
+
 INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (6, 1); 
+INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (6, 2);  
 INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (6, 3);  
 	
 

@@ -18,7 +18,7 @@
 				<div id="principio">
 					<h6 id="camion">
 						<img width='40' src='imagenes/camion.jpg'>&nbsp ENVÍO GRATIS A PARTIR DE 70€	
-					</h6></font>
+					</h6>
 				</div>
 				<div id="cabecera_alta">
 				
@@ -61,19 +61,23 @@
 						
 						
 					<!--contacto, registro, carrito-->						
-						<div id="contacto">
+					<form action="producto.php" method="GET">
+   									 <input type="text" id="busqueda" name="busqueda" placeholder="Buscar productos...">
+    								  <button type="submit">Buscar</button>
+									</form>
+					<div id="contacto">
+
 							<nav id="A">
+
 								<ul>
+
 									<li><a href="contacto.php"><img src="imagenes/sobre.png"> Contacto</a><li>
 									<li><a href="registro.php"><img src="imagenes/usuario.png"> Registro</a><li>
 									<?php
 
 										if(isset($_SESSION["codusuario"]) && isset($_SESSION["rol"]) && $_SESSION["rol"] == 'cliente') {
 									 			$cliente=$_SESSION["codusuario"];
-												
-										// 		// $consultac="Select NºPEDIDO from carro where ID='$cliente'";
-										// 		// $resultadoc=mysqli_query($conexion, $consultac);
-										// 		// $nregistroc=mysqli_num_rows($resultadoc);
+										
 												
 												
 
@@ -82,9 +86,7 @@
 										 		 $registrop=mysqli_fetch_row($resultadop);
 												
 										 		echo "<li><a href='carrito.php'><img src='imagenes/carrito.png'>Mi cesta </a><li>";												
-										 		  //if($registrop!=0){
 										 		 	echo "<li><a href='pedidos.php'><img src='imagenes/pedido.jpg'> Mis pedidos</a><li>";
-										 		  //}else{}
 										 		
 										}
 									
@@ -99,7 +101,7 @@
 				
 				<div id="cabecera_baja">
 					<nav>
-						<ul id="B">							
+						<ul id="B">
 							<li><a href="producto.php">Ver todos</a></li>
 							<li><a href="producto.php?categoria=1">Ropa deportiva</a></li>
 							<li><a href="producto.php?categoria=4">Suplementos</a></li>

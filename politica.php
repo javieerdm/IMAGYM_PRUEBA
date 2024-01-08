@@ -34,7 +34,7 @@
 				<p>IMAGYM tiene el deber de informar a los usuarios de su sitio web 
 				acerca de la recogida de datos de carácter personal que pueden llevarse a 
 				cabo, bien sea mediante el envío de correo electrónico o al cumplimentar 
-				los formularios incluidos en el sitio web. En este sentido, Tienda Swimmer 
+				los formularios incluidos en el sitio web. En este sentido, IMAGYM 
 				será considerada como responsable de los datos recabados mediante los 
 				medios anteriormente descritos.</p>
 				<br>

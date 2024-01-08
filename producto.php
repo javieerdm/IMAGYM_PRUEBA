@@ -16,7 +16,9 @@
 <body>
     <div id="body">
 
-        <?php include('cabecera.php'); ?>
+        <?php include('cabecera.php');
+        include('conexion.php'); ?>
+
 
         <section>
             <div id="articulos">
@@ -28,6 +30,10 @@
                     <h6 class="volver"><a href="javascript:history.go(-1)"><img title="Volver atrás" src="imagenes/volver.jpg"></img></a></h6>
 
                     <?php
+                            $terminoBusqueda = isset($_GET['busqueda']) ? $_GET['busqueda'] : '';
+                            if ($terminoBusqueda != '') {
+                                $consultalista = "SELECT * FROM productos WHERE Nombre LIKE '%$terminoBusqueda%'";}
+                            else{
 
                     if (isset($_GET['genero']) && isset($_GET['categoria'])) {
                         $generos = $_GET['genero'];
@@ -46,6 +52,7 @@
                         $consultalista = "SELECT *
                         FROM productos";
                     }
+                }
 
                     $resultadolista = mysqli_query($conexion, $consultalista);
 
