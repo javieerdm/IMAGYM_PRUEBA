@@ -91,12 +91,12 @@ CREATE TABLE Productos (
 
 INSERT INTO Productos (Nombre,Imagen, Precio, Stock, CategoriaID, GeneroID)
 VALUES
-    ('Camiseta Nike','./imagenes/nike.png', 29.99, 100, 1, 1),
-    ('Camiseta Million','./imagenes/million.png', 39.99, 75, 1, 1),
-    ('Pantalón Adidas','./imagenes/adidas.png', 24.99, 50, 1, 2),
-    ('Pantalón Joma','./imagenes/joma.png', 19.99, 15, 1, 2),
-    ('Zapatillas Asics','./imagenes/asics.png', 69.99, 20, 1, 3),
-    ('Zapatillas Nike','./imagenes/nikeShoes.png', 79.99, 10, 1, 3),
+    ('Camiseta Nike','./imagenes/nike.jpg', 29.99, 100, 1, 1),
+    ('Camiseta Puma','./imagenes/puma.jpg', 39.99, 75, 1, 1),
+    ('Pantalón Adidas','./imagenes/adidas.jpg', 24.99, 50, 1, 2),
+    ('Pantalón Joma','./imagenes/joma.jpg', 19.99, 15, 1, 2),
+    ('Zapatillas Asics','./imagenes/asics.jpg', 69.99, 20, 1, 3),
+    ('Zapatillas Nike','./imagenes/nikeShoes.jpg', 79.99, 10, 1, 3),
     ('Mancuerna 10kg','./imagenes/pesa10k.png', 29.99, 20, 2, 4),
     ('Mancuerna 15kg','./imagenes/pesa15k.png', 34.99, 20, 2, 4),
     ('Goma con agarre','./imagenes/goma_agarre.png', 5.99, 15, 2, 5),

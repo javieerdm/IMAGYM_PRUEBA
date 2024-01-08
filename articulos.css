@@ -28,24 +28,6 @@ h1 {text-align: center; margin-top: 10px; font-family: 'Roboto', sans-serif;}
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-#talla {margin-left: 5%;}
-#boton {
-    margin-left:30%;
-    margin-top: 10px;
-    border-radius: 20px;
-    border: 2px solid #28abe1; /* bordes más estilizados */
-    font-size: 1em;
-    text-align: center;
-    padding: 5px 10px;
-    background-color: white;
-    color: #28abe1; /* colores coherentes con el tema */
-    text-decoration: none;
-}
-#boton:hover {
-    box-shadow: 0 4px 16px;
-    background-color: #28abe1;
-    color: white;
-}
 
 p, h5 {
     text-align: center;
@@ -53,14 +35,14 @@ p, h5 {
     font-size:0.9em;
 }
 
-#prenda {width: 50%; height:110px; margin:auto; margin-top:10px;}
+#prenda {width: 90%; height:150px; margin:auto; margin-top:10px;}
 #prenda img{
     width: 100%;
     height: 100%;
-    transition: transform 0.3s ease; /* transición más suave */
+    transition: transform 0.45s ease; /* transición más suave */
 }
 #prenda img:hover{
-    transform: scale(1.1);
+    transform: scale(1.4);
     box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
 
@@ -86,8 +68,4 @@ p, h5 {
     color: #28abe1;
 }
 
-.rebajado {
-    color: red;
-    font-size: 1em;
-    text-align: center;
-}
+
