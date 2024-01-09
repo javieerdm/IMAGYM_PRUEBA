@@ -22,13 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($accion === 'incrementar') {
             // Lógica para incrementar la cantidad del producto en el carrito
             if (isset($carrito[$producto_id])) {
-                $carrito[$producto_id]++;
+                $carrito[$producto_id]['cantidad']++;
             }
         } elseif ($accion === 'decrementar') {
             // Lógica para decrementar la cantidad del producto en el carrito
             if (isset($carrito[$producto_id]) && $carrito[$producto_id] > 0) {
-                $carrito[$producto_id]--;
-                if ($carrito[$producto_id] === 0) {
+                $carrito[$producto_id]['cantidad']--;
+                if ($carrito[$producto_id]['cantidad'] === 0) {
                     unset($carrito[$producto_id]);
                 }
             }

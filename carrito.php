@@ -47,11 +47,13 @@
                             <th>Producto</th>
                             <th>Nombre</th>
                             <th>Precio Unitario</th>
+                            <th>Talla</th>
                             <th>Cantidad</th>
-                            <th>Precio Total</th>
+                            <th>Precio total</th>
+
                         </tr>";
                     
-foreach ($carrito as $producto_id => $cantidad) {
+foreach ($carrito as $producto_id => $detalles) {
     $consulta = "select * from productos where ID=$producto_id";
     $resultado = $conexion->query($consulta);
 
@@ -60,20 +62,22 @@ foreach ($carrito as $producto_id => $cantidad) {
         echo "<td> <img width='70' src=" . $registro['Imagen'] . "></img></td>";
         echo "<td>" . $registro['Nombre'] . "</td>";
         echo "<td>" . $registro['Precio'] . " € </td>";
+        $tallaParaMostrar = isset($detalles['talla']) && $detalles['talla'] != '' ? $detalles['talla'] : 'N/A';
+        echo "<td>" . $tallaParaMostrar . "</td>"; // Mostrar talla o 'N/A'
         echo "<td>";
         echo "<form method='post' action='actualizar-carrito.php'>";
         echo "<input type='hidden' name='producto_id' value='" . $registro['ID'] . "'>";
         echo "<input type='hidden' name='accion' value='incrementar'>";
-        echo "<button type='submit' name='submit'>+</button>";
+        echo "<button type='submit' class='btn-incrementar' name='submit'>+</button>";
         echo "</form>";
-        echo $carrito[$registro['ID']];
+        echo $carrito[$registro['ID']]['cantidad'];
         echo "<form method='post' action='actualizar-carrito.php'>";
         echo "<input type='hidden' name='producto_id' value='" . $registro['ID'] . "'>";
-        echo "<input type='hidden' name='accion' value='decrementar'>";
+        echo "<input type='hidden'  class='btn-decrementar' name='accion' value='decrementar'>";
         echo "<button type='submit' name='submit'>-</button>";
         echo "</form>";
         echo "</td>";
-        echo "<td>" . $registro['Precio'] * $carrito[$registro['ID']] . " € </td>";
+        echo "<td>" . $registro['Precio'] * $carrito[$registro['ID']]['cantidad'] . " € </td>";
         echo "<td>
                 <a href=./borrar-cesta.php?productoId=" . $producto_id . ">
                     <button id='botonx' type='reset' title='eliminar'><img width='20' src='imagenes/papelera.jpg'></button>
@@ -95,7 +99,7 @@ foreach ($carrito as $producto_id => $cantidad) {
                         $resultado = $conexion->query($consulta);
 
                         while ($registro = $resultado->fetch_assoc()) {
-                            $total_amount += $registro['Precio'] * $carrito[$registro['ID']];
+                            $total_amount += $registro['Precio'] * $carrito[$registro['ID']]['cantidad'];
                         }
                     }
 

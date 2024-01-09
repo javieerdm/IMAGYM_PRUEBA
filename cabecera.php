@@ -17,7 +17,7 @@
 			<div id="header">
 				<div id="principio">
 					<h6 id="camion">
-						<img width='40' src='imagenes/camion.jpg'>&nbsp ENVÍO GRATIS A PARTIR DE 70€	
+						<img width='40' src='imagenes/camion.jpg'>&nbsp ENVÍO GRATIS A PARTIR DE 50€	
 					</h6>
 				</div>
 				<div id="cabecera_alta">
@@ -49,7 +49,7 @@
 										
 									}																
 									else{
-										echo "Hola " . $_SESSION["cliente"];
+										echo "Bienvenido " . $_SESSION["cliente"];
 										echo "<button class='boton'><a href='cerrar.php'>Cerrar sesión</a></button>";										
 									}
 								}
@@ -102,6 +102,37 @@
 				<div id="cabecera_baja">
 					<nav>
 						<ul id="B">
+						<div class="menu-desplegable">
+							<a href="javascript:void(0)">
+								<img src="imagenes/menu.png" alt="Menú" />
+							</a>
+							<div class="contenido-desplegable">
+								<!-- Aquí insertas el contenido de tu navegador.php -->
+								<form class="ordenar" method="GET">
+									Buscar por:<br><br>
+									<ul class="ordenar"><a href="producto.php?categoria=1">Ropa Deportiva</a>
+										<li class="ordenar"><a href="producto.php?genero=1">Camisetas</a></li>
+										<li class="ordenar"><a href="producto.php?genero=2">Pantalones</a></li>
+										<li class="ordenar"><a href="producto.php?genero=3">Zapatillas</a></li>
+									</ul>
+									<ul class="ordenar"><a href="producto.php?categoria=2">Material</a>
+										<li class="ordenar"><a href="producto.php?genero=4">Mancuernas</a></li>
+										<li class="ordenar"><a href="producto.php?genero=5">Gomas</a></li>
+										<li class="ordenar"><a href="producto.php?genero=6">Barras</a></li>
+									</ul>
+									<ul class="ordenar"><a href="producto.php?categoria=3">Máquinas</a>
+										<li class="ordenar"><a href="producto.php?genero=7">Cardio</a></li>
+										<li class="ordenar"><a href="producto.php?genero=8">Rack</a></li>
+										<li class="ordenar"><a href="producto.php?genero=9">Musculación</a></li>
+									</ul>
+									<ul class="ordenar"><a href="producto.php?categoria=4">Suplementos</a>
+										<li class="ordenar"><a href="producto.php?genero=10">Proteina</a></li>
+										<li class="ordenar"><a href="producto.php?genero=11">Creatina</a></li>
+										<li class="ordenar"><a href="producto.php?genero=12">Pre-Entreno</a></li>
+									</ul>
+								</form>
+							</div>
+						</div>
 							<li><a href="producto.php">Ver todos</a></li>
 							<li><a href="producto.php?categoria=1">Ropa deportiva</a></li>
 							<li><a href="producto.php?categoria=4">Suplementos</a></li>

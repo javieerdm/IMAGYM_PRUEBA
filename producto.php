@@ -23,7 +23,7 @@
         <section>
             <div id="articulos">
                 <!--izquierda-->
-                <?php include('navegador.php'); ?>
+                
 
                 <!--derecha-->
                 <div id="derecha">

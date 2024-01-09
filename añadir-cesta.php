@@ -7,6 +7,7 @@ session_start();
 include('conexion.php');
 $producto_id = $_GET['ProductoID'];
 $cantidad =$_POST['cantidad'];
+$talla = $_POST['talla'];
 
 if (isset($_SESSION['carrito'])) {
     $carrito = $_SESSION['carrito'];
@@ -17,9 +18,11 @@ if (isset($_SESSION['carrito'])) {
 
 // Agregar el producto al carrito
 if (isset($carrito[$producto_id])) {
-    $carrito[$producto_id] += $cantidad;
+    $carrito[$producto_id]['cantidad'] += $cantidad;
 } else {
-    $carrito[$producto_id] = $cantidad;
+    $carrito[$producto_id] = ['cantidad' => $cantidad, 'talla' => $talla];
+
+
 }
 
 // Guardar el carrito en una cookie

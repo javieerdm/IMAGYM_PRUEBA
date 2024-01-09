@@ -19,10 +19,11 @@ h1 {text-align: center; margin-top: 10px; font-family: 'Roboto', sans-serif;}
     width: 90%;
     height:30%;
     float:left;
-    margin:15px 0px;
+    margin:35px 0px;
     border: 1px solid #ddd; /* bordes más sutiles */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra más suave */
     transition: all 0.2s ease;
+    margin-left: 20px;
 }
 #producto1:hover {
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
