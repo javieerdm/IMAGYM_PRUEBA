@@ -9,6 +9,9 @@ $producto_id = $_GET['ProductoID'];
 $cantidad =$_POST['cantidad'];
 $talla = $_POST['talla'];
 
+$clave_carrito = $producto_id . '_' . $talla;
+
+
 if (isset($_SESSION['carrito'])) {
     $carrito = $_SESSION['carrito'];
 } else {
@@ -17,10 +20,10 @@ if (isset($_SESSION['carrito'])) {
 
 
 // Agregar el producto al carrito
-if (isset($carrito[$producto_id])) {
-    $carrito[$producto_id]['cantidad'] += $cantidad;
+if (isset($carrito[$clave_carrito])) {
+    $carrito[$clave_carrito]['cantidad'] += $cantidad;
 } else {
-    $carrito[$producto_id] = ['cantidad' => $cantidad, 'talla' => $talla];
+    $carrito[$clave_carrito] = ['cantidad' => $cantidad, 'talla' => $talla];
 
 
 }

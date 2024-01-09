@@ -53,7 +53,11 @@
 
                         </tr>";
                     
-foreach ($carrito as $producto_id => $detalles) {
+foreach ($carrito as $clave_carrito => $detalles) {
+
+    list($producto_id, $talla_producto) = explode('_', $clave_carrito);
+
+
     $consulta = "select * from productos where ID=$producto_id";
     $resultado = $conexion->query($consulta);
 
@@ -67,19 +71,21 @@ foreach ($carrito as $producto_id => $detalles) {
         echo "<td>";
         echo "<form method='post' action='actualizar-carrito.php'>";
         echo "<input type='hidden' name='producto_id' value='" . $registro['ID'] . "'>";
+        echo "<input type='hidden' name='talla' value='" . $detalles['talla'] . "'>";
         echo "<input type='hidden' name='accion' value='incrementar'>";
         echo "<button type='submit' class='btn-incrementar' name='submit'>+</button>";
         echo "</form>";
-        echo $carrito[$registro['ID']]['cantidad'];
+        echo $carrito[$clave_carrito]['cantidad'];
         echo "<form method='post' action='actualizar-carrito.php'>";
         echo "<input type='hidden' name='producto_id' value='" . $registro['ID'] . "'>";
+        echo "<input type='hidden' name='talla' value='" . $detalles['talla'] . "'>";
         echo "<input type='hidden'  class='btn-decrementar' name='accion' value='decrementar'>";
         echo "<button type='submit' name='submit'>-</button>";
         echo "</form>";
         echo "</td>";
-        echo "<td>" . $registro['Precio'] * $carrito[$registro['ID']]['cantidad'] . " € </td>";
+        echo "<td>" . $registro['Precio'] * $carrito[$clave_carrito]['cantidad'] . " € </td>";
         echo "<td>
-                <a href=./borrar-cesta.php?productoId=" . $producto_id . ">
+                <a href=./borrar-cesta.php?productoId=" . $clave_carrito . ">
                     <button id='botonx' type='reset' title='eliminar'><img width='20' src='imagenes/papelera.jpg'></button>
                 </a>
             </td>";
@@ -94,12 +100,12 @@ foreach ($carrito as $producto_id => $detalles) {
                     // Calcular la cantidad total
                     $total_amount = 0;
 
-                    foreach ($carrito as $producto_id => $cantidad) {
+                    foreach ($carrito as $clave_carrito => $cantidad) {
                         $consulta = "select * from productos where ID=$producto_id";
                         $resultado = $conexion->query($consulta);
 
                         while ($registro = $resultado->fetch_assoc()) {
-                            $total_amount += $registro['Precio'] * $carrito[$registro['ID']]['cantidad'];
+                            $total_amount += $registro['Precio'] * $carrito[$clave_carrito]['cantidad'];
                         }
                     }
 

@@ -15,21 +15,23 @@ if (isset($_SESSION['carrito'])) {
 
 // Manejar la actualización del carrito
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['producto_id']) && isset($_POST['accion'])) {
+    if (isset($_POST['producto_id'], $_POST['talla'], $_POST['accion'])) {
         $producto_id = $_POST['producto_id'];
+        $talla = $_POST['talla'];
         $accion = $_POST['accion'];
 
+        // Crear la clave combinada
+        $clave_carrito = $producto_id . '_' . $talla;
+
         if ($accion === 'incrementar') {
-            // Lógica para incrementar la cantidad del producto en el carrito
-            if (isset($carrito[$producto_id])) {
-                $carrito[$producto_id]['cantidad']++;
+            if (isset($carrito[$clave_carrito])) {
+                $carrito[$clave_carrito]['cantidad']++;
             }
         } elseif ($accion === 'decrementar') {
-            // Lógica para decrementar la cantidad del producto en el carrito
-            if (isset($carrito[$producto_id]) && $carrito[$producto_id] > 0) {
-                $carrito[$producto_id]['cantidad']--;
-                if ($carrito[$producto_id]['cantidad'] === 0) {
-                    unset($carrito[$producto_id]);
+            if (isset($carrito[$clave_carrito]) && $carrito[$clave_carrito]['cantidad'] > 0) {
+                $carrito[$clave_carrito]['cantidad']--;
+                if ($carrito[$clave_carrito]['cantidad'] === 0) {
+                    unset($carrito[$clave_carrito]);
                 }
             }
         }
