@@ -34,8 +34,8 @@
 							values ('$NOMBRE','$EMAIL', '$CONTRASEÑA', 'cliente')";						
 							$resultadoinsertar=mysqli_query ($conexion, $consultainsertar);	
 							
-							echo "<script  type='text/javascript'>alert('Bienvenido a IMAGYM');</script>";							
-							echo "<script type='text/javascript'>window.location.href='registrado.php';</script>";
+							echo "<script type='text/javascript'>alert('Bienvenido a IMAGYM'); window.location.href='index.php';</script>";						
+
 						}
 						
 					
