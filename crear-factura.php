@@ -22,12 +22,14 @@ if (isset($_COOKIE['carrito'])) {
 
 	$total_amount = 0;
 
-	foreach ($carrito as $producto_id => $cantidad) {
+	foreach ($carrito as $clave_carrito => $detalles) {
+		list($producto_id, $talla_producto) = explode('_', $clave_carrito);
+
 		$consulta = "SELECT * FROM Productos where ID=$producto_id";
 		$resultado = $conexion->query($consulta);
 
 		while ($registro = $resultado->fetch_assoc()) {
-			$total_amount += $registro['Precio'] * $carrito[$registro['ID']];
+			$total_amount += $registro['Precio'] * $detalles['cantidad'];
 		}
 	}
 	//$precioTotal = calcularPrecioTotal($carrito);
@@ -38,8 +40,10 @@ if (isset($_COOKIE['carrito'])) {
 	$facturaID = $conexion->insert_id;
 
 	// Insertar datos en la tabla ProductosEnFacturas
-	foreach ($carrito as $producto_id => $cantidad) {
-		$insertProductosEnFacturas = "INSERT INTO ProductosEnFacturas (FacturaID, ProductoID, Cantidad) VALUES ('$facturaID', '$producto_id', '$cantidad')";
+	foreach ($carrito as $clave_carrito => $detalles) {
+		list($producto_id, $talla_producto) = explode('_', $clave_carrito);
+
+		$insertProductosEnFacturas = "INSERT INTO ProductosEnFacturas (FacturaID, ProductoID, Cantidad) VALUES ('$facturaID', '$producto_id', '{$detalles['cantidad']}')";
 		$resultado3 = $conexion->query($insertProductosEnFacturas);
 	}
 }
