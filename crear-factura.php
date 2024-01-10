@@ -42,8 +42,9 @@ if (isset($_COOKIE['carrito'])) {
 	// Insertar datos en la tabla ProductosEnFacturas
 	foreach ($carrito as $clave_carrito => $detalles) {
 		list($producto_id, $talla_producto) = explode('_', $clave_carrito);
+		$talla_producto_escaped = $conexion->real_escape_string($talla_producto);
 
-		$insertProductosEnFacturas = "INSERT INTO ProductosEnFacturas (FacturaID, ProductoID, Cantidad) VALUES ('$facturaID', '$producto_id', '{$detalles['cantidad']}')";
+		$insertProductosEnFacturas = "INSERT INTO ProductosEnFacturas (FacturaID, ProductoID, Cantidad, Talla) VALUES ('$facturaID', '$producto_id', '{$detalles['cantidad']}','$talla_producto_escaped')";
 		$resultado3 = $conexion->query($insertProductosEnFacturas);
 	}
 }

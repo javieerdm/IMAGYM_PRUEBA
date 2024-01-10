@@ -27,7 +27,7 @@
 
                     // Obtener los productos de cada pedido
                     $facturaID = $pedido['ID'];
-                    $consultaProductosEnPedido = "SELECT P.Nombre, P.Precio, PF.Cantidad
+                    $consultaProductosEnPedido = "SELECT P.Nombre, P.Precio, PF.Cantidad, PF.Talla
                                                   FROM ProductosEnFacturas PF
                                                   JOIN Productos P ON PF.ProductoID = P.ID
                                                   WHERE PF.FacturaID = $facturaID";
@@ -40,6 +40,8 @@
                                     <th>Producto</th>
                                     <th>Precio Unitario</th>
                                     <th>Cantidad</th>
+                                    <th>Talla</th>
+
                                 </tr>";
 
                         while ($productoEnPedido = $resultadoProductosEnPedido->fetch_assoc()) {
@@ -47,6 +49,8 @@
                                     <td>" . $productoEnPedido['Nombre'] . "</td>
                                     <td>" . $productoEnPedido['Precio'] . " €</td>
                                     <td>" . $productoEnPedido['Cantidad'] . "</td>
+                                    <td>" . $productoEnPedido['Talla'] . "</td>
+
                                   </tr>";
                         }
 

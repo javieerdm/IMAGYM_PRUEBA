@@ -179,6 +179,7 @@ CREATE TABLE ProductosEnFacturas (
     FacturaID INT NOT NULL,
     ProductoID INT NOT NULL,
     Cantidad INT NOT NULL,
+    Talla VARCHAR(10),
     FOREIGN KEY (FacturaID) REFERENCES Facturas(ID),
     FOREIGN KEY (ProductoID) REFERENCES Productos(ID)
 );
