@@ -1,16 +1,6 @@
 <!doctype html>
 <?php
 	session_start();
-	require_once 'vendor/autoload.php';
-
-$client = new Google_Client();
-$client->setClientId('24936604300-7nbsa047akchfp437hd3s8gg1mgl4521.apps.googleusercontent.com');
-$client->setClientSecret('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');
-$client->setRedirectUri('http://localhost/IMAGYM/google-callback.php');
-$client->addScope("email");
-$client->addScope("profile");
-
-$login_url = $client->createAuthUrl();
 ?>
 	
 <html lang="es">
@@ -49,11 +39,7 @@ $login_url = $client->createAuthUrl();
 								if(!isset($_SESSION["cliente"])){									
 									echo "<input class='usuario' type='text' size='18' name='usu' placeholder='Email'>
 									<input class='usuario' type='password' size='8' name='pass' placeholder='Contraseña'>									
-									<button class='boton' type='submit'>Entrar</button>";
-									
-									echo "<a href='$login_url' class='boton-google'>
-									<img src='imagenes/google.png' alt='Iniciar sesión con Google'>
-								  </a>";
+									<button class='boton' type='submit'>Entrar</button>";									
 								}
 								if(isset($_SESSION["cliente"])){
 									if($_SESSION["rol"]=='administrador'){

@@ -2,36 +2,9 @@
 
 * { margin:0px; padding:0px; }
 
-body { background: #9a9191; }
+body{background:#9a9191;}
 
-#body {
-    max-width: 1200px; /* Usa max-width en lugar de width */
-    margin: auto;
-    font-family: verdana;
-    background: #9a9191;
-    width: 95%; /* Ancho relativo para adaptarse al viewport */
-}
-
-/* Media Queries */
-@media (max-width: 1200px) {
-    #body {
-        width: 95%; /* Ancho menor para pantallas más pequeñas */
-    }
-}
-
-@media (max-width: 768px) {
-    #body {
-        width: 100%; /* Ancho completo para dispositivos más pequeños como tablets */
-    }
-}
-
-@media (max-width: 480px) {
-    #body {
-        width: 100%; /* Ancho completo para teléfonos móviles */
-        /* Aquí puedes añadir estilos adicionales para móviles si es necesario */
-    }
-}
-
+#body {width:1200px; margin:auto; font-family: verdana; background: #9a9191;}
 
 
 

@@ -14,8 +14,7 @@
     background-size: 100% 100%; }
 #caja2 {width: 60%; height: 100%; float: right;}
 
-#usuario {width: 100%; height: 50%; float:right;  margin-right: 100px; 
-}
+#usuario {width: 100%; height: 50%; float:right;}
 #usuario form {width:70%; height:100%; float:right; font-size:1.1em;}
 #usuario .boton {margin-top: 10px;
     margin-left:10px;
@@ -184,19 +183,6 @@ body.dimmed::before {
     bottom: 0;
     background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
     z-index: 99; /* Menor que el menú, pero mayor que el resto del contenido */
-}
-
-.boton-google {
-    display: inline-block;
-    padding: 5px; /* ajusta el relleno según sea necesario */
-    margin-left: 350px; /* espacio entre el botón Entrar y el botón de Google */
-    vertical-align: middle; /* para alinear verticalmente con tu otro botón */
-    margin-top: -55px;
-    
-}
-
-.boton-google img {
-    height: 26px;
 }
 
 
