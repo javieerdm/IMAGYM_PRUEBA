@@ -6,6 +6,11 @@
 		
 		$usu=$_POST["usu"];
 		$pass=$_POST["pass"];
+
+		if (empty($usu) || empty($pass)) {
+			header("Location: registro.php");
+			exit;
+		}
 		
 		$consultainsertarcliente="select ID, NOMBRE, EMAIL, CONTRASEÑA, ROL from Usuarios 
 		where EMAIL='$usu' and CONTRASEÑA='$pass'";
