@@ -10,7 +10,12 @@
 	<body>
 		<div id="body">		
 		
-			<?php include('cabecera.php');?>
+			<?php 
+			require_once(__DIR__.'/vendor/autoload.php');
+			$shieldon = new \Shieldon\Firewall\Integration\Bootstrap();
+			$shieldon->run();
+
+			include('cabecera.php');?>
 			
 			<section>			
 					<div id="section1">
@@ -22,18 +27,18 @@
 						<a href="producto.php?categoria=4"><div id="suplementos"><span>Suplementos</span></div></a>
 					</div>
 					<script>
-<script>
-window.embeddedChatbotConfig = {
-chatbotId: "BvNu_1MgdthT_wsQMHZ_j",
-domain: "www.chatbase.co"
-}
-</script>
-<script
-src="https://www.chatbase.co/embed.min.js"
-chatbotId="BvNu_1MgdthT_wsQMHZ_j"
-domain="www.chatbase.co"
-defer>
-</script>
+							<script>
+							window.embeddedChatbotConfig = {
+							chatbotId: "BvNu_1MgdthT_wsQMHZ_j",
+							domain: "www.chatbase.co"
+							}
+							</script>
+							<script
+							src="https://www.chatbase.co/embed.min.js"
+							chatbotId="BvNu_1MgdthT_wsQMHZ_j"
+							domain="www.chatbase.co"
+							defer>
+							</script>
 			</section>
 			
 			<?php include('pie.php');?>		

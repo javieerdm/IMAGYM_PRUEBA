@@ -39,7 +39,8 @@
 								if(!isset($_SESSION["cliente"])){									
 									echo "<input class='usuario' type='text' size='18' name='usu' placeholder='Email'>
 									<input class='usuario' type='password' size='8' name='pass' placeholder='Contraseña'>									
-									<button class='boton' type='submit'>Entrar</button>";									
+									<button class='boton' type='submit'>Entrar</button>";
+									
 								}
 								if(isset($_SESSION["cliente"])){
 									if($_SESSION["rol"]=='administrador'){
