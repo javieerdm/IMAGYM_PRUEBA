@@ -109,6 +109,25 @@ foreach ($carrito as $clave_carrito => $detalles) {
                         }
                     }
 
+                        $gastos_envio = 0;
+                        if ($total_amount < 50) {
+                            $gastos_envio = 4.99;
+                            $total_amount += $gastos_envio;
+                        }
+
+                        echo "<tr>
+                            <td colspan='4' align='right'><b>Subtotal:</b></td>
+                            <td><b>" . ($total_amount - $gastos_envio) . " € </b></td>
+                        </tr>";
+                        echo "<tr><td colspan='6'>&nbsp;</td></tr>"; 
+
+                        if ($gastos_envio > 0) {
+                            echo "<tr>
+                                <td colspan='4' align='right'><b>Gastos de envío:</b></td>
+                                <td><b>" . $gastos_envio . " € </b></td>
+                            </tr>";
+                        }
+
                     echo "<form action='https://www.sandbox.paypal.com/cgi-bin/webscr' method='post' id='form_pay'>
                         <!-- Valores requeridos -->
                         <input type='hidden' name='business' value='sb-gngo228196001@business.example.com'>
