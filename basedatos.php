@@ -9,7 +9,7 @@ session_start();
     // Conectar a la base de datos
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $password = "tfgimagym";
     $dbname = "script_imagym";
     
     $conn = new mysqli($servername, $username, $password, $dbname);

@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Regístrate y encuentra nuestros mejores artículos con increíbles ofertas</title>
-		<link rel="stylesheet" href="principal.css">
-		<link rel="stylesheet" href="registro.css">
+		<link rel="stylesheet" href="css/principal.css">
+		<link rel="stylesheet" href="css/registro.css">
 
 	</head>	
 	<body>

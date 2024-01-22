@@ -35,8 +35,8 @@
 						<div id="producto">
 							<div id="producto1">							
 								<br>
-								<!--Muestra la referencia del articulo-->	
-								<div class="referencia">ID<?php echo " " . $registrodetalles[0];?></div>
+								
+	
 								<br><br>
 
 								<!--Muestra la imagen del articulo-->
@@ -47,6 +47,9 @@
 							
 								<!--Muestra el nombre del articulo-->
 								<p id="art"><b><?php echo $registrodetalles[1];?></b></p>
+
+								<!--Muestra la descripción del articulo-->
+								<p id="descripcion"><b><?php echo $registrodetalles[7];?></b></p>
 								
 								<!--Muestra el precio del articulo-->
 								
