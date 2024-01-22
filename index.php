@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>IMAGYM: Tienda online de productos para el gimnasio</title>
-		<link rel="stylesheet" href="principal.css">
-		<link rel="stylesheet" href="portada.css">
+		<link rel="stylesheet" href="css/principal.css">
+		<link rel="stylesheet" href="css/portada.css">
 
 	</head>	
 	<body>

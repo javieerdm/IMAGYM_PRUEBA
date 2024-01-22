@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Listado por categoria y genero</title>
-    <link rel="stylesheet" href="navegador.css">
+    <link rel="stylesheet" href="css/navegador.css">
 
 </head>
 

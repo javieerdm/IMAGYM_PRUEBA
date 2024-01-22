@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Contacta con nosotros y resuelve tus dudas</title>
-	<link rel="stylesheet" href="principal.css">
-	<link rel="stylesheet" href="contacto.css">
+	<link rel="stylesheet" href="css/principal.css">
+	<link rel="stylesheet" href="css/contacto.css">
 
 </head>
 

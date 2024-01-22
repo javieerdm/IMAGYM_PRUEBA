@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>FORMULARIO</title>		
-		<link rel="stylesheet" href="principal.css">
-		<link rel="stylesheet" href="registro.css">
+		<link rel="stylesheet" href="css/principal.css">
+		<link rel="stylesheet" href="css/registro.css">
 		
 	</head>
 	<body>

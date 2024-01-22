@@ -18,10 +18,10 @@ section { width: 100%; height:673px; background: #f5f5f5; /* suave color de fond
     transition: transform 0.3s, box-shadow 0.3s; /* transición suave */
 }
 
-#ropa { background: url(imagenes/portada/ropa-deportiva.jpeg) center center no-repeat; background-size: cover; }
-#material { background: url(imagenes/portada/material.png) center center no-repeat; background-size: cover; }
-#maquinas { background: url(imagenes/portada/maquinas.jpeg) center center no-repeat; background-size: cover; }
-#suplementos { background: url(imagenes/portada/suplementacion.jpg) center center no-repeat; background-size: cover; }
+#ropa { background: url(../imagenes/portada/ropa-deportiva.jpeg) center center no-repeat; background-size: cover; }
+#material { background: url(../imagenes/portada/material.png) center center no-repeat; background-size: cover; }
+#maquinas { background: url(../imagenes/portada/maquinas.jpeg) center center no-repeat; background-size: cover; }
+#suplementos { background: url(../imagenes/portada/suplementacion.jpg) center center no-repeat; background-size: cover; }
 
 #ropa:hover, #maquinas:hover, #material:hover, #suplementos:hover {
     transform: scale(1.05);

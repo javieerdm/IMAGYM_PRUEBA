@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Nuestra Política de privacidad</title>
-		<link rel="stylesheet" href="principal.css">
-		<link rel="stylesheet" href="politicaycondiciones.css">
+		<link rel="stylesheet" href="css/principal.css">
+		<link rel="stylesheet" href="css/politicaycondiciones.css">
 
 	</head>	
 	<body>

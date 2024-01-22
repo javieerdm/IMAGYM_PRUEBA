@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Mis Pedidos</title>
-    <link rel="stylesheet" href="principal.css">
-    <link rel="stylesheet" href="pedidos.css">
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/pedidos.css">
 </head>
 
 <body>

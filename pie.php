@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Pie de página</title>
-		<link rel="stylesheet" href="pie.css">
+		<link rel="stylesheet" href="css/pie.css">
 	</head>	
 	<body>	
 		<footer>

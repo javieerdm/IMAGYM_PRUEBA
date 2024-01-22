@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Añade productos a tu cesta </title>
-    <link rel="stylesheet" href="principal.css">
-    <link rel="stylesheet" href="carrito.css">
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/carrito.css">
 </head>
 
 <body>

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Listado de productos</title>
-    <link rel="stylesheet" href="principal.css">
-    <link rel="stylesheet" href="articulos.css">
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/articulos.css">
     <script>
 
 
