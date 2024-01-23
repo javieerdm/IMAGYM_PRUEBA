@@ -2,23 +2,6 @@
 
 * { margin:0px; padding:0px;}
 
-#articulos {width: 100%; overflow:hidden;}
-
-.linea2 {width: 85%; margin-left: 90px;}
-
-#derecha {width: 100%; min-height:500px; float:left;}
-
-#derecha a {
-    text-decoration: none;
-    color: black;
-    transition: color 0.2s;
-}
-
-#derecha a:hover {
-    text-decoration: underline;
-    color: #28abe1; /* color que coincide con el esquema del sitio */
-}
-
 #celdas { margin-left: 5%;}
 
 h1 {
@@ -27,31 +10,6 @@ h1 {
     font-family: 'Roboto', sans-serif; /* cambio de fuente */
 }
 
-.vacía {width:100%; height:570px;}
-
-#etiquetas {
-    margin: auto;
-    width: 80%;
-    height: 100px;
-    margin-top: 5%;
-}
-
-#bañador, #equipo, #entreno, #neopreno {
-    width: 20%;
-    height: 100%;
-    float: left;
-    background-size: cover; /* cambio para una mejor visualización */
-    margin-left: 4%;
-    border-radius: 10px; /* bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra suave */
-}
-	
-
-
-
-.seguir {margin-left: 5%;}
-.factura{margin-left:70%;}
-.envio{margin-left:100px;}
 
 #boton, #botonx {
 	border-radius: 20px;
