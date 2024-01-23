@@ -54,7 +54,12 @@
 								<!--Muestra el precio del articulo-->
 								
 								<p id="precio"><b>Precio: <?php echo $registrodetalles[3] . " €";?></b></p>
-								
+
+								<form method='POST' action='<?php echo isset($_SESSION["cliente"]) ? "./añadir-favoritos.php?ProductoID=" . $registrodetalles[0] : "registro.php"; ?>' target='_self'>
+    							<input type='submit' id='boton-favoritos' value='AÑADIR A FAVORITOS'>
+								</form>
+
+																	
 								
 								<button id="comprar" type="submit">
 								<form method='POST' action='<?php echo isset($_SESSION['cliente']) ? "./añadir-cesta.php?ProductoID=" . $registrodetalles[0] : "registro.php"; ?>' target='_self'>

@@ -16,7 +16,7 @@
 	
 
 
-DROP TABLE IF EXISTS Usuarios, Categorias, Contacto, Generos, Productos, Facturas, ProductosEnFacturas, Tallas, ProductoTallas CASCADE;
+DROP TABLE IF EXISTS Usuarios, Categorias, Contacto, Generos, Productos, Facturas, ProductosEnFacturas, Tallas, ProductoTallas, Favoritos CASCADE;
 
 CREATE TABLE Usuarios (
     ID INT PRIMARY KEY AUTO_INCREMENT,
@@ -182,5 +182,13 @@ CREATE TABLE ProductosEnFacturas (
     Cantidad INT NOT NULL,
     Talla VARCHAR(10),
     FOREIGN KEY (FacturaID) REFERENCES Facturas(ID),
+    FOREIGN KEY (ProductoID) REFERENCES Productos(ID)
+);
+
+CREATE TABLE Favoritos (
+    UsuarioID INT NOT NULL,
+    ProductoID INT NOT NULL,
+    PRIMARY KEY (UsuarioID, ProductoID),
+    FOREIGN KEY (UsuarioID) REFERENCES Usuarios(ID),
     FOREIGN KEY (ProductoID) REFERENCES Productos(ID)
 );

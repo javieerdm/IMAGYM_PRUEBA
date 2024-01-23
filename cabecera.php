@@ -87,7 +87,9 @@
 										 		 $registrop=mysqli_fetch_row($resultadop);
 												
 										 		echo "<li><a href='carrito.php'><img src='imagenes/carrito.png'>Mi cesta </a><li>";												
-										 		 	echo "<li><a href='pedidos.php'><img src='imagenes/pedido.jpg'> Mis pedidos</a><li>";
+										 		echo "<li><a href='pedidos.php'><img src='imagenes/pedido.jpg'> Mis pedidos</a><li>";
+												echo "<li><a href='favoritos.php'><img src='imagenes/favoritos.jpg'> Mis favoritos</a><li>";
+
 										 		
 										}
 									

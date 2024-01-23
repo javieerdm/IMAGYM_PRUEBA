@@ -48,7 +48,7 @@
 
 #A {
     margin: auto;
-    width: 500px;
+    width: 800px;
     font-family: 'Roboto', sans-serif; /* Cambio de fuente */
 }
 
@@ -57,7 +57,7 @@
     display: block;
     padding: 0px 10px;
     margin-top: 5px;
-    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+    font-size: 0.7em; /* Tamaño de fuente más pequeño */
     color: black;
 }
 
