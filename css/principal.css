@@ -1,13 +1,35 @@
 @charset "UTF-8";
 
-* { margin:0px; padding:0px; }
+* { 
+    margin: 0; 
+    padding: 0; 
+}
 
-body{background:#9a9191;}
+body {
+    background: #9a9191;
+    font-family: verdana; /* Mover la fuente aquí para que se aplique globalmente */
+}
 
-#body {width:1200px; margin:auto; font-family: verdana; background: #9a9191;}
+#body {
+    max-width: 1200px; /* Uso de max-width para flexibilidad */
+    width: 100%; /* Hace que el ancho sea responsive */
+    margin: auto;
+    background: #9a9191;
+}
 
+/* Media Queries para pantallas más pequeñas */
+@media screen and (max-width: 1200px) {
+    #body {
+        width: auto; /* Hace que el contenedor se ajuste al tamaño de la pantalla */
+        padding: 10px; /* Agrega un poco de padding para no tocar los bordes de la pantalla */
+    }
+}
 
+/* Puedes añadir más media queries si necesitas ajustes específicos para diferentes tamaños de pantalla */
+@media screen and (max-width: 768px) {
+    /* Estilos para pantallas aún más pequeñas, como tablets o teléfonos grandes */
+}
 
-	
-
-
+@media screen and (max-width: 480px) {
+    /* Estilos para pantallas pequeñas, como teléfonos móviles */
+}
