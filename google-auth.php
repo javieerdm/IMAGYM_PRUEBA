@@ -4,7 +4,7 @@ require 'google-api-php-client--PHP8.2/vendor/autoload.php';
 $client = new Google_Client();
 $client->setClientId('24936604300-7nbsa047akchfp437hd3s8gg1mgl4521.apps.googleusercontent.com');
 $client->setClientSecret('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');
-$client->setRedirectUri('http://localhost/IMAGYM');
+$client->setRedirectUri('http://localhost/IMAGYM_PRUEBA');
 $client->addScope("email");
 $client->addScope("profile");
 session_start();

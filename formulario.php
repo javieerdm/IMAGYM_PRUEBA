@@ -32,8 +32,8 @@ $baseUrl = 'http://localhost/paypal-pdt-php/buy_now_button';
     <input type="hidden" name="lc" value="es_ES">
     <input type="hidden" name="no_shipping" value="1">
     <input type="hidden" name="image_url" src="imagenes/logotipo">
-    <input type="hidden" name="return" value="http://localhost/COMERCIO/IMAGYM/receptor.php">
-    <input type="hidden" name="cancel_return" value="http://localhost/COMERCIO/IMAGYM/pago_cancelado.php">
+    <input type="hidden" name="return" value="http://localhost/IMAGYM_PRUEBA/receptor.php">
+    <input type="hidden" name="cancel_return" value="http://localhost/IMAGYM_PRUEBA/pago_cancelado.php">
 
     <hr>
 

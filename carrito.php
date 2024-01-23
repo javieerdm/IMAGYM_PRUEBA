@@ -133,8 +133,8 @@ foreach ($carrito as $clave_carrito => $detalles) {
                         <input type='hidden' name='business' value='sb-gngo228196001@business.example.com'>
                         <input type='hidden' name='cmd' value='_xclick'>
                         <input type='hidden' name='currency_code' value='EUR'>
-                        <input type='hidden' name='return' value='http://localhost/IMAGYM/crear-factura.php'>
-                        <input type='hidden' name='cancel_return' value='http://localhost/IMAGYM/pago_cancelado.php'>
+                        <input type='hidden' name='return' value='http://localhost/IMAGYM_PRUEBA/crear-factura.php'>
+                        <input type='hidden' name='cancel_return' value='http://localhost/IMAGYM_PRUEBA/pago_cancelado.php'>
                         
                         <!-- Valores calculados -->
                         <input type='hidden' name='item_name' value='Productos en el carrito'>

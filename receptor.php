@@ -63,7 +63,7 @@ if (strcmp($lines[0], "SUCCESS") == 0) {
 
     echo "<h1>¡Hemos procesado tu pago exitosamente!</h1> 
     Recibimos $mc_gross Euros en concepto de: $quantity $item_name.<hr>
-    Vuelve a comprar dando clic <a href='http://localhost/COMERCIO/IMAGYM/formulario.php";
+    Vuelve a comprar dando clic <a href='http://localhost/IMAGYM_PRUEBA/formulario.php";
     return;
 } else if (strcmp($lines[0], "FAIL") == 0) {
     // Registramos datos para realizar una investigación
