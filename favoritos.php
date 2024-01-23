@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Mis Favoritos</title>
     <link rel="stylesheet" href="css/principal.css">
-    <link rel="stylesheet" href="css/favoritos.css"> <!-- Asume que tienes un archivo CSS para favoritos -->
+    <link rel="stylesheet" href="css/favoritos.css"> 
 </head>
 
 <body>
@@ -16,8 +16,6 @@
             <h1>Mis Productos Favoritos</h1>
 
             <?php
-            // Asegúrate de tener una sesión iniciada y una conexión a la base de datos
-            //session_start();
             include('conexion.php');
 
             // Obtener el ID del usuario a partir del nombre en la sesión
@@ -49,6 +47,13 @@
                             <td><img src='" . $favorito['Imagen'] . "' alt='" . $favorito['Nombre'] . "' /></td>
                             <td>" . $favorito['Precio'] . " €</td>
                             <td>" . $favorito['Descripcion'] . "</td>
+                            <td>
+                            <form action='eliminar-favorito.php' method='post'>
+                            <input type='hidden' name='producto_id' value='" . $favorito['ID'] . "' />
+                            <input type='hidden' name='usuario_id' value='" . $usuario_id . "' />
+                            <input type='submit' value='Eliminar de favoritos' />
+                        </form>
+                            </td>
                           </tr>";
                 }
 
