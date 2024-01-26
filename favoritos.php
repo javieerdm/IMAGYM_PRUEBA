@@ -33,6 +33,7 @@
             $resultadoFavoritos = $conexion->query($consultaFavoritos);
 
             if ($resultadoFavoritos->num_rows > 0) {
+                echo "<div class='tabla-responsive'>";
                 echo "<table border='1'>
                         <tr>
                             <th>Producto</th>
@@ -58,6 +59,8 @@
                 }
 
                 echo "</table>";
+                echo "</div>";
+
             } else {
                 echo "<p>No tienes productos favoritos.</p>";
             }

@@ -2,14 +2,12 @@
 
 * { margin:0px; padding:0px;}
 
-#header {width:100%; height: 150px; margin:auto;}
-
 #principio p{width:100%; margin:auto; font-size: 0.9em;}
 #principio img{width:25px;}
 #camion {margin-left: 32%;}
 
 #cabecera_alta {width: 100%; height: 80%;}
-#logo {width: 15%; height: 100%; float: left;  margin-left: 10%;}
+#logo {width: 12%; height: 90%; float: left;  margin-left: 10%;}
 #imagen {width: 100%; height:100%; margin: auto; background:url(../imagenes/logotipo.png) center center;
     background-size: 100% 100%; }
 #caja2 {width: 60%; height: 100%; float: right;}
@@ -33,18 +31,6 @@
 .linea1 {width: 90%; margin-left: 2em;}
 #contacto {width: 70%; height: 48%; float: right;}
 
-/* #A {margin:auto; width:500px; font-family: 'Open Sans', sans-serif;}
-#A ul a{text-decoration: none; display:block; padding:0px 10px; margin-top:5px; font-size: 1em; color: black;}
-#A ul li a:hover {color: #28abe1; text-decoration: underline;}
-#A ul  {list-style:none;}
-#A ul > li {float:left; margin-right: 10px;}
-#A ul img {width: 25px; height: 25px;}
-
-#cabecera_baja {width: 100%; height: 20%; float:left; background: #f0f0f0; float:left;}
-#B {margin-left: 20%;} 
-#B li a{background: #f0f0f0; text-decoration:none; padding: 5px 15px; display:block; color: black;}
-#B > li {float:left; list-style: none; font-size:1em; margin-right: 10px;}		
-#B li a:hover {color: white; background-color: #28abe1; text-decoration: none;} */
 
 #A {
     margin: auto;
@@ -55,9 +41,9 @@
 #A ul a {
     text-decoration: none;
     display: block;
-    padding: 0px 10px;
+    padding: 0px 5px;
     margin-top: 5px;
-    font-size: 0.7em; /* Tamaño de fuente más pequeño */
+    font-size: 0.75em; /* Tamaño de fuente más pequeño */
     color: black;
 }
 
@@ -130,7 +116,7 @@
     width: 30px; /* Tamaño del icono del menú */
     height: auto;
     margin-left: -850px; /* Ajusta según tu diseño */
-    margin-bottom: 100px; /* Espacio debajo del icono */
+    margin-bottom: 130px; /* Espacio debajo del icono */
 }
 
 .contenido-desplegable {
@@ -185,9 +171,94 @@ body.dimmed::before {
     z-index: 99; /* Menor que el menú, pero mayor que el resto del contenido */
 }
 
+#header {
+    width: 100%;
+    height: 150px;
+    margin: auto;
+    background-color: #a0c7d8; /* Color más vivo */
+    border-bottom: 2px solid #f0f0f0; /* Borde inferior sutil */
+}
+
+#cabecera_alta, #cabecera_baja {
+    font-family: 'Arial', sans-serif; /* Cambio de fuente para modernizar */
+}
+
+#cabecera_baja a {
+    font-size: 1.15em; /* Tamaño de fuente más grande */
+    padding: 8px 16px; /* Más espacio alrededor de los enlaces */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para hover */
+}
+
+#cabecera_baja a:hover {
+    background-color: #333; /* Fondo oscuro al pasar el ratón */
+    color: white; /* Texto blanco al pasar el ratón */
+}
+
+.menu-desplegable .contenido-desplegable {
+    background-color: #a0c7d8; /* Color que combina con la cabecera */
+    /* ... otros estilos de menú desplegable ... */
+}
 
 
+@media (max-width: 768px) {
+#logo {
+    width: 20%; 
+    margin-left: 5%; 
+  }
+  
+  #busqueda {
+    width: 65%; 
+    margin-left: 33px; 
+    margin-top: 10px; 
 
+  }
+  #contacto {
+    width: 100%; /* Ajusta el ancho del área de contacto */
+    margin-top: 40px; /* Añade un margen superior para bajar los íconos de contacto y registro */
+    margin-right: 47px;
+}
+#A ul img {
+    width: 10px; /* O el tamaño que se ajuste a tu diseño */
+    height: auto;
+}
+#A ul li {
+    margin-right: 3px; /* Reduce el margen derecho para que los íconos estén más juntos */
+}
+#usuario .boton {
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 5px; /* Puedes ajustar el radio del borde para hacerlo menos pronunciado */
+    border: 1px solid #28abe1; /* Ajusta el grosor del borde si es necesario */
+    font-size: 0.7em; /* Disminuye el tamaño de la fuente para reducir el tamaño del texto */
+    text-align: center;
+    padding: 2px 6px; /* Reduce el padding para disminuir el tamaño total del botón */
+    text-decoration: none;
+    transition: all 0.2s ease;
+    background-color: white;
+    color: black;
+    cursor: pointer; /* Cambia el cursor a un puntero para indicar que es un botón clickeable */
+}
 
+#B {
+    display: flex; /* Alinea los elementos en línea */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten y no salgan del contenedor */
+    justify-content: center; /* Centra los elementos */
+    padding: 0; /* Elimina el padding si lo hay */
+    margin: 0; /* Elimina el margen si lo hay */
+}
 
+/* Estilos para los elementos de lista dentro de #B */
+#B > li {
+    list-style: none; /* Elimina los estilos de lista por defecto */
+    margin-right: 5px; /* Reduce el margen derecho para acercar los elementos */
+    font-size: 0.7em; /* Ajusta el tamaño del texto si es necesario */
+}
 
+/* Estilos para los enlaces dentro de los elementos de lista de #B */
+#B li a {
+    text-decoration: none; /* Elimina la subrayado del texto */
+    color: black; /* Ajusta el color del texto */
+    padding: 5px; /* Ajusta el relleno para cambiar el tamaño del área cliqueable */
+}
+
+}

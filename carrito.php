@@ -41,6 +41,7 @@
 									</div>";
                 } else {
                     echo "<h1>Carrito de Compras</h1>";
+                    echo "<div class='tabla-responsive'>";
 
                     echo "<table id='celdas' width='90%' border='1' align='center'>
                         <tr>
@@ -69,33 +70,38 @@ foreach ($carrito as $clave_carrito => $detalles) {
         $tallaParaMostrar = isset($detalles['talla']) && $detalles['talla'] != '' ? $detalles['talla'] : 'N/A';
         echo "<td>" . $tallaParaMostrar . "</td>"; // Mostrar talla o 'N/A'
         echo "<td>";
-        echo "<form method='post' action='actualizar-carrito.php'>";
+        echo "<div class='contador'>";
+        echo "<form method='post' action='actualizar-carrito.php' style='display: inline;'>";
+        echo "<input type='hidden' name='producto_id' value='" . $registro['ID'] . "'>";
+        echo "<input type='hidden' name='talla' value='" . $detalles['talla'] . "'>";
+        echo "<input type='hidden' name='accion' value='decrementar'>";
+        echo "<button type='submit' class='btn-decrementar' name='submit'>-</button>";
+        echo "</form>";
+        echo "<span class='cantidad'>" . $carrito[$clave_carrito]['cantidad'] . "</span>";
+        echo "<form method='post' action='actualizar-carrito.php' style='display: inline;'>";
         echo "<input type='hidden' name='producto_id' value='" . $registro['ID'] . "'>";
         echo "<input type='hidden' name='talla' value='" . $detalles['talla'] . "'>";
         echo "<input type='hidden' name='accion' value='incrementar'>";
         echo "<button type='submit' class='btn-incrementar' name='submit'>+</button>";
         echo "</form>";
-        echo $carrito[$clave_carrito]['cantidad'];
-        echo "<form method='post' action='actualizar-carrito.php'>";
-        echo "<input type='hidden' name='producto_id' value='" . $registro['ID'] . "'>";
-        echo "<input type='hidden' name='talla' value='" . $detalles['talla'] . "'>";
-        echo "<input type='hidden'  class='btn-decrementar' name='accion' value='decrementar'>";
-        echo "<button type='submit' name='submit'>-</button>";
-        echo "</form>";
+        echo "</div>";
         echo "</td>";
         echo "<td>" . $registro['Precio'] * $carrito[$clave_carrito]['cantidad'] . " € </td>";
         echo "<td>
-                <a href=./borrar-cesta.php?productoId=" . $clave_carrito . ">
-                    <button id='botonx' type='reset' title='eliminar'><img width='20' src='imagenes/papelera.jpg'></button>
+                <a href='./borrar-cesta.php?productoId=" . $clave_carrito . "'>
+                    <button id='botonx' type='button' title='eliminar'><img width='20' src='imagenes/papelera.jpg'></button>
                 </a>
             </td>";
         echo "</tr>";
     }
+    
 }
 
                     
 
                     echo "</table>";
+                    echo "</div>";
+
 
                     // Calcular la cantidad total
                     $total_amount = 0;

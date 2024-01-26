@@ -2,32 +2,44 @@
 
 * { margin:0px; padding:0px; bottom:0px;}
 
-#footer {width:100%; overflow:hidden; font-size:14px; background: #333; color: #fff;}
+#footer {
+    width: 100%;
+    overflow: hidden;
+    font-size: 14px;
+    background: #333;
+    color: #fff;
+    font-family: 'Arial', sans-serif; /* Fuente más moderna */
+    padding: 20px 0; /* Espaciado superior e inferior */
+}
 
-#pies {width:100%; overflow:hidden;}
+#pies {width: 100%; overflow: hidden;}
 
-#pie1, #pie2, #pie3 {
+#pie1, #pie3 {
     width: 30%;
     float: left;
     padding: 20px;
-    box-sizing: border-box; /* Asegura que el padding no cambie el ancho */
+    box-sizing: border-box;
 }
 
-#pie1 ul li, #pie2 ul li, #pie3 ul li {
-    list-style: none;
-    margin-bottom: 10px; /* Espaciado entre elementos */
-    color: #fff; /* Color de la lista */
+#pie1 ul, #pie3 ul {
+    padding: 0; /* Remover padding predeterminado */
 }
 
-#pie1 ul li a, #pie2 ul li a, #pie3 ul li a {
+#pie1 ul li, #pie3 ul li {
+    list-style-type: none; /* Estilo de lista más moderno */
+    margin-bottom: 10px;
+    color: #ccc; /* Color ligeramente más claro para mejor contraste */
+}
+
+#pie1 ul li a, #pie3 ul li a {
     text-decoration: none;
     color: #fff;
-    transition: color 0.3s ease; /* Suaviza la transición del color */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transición suave */
 }
 
-#pie1 ul li a:hover, #pie2 ul li a:hover, #pie3 ul li a:hover {
-    color: #28abe1; /* Color al pasar el mouse */
-    text-decoration: underline;
+#pie1 ul li a:hover, #pie3 ul li a:hover {
+    color: #28abe1;
+    text-decoration: underline; /* Subrayado al pasar el mouse */
 }
 
 #creador {
@@ -35,7 +47,9 @@
     text-align: center;
     padding: 10px 0;
     font-size: 12px;
-    border-top: 1px solid #444; /* Borde superior */
+    border-top: 1px solid #444;
+    background-color: #282828; /* Fondo ligeramente diferente */
+    color: #aaa; /* Color de texto más claro */
 }
 
 #mcs {font-size: 12px;}

@@ -15,8 +15,6 @@
 			<section>	
 				<div id="articulos">
 				
-					<!--izquierda-->
-					<?php //include('navegador.php');?>
 					
 					
 					<div id="derecha">

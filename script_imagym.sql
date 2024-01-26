@@ -100,7 +100,7 @@ VALUES
     ('Zapatillas Nike','./imagenes/nikeShoes.jpg', 79.99, 10, 1, 3,'Zapatillas Nike innovadoras, ideales para deportistas exigentes. Combinan tecnología avanzada con un diseño atractivo.'),
     ('Mancuerna 10kg','./imagenes/pesa10k.jpg', 29.99, 20, 2, 4,'Mancuerna robusta de 10kg, perfecta para fortalecer y tonificar. Diseño ergonómico y seguro. Ideal para ejercicios de musculación.'),
     ('Mancuerna 15kg','./imagenes/pesa15k.jpg', 34.99, 20, 2, 4,'Mancuerna de 15kg, ideal para entrenamientos intensivos. Excelente para el desarrollo muscular y resistencia.'),
-    ('Goma con agarre','./imagenes/goma_agarre.jpg', 5.99, 15, 2, 5,'Goma elástica con agarres cómodos. Perfecta para ejercicios de estiramiento y resistencia. Ligera y fácil de usar.'),
+    ('Pack Discos','./imagenes/goma_agarre.jpg', 24.99, 15, 2, 5,'Diseñado para atletas de todos los niveles. Cada pack incluye una variedad de discos, cuidadosamente seleccionados para proporcionar el progreso gradual que buscan tanto principiantes como veteranos del fitness.'),
     ('Pack Gomas','./imagenes/gomas.jpg', 14.99, 40, 2, 5,'Conjunto de gomas elásticas de diferentes resistencias. Ideal para una variedad de ejercicios. Compacto y versátil.'),
 	('Barra Z','./imagenes/barraZ.jpg', 19.99, 25, 2, 6,'Conjunto de gomas elásticas de diferentes resistencias. Ideal para una variedad de ejercicios. Compacto y versátil.'),
 	('Barra Olímpica','./imagenes/barra.jpg', 25.99, 10, 2, 6,'Barra Olímpica estándar, ideal para levantamiento de pesas. Diseño robusto y seguro, adecuado para uso profesional.'),

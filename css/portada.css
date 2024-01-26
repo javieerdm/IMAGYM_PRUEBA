@@ -2,42 +2,83 @@
 
 * { margin:0px; padding:0px;}
 
-section { width: 100%; height:673px; background: #f5f5f5; /* suave color de fondo */}
+section {
+    width: 100%;
+    height: 673px;
+    background: #f5f5f5; /* Color de fondo suave */
+}
 
-#section1 {width: 100%; height:50%;}
-
-#ropa, #maquinas, #material, #suplementos {
-    width: 40%;
-    height: 80%;
-    float: left;
-    margin-left: 5%;
-    margin-top: 2%;
+#carousel {
+    width: 100%;
+    height: 673px;
+    overflow: hidden;
     position: relative;
-    border-radius: 20px; /* bordes redondeados */
-    box-shadow: 5px 3px 15px rgba(0,0,0,0.1); /* sombra suave */
-    transition: transform 0.3s, box-shadow 0.3s; /* transición suave */
 }
 
-#ropa { background: url(../imagenes/portada/ropa-deportiva.jpeg) center center no-repeat; background-size: cover; }
-#material { background: url(../imagenes/portada/material.png) center center no-repeat; background-size: cover; }
-#maquinas { background: url(../imagenes/portada/maquinas.jpeg) center center no-repeat; background-size: cover; }
-#suplementos { background: url(../imagenes/portada/suplementacion.jpg) center center no-repeat; background-size: cover; }
-
-#ropa:hover, #maquinas:hover, #material:hover, #suplementos:hover {
-    transform: scale(1.05);
-    box-shadow: 10px 5px 30px rgba(0,0,0,0.2);
-}
-
-#section2 {width: 100%; height:50%;}
-
-#ropa span, #maquinas span, #suplementos span, #material span {
+.slide {
+    width: 80%; /* Aumento del tamaño de las diapositivas */
+    height: 100%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white; /* color del texto */
-    font-size: 28px; /* tamaño de la fuente */
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.5s ease-in-out; /* Transición de desvanecimiento */
+    left: 10%; /* Centrado de la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide span {
+    color: white;
+    font-size: 28px;
     font-weight: bold;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* sombra del texto para mejorar la legibilidad */
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.7); /* Sombra más pronunciada para mejor legibilidad */
+    z-index: 2;
+}
+
+.active {
+    opacity: 1; /* Diapositiva activa totalmente visible */
+}
+
+.out {
+    opacity: 0; /* Diapositivas inactivas se desvanecen */
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    border: none;
+    padding: 15px; /* Botones más grandes */
+    cursor: pointer;
+    z-index: 3;
+    font-size: 24px; /* Tamaño de icono si se usa */
+}
+
+#prevButton {
+    left: 10px;
+}
+
+#nextButton {
+    right: 10px;
+}
+
+.arrow:hover {
+    background-color: #cccccc; /* Cambio de color al pasar el mouse */
+}
+
+/* Respuestas para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .slide {
+        width:100%; /* Ajuste para pantallas más pequeñas */
+        left: 0;
+        margin-top: 10px;
+    }
+    #carousel {
+        height: 100%; /* Ajusta la altura para adaptarse al nuevo tamaño del slide */
+        margin-top: 20px;
+
+    }
 }

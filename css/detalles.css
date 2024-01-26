@@ -1,69 +1,79 @@
 @charset "UTF-8";
 
-* { margin:0px; padding:0px;}
+* { margin: 0px; padding: 0px; }
 
-/* section página de bañadores*/
+#articulos {
+    width: 100%;
+    overflow: hidden;
+    display: flex; /* Utilizando flexbox para el layout */
+    justify-content: center; /* Centrado horizontal */
+}
 
-#articulos {width: 100%; overflow:hidden; /*background: purple;*/}
-	
-	#derecha {width: 80%; float:left; margin-left:10%;/*background: green;*/}
+#producto, #detalles {
+    flex: 1; /* Ambos elementos ocuparán espacio equitativo */
+}
 
-		#titulo {width: 100%; float:left; /*background:orange;*/}
+#producto {
+    /* Asegúrate de que la imagen no exceda el ancho del contenedor */
+    max-width: 50%;
+    order: 1; /* Imagen primero */
+}
 
-			h1 {text-align: center; margin-top: 10px;}
-			
-			h5{color:red; font-size:1em; text-align:center; /*background:orange;*/}
-			
-			.volver img:hover{box-shadow: 0 4px 16px; border-radius:15px;}
-			.volver img{width:30px; margin-top:10px;}
-			
-		#producto {width:100%; height:650px; float:left; /*background:red;*/}
-		
-		#producto1 {width: 40%; float:left; 
-			/*border: 1px solid black;*/  /*background:yellow;*/}
-			
-				.referencia {font-size: 1em;}
-				
-				#comprar {margin-left:18%;
-					margin-top: 10px;
-					border-radius: 20px;
-					border: 3px solid white;
-					border-style: outset;
-					font-size: 1em;
-					text-align: center;
-					padding: 20px 10px 20px 10px;
-				text-decoration: none;}
-				
-				#comprar:hover {box-shadow: 0 4px 16px;
-				transition: all 0.2s ease;}
-				
-				#detalles p {font-size:1.2em; padding:0px 50px 0px;}
-				
-				#prenda img{width: 100%;}
-				
-				#detalles{width: 60%; float:left; /*background:purple;*/}
-				
-				#producto1, #detalles {display:inline;}
-				
-				#art{width: 100%; float:left; /*background:orange;*/
-					font-size:1.2em;
-					margin:10% 10% 10%;}
-					
-				#precio{width: 100%; /*background:pink;*/
-					font-size:1em;
-					margin:10% 10% 10% 10%;
-					color:blue;}
-					
-					
-				#detalle{width: 100%; /*background:green;*/
-					font-size:1em;
-					margin:20% 10%;}
+#detalles {
+    padding-left: 20px; /* Espaciado entre la imagen y los detalles */
+    order: 2; /* Detalles después de la imagen */
+}
 
-					#descripcion {
-						font-size: 14px;
-						color: #333;
-						margin-top: 10px;
-					}
-					
-					
-	
+.volver img:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    border-radius: 15px;
+}
+
+.volver img {
+    width: 30px;
+    margin-top: 10px;
+}
+
+#comprar {
+	margin-left: 18%;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: 3px solid #28abe1; /* Color que destaque */
+    font-size: 1em;
+    text-align: center;
+    padding: 20px 10px;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Transición más suave */
+    background-color: white;
+    color: #28abe1;
+}
+
+#comprar:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    background-color: #28abe1;
+    color: white;}
+
+#detalles p {
+    font-size: 1.2em;
+}
+
+#prenda img {
+    width: 100%; /* La imagen del producto ocupa todo el ancho disponible */
+    height: auto; /* Mantiene la proporción de la imagen */
+    transition: transform 0.3s ease;
+}
+
+#prenda img:hover {
+    transform: scale(1.05);
+}
+
+#art, #precio {
+    font-size: 1.2em;
+    color: #333;
+}
+
+#descripcion {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}

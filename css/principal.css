@@ -3,33 +3,42 @@
 * { 
     margin: 0; 
     padding: 0; 
+    box-sizing: border-box; /* Asegúrate de que padding y border no afecten el ancho total */
 }
 
 body {
-    background: #9a9191;
-    font-family: verdana; /* Mover la fuente aquí para que se aplique globalmente */
+    background: white; /* Color más vibrante */
+    font-family: 'Roboto', sans-serif; /* Fuente moderna de Google Fonts */
+    margin: 0; /* Elimina cualquier margen predeterminado del navegador */
 }
 
 #body {
-    max-width: 1200px; /* Uso de max-width para flexibilidad */
-    width: 100%; /* Hace que el ancho sea responsive */
-    margin: auto;
-    background: #9a9191;
+    width: 100%; /* Establece el ancho al 100% del viewport */
+    min-height: 100vh; /* Altura mínima para que se extienda al menos a la altura del viewport */
+    margin: auto; /* Centrado horizontalmente si hay un ancho máximo */
+    background: white; /* Fondo claro para el contenido */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra suave */
+    border-radius: 8px; /* Bordes redondeados */
 }
 
 /* Media Queries para pantallas más pequeñas */
 @media screen and (max-width: 1200px) {
     #body {
-        width: auto; /* Hace que el contenedor se ajuste al tamaño de la pantalla */
-        padding: 10px; /* Agrega un poco de padding para no tocar los bordes de la pantalla */
+        width: auto;
+        padding: 20px;
     }
 }
 
-/* Puedes añadir más media queries si necesitas ajustes específicos para diferentes tamaños de pantalla */
 @media screen and (max-width: 768px) {
-    /* Estilos para pantallas aún más pequeñas, como tablets o teléfonos grandes */
+    /* Estilos para tablets o teléfonos grandes */
+    #body {
+        padding: 15px;
+    }
 }
 
 @media screen and (max-width: 480px) {
-    /* Estilos para pantallas pequeñas, como teléfonos móviles */
+    /* Estilos para teléfonos móviles */
+    #body {
+        padding: 10px;
+    }
 }

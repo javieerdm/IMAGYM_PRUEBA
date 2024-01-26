@@ -1,32 +1,66 @@
 @charset "UTF-8";
 
-* { margin:0px; padding:0px; }	
+* { margin: 0px; padding: 0px; }
 
-#section {width: 100%; height:673px; /*background: red;*/}
+#section {width: 100%; height: 673px;}
 
-/* section página de contacto*/
+#contactos {
+    width: 40%;
+    height: 100%;
+    float: left;
+    
+}
 
-#contactos {width: 40%; height: 100%; float: left; /*background:orange;*/}
-	
-	#formu {margin: auto; width: 80%; margin-top: 20%;}
-	
-	#formu .cont {margin-left: 30px;}
-	
-	#formu .boton {margin-top: 20px; margin-bottom: 20px;
-		margin-left: 150px;
-		border-radius: 20px;
-		border: 3px solid white;
-		border-style: outset;
-		font-size: 1em;
-		text-align: center;
-		padding: 5px 15px 5px 15px;
-	text-decoration: none;}		
-		
-	#formu .boton:hover {box-shadow: 0 4px 16px;
-	transition: all 0.2s ease;}
+#formu {
+    margin: auto;
+    width: 80%;
+    margin-top: 10%; /* Reducción del margen superior */
+}
 
-#localizacion {width: 60%; height: 100%; float: left; /*background:blue;*/}
+#formu .cont {
+    margin-left: 30px;
+    margin-bottom: 15px; /* Espaciado entre los campos */
+}
+
+#formu input[type="text"], #formu input[type="email"], #formu textarea {
+    width: calc(100% - 60px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#formu textarea {
+    height: 100px;
+    resize: vertical; /* Permite al usuario ajustar la altura */
+}
+
+#formu .boton {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; /* Centrar el botón */
+    border-radius: 20px;
+    border: none;
+    font-size: 1em;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #28abe1; /* Color del botón */
+    color: white; /* Texto blanco */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#formu .boton:hover {
+    background-color: #1a6f93;
+}
+#localizacion {width: 60%; height: 100%; float: left; }
 
 .direccion {font-size: 12px; margin-top: 10%; margin-left: 20px;}
 
-iframe { margin-left: 20px; width: 70%; height: 60%;}
+iframe {
+    margin-left: 20px;
+    width: 90%; /* Ajuste del ancho */
+    height: 400px; /* Ajuste de la altura */
+    border: none; /* Remover el borde predeterminado */
+}

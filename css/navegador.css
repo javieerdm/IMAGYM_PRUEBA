@@ -1,25 +1,51 @@
-/*section navegador*/
+#izquierda {
+    width: 20%;
+    float: left;
+}
 
-#izquierda {width: 20%; float:left; /*background: blue;*/}
-	
-	#buscador {width: 80%; float: left; background:#aedef0;
-			border: 1px solid black; margin-left: 20px; 
-			margin-top: 10px;
-			margin-bottom: 10px;
-			padding-top:10px;
-			box-shadow: 5px 5px 10px  black;
-			border-radius: 30px;}
+#buscador {
+    width: 80%;
+    float: left;
+    /* Resto de estilos... */
+}
 
-	.ordenar {margin-left: 20px; margin-top: 10px;}
-	
-	.ordenar > li {list-style: none;}	
-	
-	.ordenar a{text-decoration:none;}	
-	
-	.ordenar a:link{color:black;}
+.ordenar {
+    display: flex;
+    flex-direction: row; /* Asegura que los elementos estén en fila */
+    justify-content: space-around; /* Distribuye los elementos uniformemente */
+    flex-wrap: nowrap; /* Evita el salto de línea en los elementos */
+    margin-top: 10px;
+}
 
-	.ordenar a:visited{color:black;}
-	
-	.ordenar a:hover{color: blue; text-decoration: underline;}	
-	
-	h4 {text-align: center; margin-top: 10px;}
+.categoria {
+    position: relative; /* Para el posicionamiento de sub-categorías */
+}
+
+.sub-categoria {
+    display: none;
+    position: absolute;
+    left: 0; /* Alinea las sub-categorías con su categoría padre */
+    top: 100%; /* Coloca las sub-categorías debajo de la categoría padre */
+    /* Resto de estilos... */
+}
+
+.categoria:hover .sub-categoria {
+    display: block;
+}
+
+.ordenar a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.2s ease;
+}
+
+.ordenar a:hover {
+    color: #28abe1;
+    text-decoration: underline;
+}
+
+h4 {
+    text-align: center;
+    margin-top: 10px;
+    color: #28abe1;
+}

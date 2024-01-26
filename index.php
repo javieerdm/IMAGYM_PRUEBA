@@ -17,15 +17,24 @@
 
 			include('cabecera.php');?>
 			
-			<section>			
-					<div id="section1">
-						<a href="producto.php?categoria=1"><div id="ropa"><span>Ropa deportiva</span></div></a>
-						<a href="producto.php?categoria=2"><div id="material"><span>Material</span></div></a>
-					</div>
-					<div id="section2">
-						<a href="producto.php?categoria=3"><div id="maquinas"><span>Máquinas</span></div></a>
-						<a href="producto.php?categoria=4"><div id="suplementos"><span>Suplementos</span></div></a>
-					</div>
+		<section>			
+			<section id="carousel">
+			<a href="producto.php?categoria=1" class="slide" style="background-image: url(./imagenes/portada/ropa-deportiva.jpeg);">
+            <span>Ropa Deportiva</span>
+        </a>
+        <a href="producto.php?categoria=2" class="slide" style="background-image: url(./imagenes/portada/material.png);">
+            <span>Material</span>
+        </a>
+        <a href="producto.php?categoria=3" class="slide" style="background-image: url(./imagenes/portada/maquinas.jpeg);">
+            <span>Máquinas</span>
+        </a>
+        <a href="producto.php?categoria=4" class="slide" style="background-image: url(./imagenes/portada/suplementacion.jpg);">
+            <span>Suplementos</span>
+        </a>
+		<button id="prevButton" class="arrow">&lt;</button>
+   		<button id="nextButton" class="arrow">&gt;</button>
+    		</section>
+
 					<script>
 							<script>
 							window.embeddedChatbotConfig = {
@@ -41,7 +50,9 @@
 							</script>
 			</section>
 			
-			<?php include('pie.php');?>		
+			<?php include('pie.php');?>	
+			<script src="carrusel.js"></script>
+	
 		
 		</div>
 	</body>

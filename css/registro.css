@@ -1,40 +1,61 @@
 @charset "UTF-8";
 
-* { margin:0px; padding:0px;}	
+* { margin: 0px; padding: 0px; }
 
-section { width: 100%; overflow:hidden; /*background: red;*/}
+section { width: 100%; overflow: hidden; }
 
-/* section página de registro*/
+#formulario { width: 100%; height: 100%; }
 
-	#formulario {width:100%; height:100%;} 	
-		
-	#reg {text-transform: uppercase;
-	text-align: center;
-	padding-top: 20px;}
+#reg {
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 20px;
+    color: #28abe1; /* Color más llamativo */
+}
 
-	#datos {width: 40%;
-			border: 1px solid black;
-			margin: auto;
-			padding: 30px 0 30px 20px;
-			box-shadow: 10px 5px 30px  black;
-	border-radius: 30px;}
+#datos {
+    width: 40%;
+    border: 1px solid #ddd; /* Borde más sutil */
+    margin: auto;
+    padding: 30px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+    border-radius: 15px; /* Bordes redondeados */
+    background-color: white; /* Fondo claro */
+}
 
-	#datos input, .reg1 {margin-left: 10px;
-	margin-bottom: 15px;}
+#datos input, .reg1 {
+    margin-left: 10px;
+    margin-bottom: 15px;
+    width: calc(100% - 20px); /* Ancho ajustado */
+    padding: 8px; /* Más espacio dentro del input */
+    border-radius: 5px; /* Bordes redondeados para input */
+    border: 1px solid #ccc; /* Borde más ligero */
+}
 
-	#datos input {width: 300px;}
+#datos input:focus {
+    outline: none; /* Remover el contorno predeterminado */
+    border-color: #28abe1; /* Resaltar con color al enfocar */
+    box-shadow: 0 0 5px #28abe1; /* Sombra sutil al enfocar */
+}
 
-	#datos .sex {width: 10px;}
+#datos .terminos {
+    width: auto; /* Ancho automático para checkbox */
+}
 
-	#datos .terminos {width: 10px;}
+.botonreg {
+    margin-left: 40px;
+    border-radius: 20px;
+    border: none; /* Quitar bordes */
+    font-size: 1em;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #28abe1; /* Color del botón */
+    color: white; /* Texto blanco */
+    cursor: pointer; /* Estilo del cursor */
+    transition: background-color 0.3s; /* Transición suave */
+}
 
-	.botonreg {margin-left:40px;		
-			border-radius: 20px;
-			border: 3px solid white;
-			border-style: outset;
-			font-size: 1em;
-			text-align: center;
-			padding: 5px 15px 5px 15px;
-	text-decoration: none;}
-							
-	.botonreg:hover {box-shadow: 0 4px 16px; transition: all 0.2s ease;}
+.botonreg:hover {
+    background-color: #1a6f93; /* Color al pasar el ratón */
+}

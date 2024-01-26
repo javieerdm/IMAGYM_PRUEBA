@@ -1,34 +1,108 @@
-@charset "UTF-8";
-
-* { margin:0px; padding:0px;}
-
-#celdas { margin-left: 5%;}
-
 h1 {
     text-align: center;
+    color: #28abe1;
     margin-top: 50px;
-    font-family: 'Roboto', sans-serif; /* cambio de fuente */
-}
-
-
-#boton, #botonx {
-	border-radius: 20px;
-	border: 2px solid #28abe1;
-	font-size: 1em;
-	text-align: center;
-	padding: 5px 10px;
-	background-color: white;
-	color: #28abe1;
-	text-decoration: none;
-	transition: all 0.2s ease;
-	margin-left:40%;
 
 }
 
-#boton:hover, #botonx:hover {
-box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-background-color: #28abe1;
-color: white;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #28abe1;
+    color: white;
+    height: 50px;
+    text-align: left;
+    padding: 10px;
+}
+
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+img {
+    max-width: 100px;
+    height: auto;
+}
+
+.boton, .btn-incrementar, .btn-decrementar {
+    background-color: #28abe1;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 
+
+#botonx {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#botonx img {
+    width: 20px;
+    height: auto;
+}
+
+#boton, .terminar {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Estilo para mensajes del carrito vacío */
+.CARRITO VACIO {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilo para el formulario de PayPal */
+#form_pay {
+    text-align: center;
+    margin-top: 20px;
+}
+
+hr {
+    margin-top: 20px;
+}
+.boton:hover, .btn-incrementar:hover, .btn-decrementar:hover {
+    background-color: #1a6f93;
+}
+.contador {
+    display: flex; /* Esto alinea horizontalmente los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+.btn-incrementar,
+.btn-decrementar {
+    margin: 0 5px; /* Añade un poco de espacio entre los botones y la cantidad */
+    /* Tus estilos existentes para .boton, .btn-incrementar, .btn-decrementar */
+}
+.tabla-responsive {
+    overflow-x: auto; /* Permite desplazamiento horizontal si el contenido se desborda */
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .contador {
+        flex-direction: column-reverse; /* Esto hace que los botones se apilen verticalmente */
+    }
+}

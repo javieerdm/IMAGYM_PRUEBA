@@ -73,7 +73,9 @@
 								<ul>
 
 									<li><a href="contacto.php"><img src="imagenes/sobre.png"> Contacto</a><li>
-									<li><a href="registro.php"><img src="imagenes/usuario.png"> Registro</a><li>
+									<?php if(!isset($_SESSION["cliente"])): ?>
+               							 <li><a href="registro.php"><img src="imagenes/usuario.png"> Registro</a><li>
+            						<?php endif; ?>
 									<?php
 
 										if(isset($_SESSION["codusuario"]) && isset($_SESSION["rol"]) && $_SESSION["rol"] == 'cliente') {
@@ -88,7 +90,7 @@
 												
 										 		echo "<li><a href='carrito.php'><img src='imagenes/carrito.png'>Mi cesta </a><li>";												
 										 		echo "<li><a href='pedidos.php'><img src='imagenes/pedido.jpg'> Mis pedidos</a><li>";
-												echo "<li><a href='favoritos.php'><img src='imagenes/favoritos.jpg'> Mis favoritos</a><li>";
+												echo "<li><a href='favoritos.php'><img src='imagenes/favoritos.png'> Mis favoritos</a><li>";
 
 										 		
 										}
