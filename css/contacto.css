@@ -64,3 +64,41 @@ iframe {
     height: 400px; /* Ajuste de la altura */
     border: none; /* Remover el borde predeterminado */
 }
+
+@media only screen and (max-width: 768px) {
+    #section {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 60px; /* Asegurarse de que el espacio se mantiene en pantallas pequeñas */
+
+    }
+
+    #contactos {
+        order: 1; /* Orden del formulario de contacto */
+        width: 70%;
+        float: none;
+        margin-top: 5px;
+    }
+
+    #formu {
+        margin-top: 10%;
+    }
+
+    #localizacion {
+        order: 2; /* Orden de la sección de localización */
+        width: 70%;
+        float: none;
+        margin-top: 20px; /* Ajuste para que el mapa aparezca más arriba */
+    }
+
+    .direccion {
+        margin-top: 5%;
+    }
+
+    iframe {
+        margin-top: 5px; /* Reducir el margen superior del iframe */
+        width: 90%;
+        height: 80px;
+    }
+}
+

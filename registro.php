@@ -5,6 +5,13 @@
 		<title>Regístrate y encuentra nuestros mejores artículos con increíbles ofertas</title>
 		<link rel="stylesheet" href="css/principal.css">
 		<link rel="stylesheet" href="css/registro.css">
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+
+		<script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+ </script>
 
 	</head>	
 	<body>
@@ -16,7 +23,7 @@
 				<?php		
 					
 				if (isset($_POST["crear"])){
-					
+
 						$NOMBRE=$_POST['NOMBRE'];
 						$EMAIL=$_POST['EMAIL'];					
 						$CONTRASEÑA=$_POST['CONTRASEÑA'];
@@ -38,8 +45,8 @@
 
 						}
 						
-					
-				}
+
+			}
 				?>
 				
 			
@@ -58,8 +65,15 @@
 								<input class="terminos" type="checkbox" name="casilla" required>
 								He leído y acepto los <a href="condiciones.php">términos y condiciones de uso.</a>
 								<br>
-							
-								<button class='botonreg' type='submit' name='crear'>Enviar</button>
+
+								<div class="g-recaptcha" data-sitekey="6Ldhwl0pAAAAAPsnRk7POYESKg8MR1TWbLim1Ycg" data-callback="habilitarBoton"></div>
+
+								<script>
+									function habilitarBoton() {
+										document.getElementById('enviarBtn').disabled = false;
+									}
+								</script>
+								<button class='botonreg' type='submit' name='crear' id='enviarBtn' disabled>Enviar</button>
 								<button class='botonreg' type='reset' >Limpiar</button>
 								<br><br>
 							</form>							

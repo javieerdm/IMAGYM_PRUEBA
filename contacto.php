@@ -6,6 +6,7 @@
 	<title>Contacta con nosotros y resuelve tus dudas</title>
 	<link rel="stylesheet" href="css/principal.css">
 	<link rel="stylesheet" href="css/contacto.css">
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 
 </head>
 
@@ -32,8 +33,15 @@
 							<label class="cont">Mensaje*</label>
 							<br>
 							​<textarea class="cont" rows="8" cols="35" name="mensaje" required></textarea>
+							<div class="g-recaptcha" data-sitekey="6Ldhwl0pAAAAAPsnRk7POYESKg8MR1TWbLim1Ycg" data-callback="habilitarBoton"></div>
 
-							<button class="boton" type="submit">Enviar</button>
+							<script>
+								function habilitarBoton() {
+									document.getElementById('enviarBtn').disabled = false;
+								}
+							</script>
+							<button class='boton' type='submit' id='enviarBtn' disabled>Enviar</button>
+							<!-- <button class="boton" type="submit">Enviar</button> -->
 						</fieldset>
 					</form>
 				</div>

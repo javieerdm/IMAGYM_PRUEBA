@@ -9,12 +9,12 @@ section { width: 100%; overflow: hidden; }
 #reg {
     text-transform: uppercase;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 40px;
     color: #28abe1; /* Color más llamativo */
 }
 
 #datos {
-    width: 40%;
+    width: 60%;
     border: 1px solid #ddd; /* Borde más sutil */
     margin: auto;
     padding: 30px;
@@ -55,7 +55,18 @@ section { width: 100%; overflow: hidden; }
     cursor: pointer; /* Estilo del cursor */
     transition: background-color 0.3s; /* Transición suave */
 }
+#datos .terminos {
+    width: auto; /* Ancho automático para checkbox */
+}
 
 .botonreg:hover {
     background-color: #1a6f93; /* Color al pasar el ratón */
+}
+@media only screen and (max-width: 768px) {
+    .g-recaptcha {
+        transform: scale(0.77);
+        -webkit-transform: scale(0.77);
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+    }
 }
