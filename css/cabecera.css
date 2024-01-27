@@ -25,8 +25,21 @@
     transition: all 0.2s ease;
     background-color: white;
     color: black;}
+    #usuario .boton-bbdd {margin-top: 10px;
+        margin-left:10px;
+        border-radius: 10px;
+        border: 2px solid #28abe1;
+        font-size: 0.9em;
+        text-align: center;
+        padding: 5px 10px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        background-color: white;
+        color: black;}
 #usuario .boton a{text-decoration: none;}
 #usuario .boton:hover {box-shadow: 0 2px 8px; color: #28abe1;}
+#usuario .boton-bbdd a{text-decoration: none;}
+#usuario .boton-bbdd:hover {box-shadow: 0 2px 8px; color: #28abe1;}
 
 .linea1 {width: 90%; margin-left: 2em;}
 #contacto {width: 70%; height: 48%; float: right;}
@@ -230,6 +243,20 @@ body.dimmed::before {
     border-radius: 5px; /* Puedes ajustar el radio del borde para hacerlo menos pronunciado */
     border: 1px solid #28abe1; /* Ajusta el grosor del borde si es necesario */
     font-size: 0.7em; /* Disminuye el tamaño de la fuente para reducir el tamaño del texto */
+    text-align: center;
+    padding: 2px 6px; /* Reduce el padding para disminuir el tamaño total del botón */
+    text-decoration: none;
+    transition: all 0.2s ease;
+    background-color: white;
+    color: black;
+    cursor: pointer; /* Cambia el cursor a un puntero para indicar que es un botón clickeable */
+}
+#usuario .boton-bbdd {
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 5px; /* Puedes ajustar el radio del borde para hacerlo menos pronunciado */
+    border: 1px solid #28abe1; /* Ajusta el grosor del borde si es necesario */
+    font-size: 0.62em; /* Disminuye el tamaño de la fuente para reducir el tamaño del texto */
     text-align: center;
     padding: 2px 6px; /* Reduce el padding para disminuir el tamaño total del botón */
     text-decoration: none;

@@ -46,7 +46,7 @@
 									if($_SESSION["rol"]=='administrador'){
 										echo "Administrador";
 										echo "<button class='boton'><a href='cerrar.php'>Cerrar sesión</a></button>";
-										echo "<button class='boton'><a href='basedatos.php'>Base de datos</a></button>";
+										echo "<button class='boton-bbdd'><a href='basedatos.php'>Base de datos</a></button>";
 										
 									}																
 									else{
