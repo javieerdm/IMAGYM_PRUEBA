@@ -30,8 +30,8 @@
 							
 							while ($registrodetalles=mysqli_fetch_row($resultadodetalles)){?>					
 						
-						<div id="producto">
-							<div id="producto1">							
+						
+							<div id="producto">							
 								<br>
 								
 	
@@ -53,8 +53,11 @@
 								
 								<p id="precio"><b>Precio: <?php echo $registrodetalles[3] . " €";?></b></p>
 
+
 								<form method='POST' action='<?php echo isset($_SESSION["cliente"]) ? "./añadir-favoritos.php?ProductoID=" . $registrodetalles[0] : "registro.php"; ?>' target='_self'>
-    							<input type='submit' id='boton-favoritos' value='AÑADIR A FAVORITOS'>
+									<button type='submit' id='boton-favoritos' style="background:none; border:none; padding:0; margin:0;">
+										<img src='./imagenes/añadirFavoritos.png' alt='Favoritos' style="vertical-align: middle;"/> AÑADIR A FAVORITOS
+									</button>
 								</form>
 
 																	
@@ -85,7 +88,7 @@
 
 							</div>
 							<br><br>	
-						</div>											
+																	
 						<?php } ?>
 					</div>
 				</div>	

@@ -77,3 +77,51 @@
     color: #666;
     margin-top: 10px;
 }
+#boton-favoritos {
+    background: #ffffff; /* Color de fondo */
+    border: 2px solid #d1d1d1; /* Borde del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 5px 10px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: all 0.3s ease; /* Efecto de transición suave para todos los cambios */
+    font-weight: bold; /* Texto en negrita */
+    color: #333333; /* Color del texto */
+    text-align: center; /* Alineación del texto */
+    display: inline-flex; /* Alineación del texto e imagen */
+    align-items: center; /* Alinea verticalmente el texto e imagen */
+    justify-content: center; /* Centra el contenido */
+}
+
+#boton-favoritos img {
+    width: 20px; /* Tamaño de la imagen */
+    margin-right: 5px; /* Espacio entre la imagen y el texto */
+}
+
+#boton-favoritos:hover {
+    background-color: #f5f5f5; /* Color de fondo al pasar el ratón por encima */
+    border-color: #a1a1a1; /* Color del borde al pasar el ratón por encima */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón por encima */
+}
+#articulos {
+    display: flex; /* Cambio a diseño flex para alinear los elementos lado a lado */
+    justify-content: center; /* Centrado horizontal de los elementos */
+    align-items: flex-start; /* Alineación vertical al inicio para evitar estiramiento */
+}
+
+#producto {
+    max-width: 40%; /* Reduciendo el ancho máximo de la imagen */
+    flex-basis: 40%; /* Establece un ancho base para el contenedor de la imagen */
+    order: 1; /* La imagen primero */
+}
+
+#prenda img {
+    width: 100%; /* La imagen ocupa todo el ancho de su contenedor */
+    height: auto; /* Para mantener la proporción */
+}
+
+#detalles {
+    flex-basis: 60%; /* Establece un ancho base para el contenedor de los detalles */
+    padding-left: 20px; /* Espaciado entre la imagen y los detalles */
+    order: 2; /* Los detalles después de la imagen */
+}
+
