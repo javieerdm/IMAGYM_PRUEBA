@@ -1,42 +1,42 @@
-let slides = document.getElementsByClassName("slide");
-let currentIndex = 0;
-let nextIndex = 1;
-let interval;
+document.addEventListener("DOMContentLoaded", function() {
+    var slides = document.querySelectorAll("#carousel .slide");
+    var captions = document.querySelectorAll("#carousel .slide-caption");
+    var currentSlide = 0;
+    var slideInterval;
 
-// Función para cambiar el slide
-function changeSlide(next) {
-    slides[currentIndex].classList.remove("active");
-    slides[currentIndex].classList.add("out");
+    function startCarousel() {
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+            captions[i].style.display = 'none';
+        }
+        slides[currentSlide].style.display = 'block';
+        captions[currentSlide].style.display = 'block';
+        slideInterval = setInterval(nextSlide, 5000);
+    }
 
-    currentIndex = next ? (currentIndex + 1) % slides.length : (currentIndex - 1 + slides.length) % slides.length;
-    nextIndex = (currentIndex + 1) % slides.length;
+    function nextSlide() {
+        slides[currentSlide].style.display = 'none';
+        captions[currentSlide].style.display = 'none';
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].style.display = 'block';
+        captions[currentSlide].style.display = 'block';
+    }
 
-    slides[currentIndex].classList.add("active");
+    document.getElementById('prevButton').addEventListener('click', function() {
+        clearInterval(slideInterval);
+        slides[currentSlide].style.display = 'none';
+        captions[currentSlide].style.display = 'none';
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        slides[currentSlide].style.display = 'block';
+        captions[currentSlide].style.display = 'block';
+        startCarousel();
+    });
 
-    setTimeout(() => {
-        slides[currentIndex].classList.remove("out");
-    }, 500);
-}
+    document.getElementById('nextButton').addEventListener('click', function() {
+        clearInterval(slideInterval);
+        nextSlide();
+        startCarousel();
+    });
 
-// Inicializa el primer slide
-slides[currentIndex].classList.add("active");
-
-// Inicia el carrusel automático
-function startInterval() {
-    interval = setInterval(() => changeSlide(true), 5000);
-}
-startInterval();
-
-// Event listeners para los botones
-document.getElementById("prevButton").addEventListener("click", () => {
-    changeSlide(false);
-    clearInterval(interval);
-    startInterval();
+    startCarousel();
 });
-
-document.getElementById("nextButton").addEventListener("click", () => {
-    changeSlide(true);
-    clearInterval(interval);
-    startInterval();
-});
-

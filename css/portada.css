@@ -68,6 +68,19 @@ section {
 .arrow:hover {
     background-color: #cccccc; /* Cambio de color al pasar el mouse */
 }
+.slide-caption {
+    position: absolute; /* Posiciona la frase de forma absoluta dentro del slide */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la posición para centrar exactamente en el medio */
+    color: white; /* Color del texto, elige el que prefieras */
+    font-size: 1.5em; /* Tamaño del texto, ajusta según necesites */
+    text-align: center; /* Alinea el texto al centro */
+    /* Añade más estilos si lo necesitas, como sombra de texto para mejorar la legibilidad */
+}
+
+
+
 
 /* Respuestas para dispositivos móviles */
 @media screen and (max-width: 768px) {

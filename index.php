@@ -20,16 +20,19 @@
 		<section>			
 			<section id="carousel">
 			<a href="producto.php?categoria=1" class="slide" style="background-image: url(./imagenes/portada/ropa-deportiva.jpeg);">
-            <span>Ropa Deportiva</span>
-        </a>
+				<span class="slide-caption">Ropa deportiva</span>
+        	</a>
         <a href="producto.php?categoria=2" class="slide" style="background-image: url(./imagenes/portada/material.png);">
-            <span>Material</span>
+			<span class="slide-caption">Material</span>
+
         </a>
         <a href="producto.php?categoria=3" class="slide" style="background-image: url(./imagenes/portada/maquinas.jpeg);">
-            <span>Máquinas</span>
+			<span class="slide-caption">Máquinas</span>
+
         </a>
         <a href="producto.php?categoria=4" class="slide" style="background-image: url(./imagenes/portada/suplementacion.jpg);">
-            <span>Suplementos</span>
+			<span class="slide-caption">Suplementos</span>
+
         </a>
 		<button id="prevButton" class="arrow">&lt;</button>
    		<button id="nextButton" class="arrow">&gt;</button>
@@ -50,10 +53,10 @@
 							</script>
 			</section>
 			
-			<?php include('pie.php');?>	
-			<script src="carrusel.js"></script>
-	
+			<?php include('pie.php');?>		
 		
 		</div>
+		<script src="carrusel.js"></script>
+
 	</body>
 </html>
