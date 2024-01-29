@@ -1,54 +1,66 @@
 <?php
-// actualizar-carrito.php
-
-// Iniciar sesión y obtener el carrito de la sesión o la cookie
 session_start();
+include('conexion.php');
 
 if (isset($_SESSION['carrito'])) {
     $carrito = $_SESSION['carrito'];
 } elseif (isset($_COOKIE['carrito'])) {
     $carrito = unserialize($_COOKIE['carrito']);
 } else {
-    // Manejar la situación en la que el carrito no está disponible
     exit("No se encontró el carrito");
 }
 
-// Manejar la actualización del carrito
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['producto_id'], $_POST['talla'], $_POST['accion'])) {
+    if (isset($_POST['producto_id'], $_POST['accion'])) {
         $producto_id = $_POST['producto_id'];
-        $talla = $_POST['talla'];
         $accion = $_POST['accion'];
-
-        // Crear la clave combinada
+        $talla = isset($_POST['talla']) ? $_POST['talla'] : null;
         $clave_carrito = $producto_id . '_' . $talla;
 
+        // Obtener el stock actual del producto
+        if ($talla) {
+            // Si el producto tiene talla, primero obtén el ID de la talla
+            $consultaTallaID = "SELECT ID FROM Tallas WHERE Talla = '$talla'";
+            $resultadoTallaID = $conexion->query($consultaTallaID);
+            if ($resultadoTallaID->num_rows > 0) {
+                $filaTallaID = $resultadoTallaID->fetch_assoc();
+                $tallaID = $filaTallaID['ID'];
+                // Luego usa ese ID para comprobar el stock
+                $consultaStock = "SELECT Stock FROM ProductoTallas WHERE ProductoID = $producto_id AND TallaID = $tallaID";
+            } else {
+                $_SESSION['error'] = 'La talla especificada no existe.';
+                header('Location: carrito.php');
+                exit;
+            }
+         } else {
+            // Si el producto no tiene talla
+            $consultaStock = "SELECT Stock FROM Productos WHERE ID = $producto_id";
+        }
+        $resultadoStock = $conexion->query($consultaStock);
+        $filaStock = $resultadoStock->fetch_assoc();
+        $stockDisponible = $filaStock['Stock'];
+
+        $cantidadActualCarrito = isset($carrito[$clave_carrito]) ? $carrito[$clave_carrito]['cantidad'] : 0;
+
         if ($accion === 'incrementar') {
-            if (isset($carrito[$clave_carrito])) {
+            if ($cantidadActualCarrito + 1 <= $stockDisponible) {
                 $carrito[$clave_carrito]['cantidad']++;
+            } else {
+                $_SESSION['error'] = 'Stock no disponible.';
+                header('Location: carrito.php');
+                exit;
             }
-        } elseif ($accion === 'decrementar') {
-            if (isset($carrito[$clave_carrito]) && $carrito[$clave_carrito]['cantidad'] > 0) {
-                $carrito[$clave_carrito]['cantidad']--;
-                if ($carrito[$clave_carrito]['cantidad'] === 0) {
-                    unset($carrito[$clave_carrito]);
-                }
-            }
+        } elseif ($accion === 'decrementar' && $cantidadActualCarrito > 1) {
+            $carrito[$clave_carrito]['cantidad']--;
         }
 
-        // Actualizar la cookie del carrito con los cambios
-        $carrito_serializado = serialize($carrito);
-        setcookie('carrito', $carrito_serializado, time() + (86400 * 30), '/'); // Cookie válida por 30 días
-
-        // Actualizar el carrito en la sesión (si se usa)
+        setcookie('carrito', serialize($carrito), time() + (86400 * 30), '/');
         $_SESSION['carrito'] = $carrito;
 
-        // Redireccionar de vuelta a la página del carrito
         header('Location: carrito.php');
         exit();
     }
 }
 
-// Manejar la situación en la que no se reciben datos POST adecuados
 exit("Acción no válida");
 ?>
