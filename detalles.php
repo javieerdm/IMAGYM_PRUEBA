@@ -1,3 +1,13 @@
+<?php
+// Lugar para comprobar y mostrar el mensaje de error.
+if (isset($_SESSION['error'])) {
+    echo "<script>alert('" . $_SESSION['error'] . "');</script>";
+    unset($_SESSION['error']); // Limpia el mensaje de error para futuras peticiones
+}
+
+include('conexion.php');
+// ... Resto del código PHP antes del HTML ...
+?>
 <!doctype html>
 <html lang="es">
 	<head>
@@ -65,7 +75,7 @@
 								<button id="comprar" type="submit">
 								<form method='POST' action='<?php echo isset($_SESSION['cliente']) ? "./añadir-cesta.php?ProductoID=" . $registrodetalles[0] : "registro.php"; ?>' target='_self'>
    							 <label>Cantidad</label>
-    							<input type='number' name='cantidad' min='<?php echo ($registrodetalles[4] > 0) ? "1" : "0"; ?>' max='<?php echo $registrodetalles[4]; ?>' value='<?php echo ($registrodetalles[4] > 0) ? "1" : "0"; ?>' />
+								<input type='number' name='cantidad' min='1' max='<?php echo $registrodetalles[4]; ?>' value='1' required />
     
 									<!-- Sección de tallas -->
 									<?php

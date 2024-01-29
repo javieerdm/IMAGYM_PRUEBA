@@ -101,7 +101,7 @@ VALUES
     ('Mancuerna 10kg','./imagenes/pesa10k.jpg', 29.99, 20, 2, 4,'Mancuerna robusta de 10kg, perfecta para fortalecer y tonificar. Diseño ergonómico y seguro. Ideal para ejercicios de musculación.'),
     ('Mancuerna 15kg','./imagenes/pesa15k.jpg', 34.99, 20, 2, 4,'Mancuerna de 15kg, ideal para entrenamientos intensivos. Excelente para el desarrollo muscular y resistencia.'),
     ('Pack Discos','./imagenes/goma_agarre.jpg', 24.99, 15, 2, 5,'Diseñado para atletas de todos los niveles. Cada pack incluye una variedad de discos, cuidadosamente seleccionados para proporcionar el progreso gradual que buscan tanto principiantes como veteranos del fitness.'),
-    ('Pack Gomas','./imagenes/gomas.jpg', 14.99, 40, 2, 5,'Conjunto de gomas elásticas de diferentes resistencias. Ideal para una variedad de ejercicios. Compacto y versátil.'),
+    ('Pack Gomas','./imagenes/gomas.jpg', 14.99, 5, 2, 5,'Conjunto de gomas elásticas de diferentes resistencias. Ideal para una variedad de ejercicios. Compacto y versátil.'),
 	('Barra Z','./imagenes/barraZ.jpg', 19.99, 25, 2, 6,'Conjunto de gomas elásticas de diferentes resistencias. Ideal para una variedad de ejercicios. Compacto y versátil.'),
 	('Barra Olímpica','./imagenes/barra.jpg', 25.99, 10, 2, 6,'Barra Olímpica estándar, ideal para levantamiento de pesas. Diseño robusto y seguro, adecuado para uso profesional.'),
 	('Cinta de Correr','./imagenes/cintacorrer.jpg', 249.99, 5, 3, 7,'Cinta de correr moderna y eficiente. Ideal para entrenamientos cardiovasculares en casa. Varias velocidades y programas.'),
@@ -135,35 +135,36 @@ INSERT INTO Tallas (Talla) VALUES ('XL');
 CREATE TABLE ProductoTallas (
     ProductoID INT,
     TallaID INT,
+    Stock INT NOT NULL,
     FOREIGN KEY (ProductoID) REFERENCES Productos(ID),
     FOREIGN KEY (TallaID) REFERENCES Tallas(ID),
     PRIMARY KEY (ProductoID, TallaID)
 );
 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (1, 6); 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (1, 7);
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (1, 8); 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (1, 9);
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (1, 6,20); 
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (1, 7,20);
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (1, 8,20); 
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (1, 9,10);
 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (2, 6); 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (2, 7);
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (2, 8);  
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (2, 6,5); 
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (2, 7,5);
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (2, 8,0);  
 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (3, 6);
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (3, 9); 
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (3, 6,10);
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (3, 9,10); 
 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (4, 6); 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (4, 8); 
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (4, 6,10); 
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (4, 8,10); 
 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (5, 1); 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (5, 2);
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (5, 3); 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (5, 4);
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (5, 5); 
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (5, 1,10); 
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (5, 2,20);
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (5, 3,5); 
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (5, 4,5);
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (5, 5,5); 
 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (6, 1); 
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (6, 2);  
-INSERT INTO ProductoTallas (ProductoID, TallaID) VALUES (6, 3);  
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (6, 1,10); 
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (6, 2,10);  
+INSERT INTO ProductoTallas (ProductoID, TallaID,Stock) VALUES (6, 3,10);  
 	
 
 -- Crear la tabla de facturas

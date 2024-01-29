@@ -46,6 +46,19 @@ if (isset($_COOKIE['carrito'])) {
 
 		$insertProductosEnFacturas = "INSERT INTO ProductosEnFacturas (FacturaID, ProductoID, Cantidad, Talla) VALUES ('$facturaID', '$producto_id', '{$detalles['cantidad']}','$talla_producto_escaped')";
 		$resultado3 = $conexion->query($insertProductosEnFacturas);
+
+		if ($talla_producto) {
+			// Si el producto tiene talla
+			// Obtener primero el TallaID correspondiente a la talla
+			$consultaTallaID = "SELECT ID FROM Tallas WHERE Talla = '$talla_producto_escaped'";
+			$resultadoTallaID = $conexion->query($consultaTallaID);
+			$tallaID = $resultadoTallaID->fetch_assoc()['ID'];
+			$updateStock = "UPDATE ProductoTallas SET Stock = Stock - {$detalles['cantidad']} WHERE ProductoID = $producto_id AND TallaID = $tallaID";
+		} else {
+			// Si el producto no tiene talla
+			$updateStock = "UPDATE Productos SET Stock = Stock - {$detalles['cantidad']} WHERE ID = $producto_id";
+		}
+		$conexion->query($updateStock);
 	}
 }
 
