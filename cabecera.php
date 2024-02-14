@@ -6,6 +6,8 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 		<title>Cabecera de página</title>
 		<link rel="stylesheet" href="css/cabecera.css">
 	</head>	
@@ -88,9 +90,9 @@
 										 		 $resultadop=mysqli_query($conexion, $consultap);
 										 		 $registrop=mysqli_fetch_row($resultadop);
 												
-										 		echo "<li><a href='carrito.php'><img src='imagenes/carrito.png'>Mi cesta </a><li>";												
-										 		echo "<li><a href='pedidos.php'><img src='imagenes/pedido.jpg'> Mis pedidos</a><li>";
-												echo "<li><a href='favoritos.php'><img src='imagenes/favoritos.png'> Mis favoritos</a><li>";
+										 		echo "<li><a href='carrito.php'><img src='imagenes/carrito.png'>Cesta </a><li>";												
+										 		echo "<li><a href='pedidos.php'><img src='imagenes/pedido.jpg'>Pedidos</a><li>";
+												echo "<li><a href='favoritos.php'><img src='imagenes/favoritos.png'>Favoritos</a><li>";
 
 										 		
 										}

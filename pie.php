@@ -2,6 +2,8 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 		<title>Pie de página</title>
 		<link rel="stylesheet" href="css/pie.css">
 	</head>	
@@ -19,7 +21,7 @@
 					<div id="pie3">				
 						<ul>
 							<li>Métodos de pago</li>
-							<li><img src="imagenes\pagos\pagos.jpg"></li>						
+							<li><img src="imagenes\pagos\pagos.jpg" style="max-width: 100px; height: auto;"></li>						
 						</ul><br><br>						
 					</div>
 				</div>

@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Añade productos a tu cesta </title>
     <link rel="stylesheet" href="css/principal.css">
     <link rel="stylesheet" href="css/carrito.css">
@@ -148,7 +150,12 @@ foreach ($carrito as $clave_carrito => $detalles) {
                         <input type='hidden' name='quantity' value='1'>
                         
                         <hr>
-                        <button id='boton' class='terminar' type='submit'>Pagar ahora con Paypal</button>
+                        <button id='boton' class='terminar' type='submit' style='background: none; border: none; padding: 0;'>
+                        <img src='imagenes\pagos\paypal.png' alt='Pagar ahora con Paypal' style='width: 150px; height: auto; transition: filter 0.3s;'>
+                    </button>
+                    
+                    
+
                     </form>";
                     
                     echo "<tr>

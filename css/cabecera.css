@@ -220,9 +220,9 @@ body.dimmed::before {
   }
   
   #busqueda {
-    width: 65%; 
     margin-left: 33px; 
-    margin-top: 10px; 
+    margin-top: 10px;
+    margin: 0 auto; 
 
   }
   #contacto {
@@ -288,4 +288,132 @@ body.dimmed::before {
     padding: 5px; /* Ajusta el relleno para cambiar el tamaño del área cliqueable */
 }
 
+
+
 }
+
+@media (max-width: 375px) {
+    #logo {
+        width: 20%; 
+        margin-left: 5%; 
+    }
+      
+    #busqueda {
+        margin-left: 33px; 
+        margin-top: 10px;
+        margin: 0 auto; 
+    }
+
+    #contacto {
+        width: 100%; /* Ajusta el ancho del área de contacto */
+        margin-top: 40px; /* Añade un margen superior para bajar los íconos de contacto y registro */
+        margin-right: 47px;
+    }
+
+    #A ul img {
+        width: 10px; /* O el tamaño que se ajuste a tu diseño */
+        height: auto;
+    }
+
+    #A ul li {
+        margin-right: 3px; /* Reduce el margen derecho para que los íconos estén más juntos */
+    }
+
+    #usuario .boton {
+        margin-top: 10px;
+        margin-left: 10px;
+        border-radius: 5px; /* Puedes ajustar el radio del borde para hacerlo menos pronunciado */
+        border: 1px solid #28abe1; /* Ajusta el grosor del borde si es necesario */
+        font-size: 0.7em; /* Disminuye el tamaño de la fuente para reducir el tamaño del texto */
+        text-align: center;
+        padding: 2px 6px; /* Reduce el padding para disminuir el tamaño total del botón */
+        text-decoration: none;
+        transition: all 0.2s ease;
+        background-color: white;
+        color: black;
+        cursor: pointer; /* Cambia el cursor a un puntero para indicar que es un botón clickeable */
+    }
+
+    #usuario .boton-bbdd {
+        margin-top: 10px;
+        margin-left: 10px;
+        border-radius: 5px; /* Puedes ajustar el radio del borde para hacerlo menos pronunciado */
+        border: 1px solid #28abe1; /* Ajusta el grosor del borde si es necesario */
+        font-size: 0.62em; /* Disminuye el tamaño de la fuente para reducir el tamaño del texto */
+        text-align: center;
+        padding: 2px 6px; /* Reduce el padding para disminuir el tamaño total del botón */
+        text-decoration: none;
+        transition: all 0.2s ease;
+        background-color: white;
+        color: black;
+        cursor: pointer; /* Cambia el cursor a un puntero para indicar que es un botón clickeable */
+    }
+
+    #B {
+        display: flex; /* Alinea los elementos en línea */
+        flex-wrap: wrap; /* Permite que los elementos se ajusten y no salgan del contenedor */
+        justify-content: center; /* Centra los elementos */
+        padding: 0; /* Elimina el padding si lo hay */
+        margin: 0; /* Elimina el margen si lo hay */
+    }
+
+    /* Estilos para los elementos de lista dentro de #B */
+    #B > li {
+        list-style: none; /* Elimina los estilos de lista por defecto */
+        margin-right: 3px; /* Reduce el margen derecho para acercar los elementos */
+    }
+
+    /* Estilos para los enlaces dentro de los elementos de lista de #B */
+    #B li a {
+        text-decoration: none; /* Elimina la subrayado del texto */
+        color: black; /* Ajusta el color del texto */
+        padding: 5px; /* Ajusta el relleno para cambiar el tamaño del área cliqueable */
+    }
+
+
+}
+@media (max-width: 413px) {
+
+
+    #cabecera_baja a {
+        font-size: 0.9em; /* Reducir el tamaño de la fuente de los enlaces */
+        padding: 5px 10px; /* Reducir el espacio alrededor de los enlaces */
+    }
+
+    #cabecera_baja a:hover {
+        padding: 5px 10px; /* Mantener el mismo espacio alrededor de los enlaces al hacer hover */
+    }
+}
+
+@media (max-width: 372px) {
+    #usuario .boton,
+    #usuario .boton-bbdd {
+        font-size: 0.6em; /* Reducir el tamaño de la fuente del botón */
+        padding: 2px 5px; /* Reducir el relleno del botón */
+        margin-left: 5px; /* Ajustar el margen izquierdo del botón */
+        display: inline-block; /* Mostrar el botón en línea para evitar que se desplace */
+        margin-top: 10px; /* Ajustar el margen superior */
+    }
+}
+@media (max-width: 371px) {
+    #usuario .boton,
+    #usuario .boton-bbdd {
+        font-size: 0.6em; /* Reducir el tamaño de la fuente del botón */
+        padding: 2px 5px; /* Reducir el relleno del botón */
+        margin-left: 5px; /* Ajustar el margen izquierdo del botón */
+        display: inline-block; /* Mostrar el botón en línea para evitar que se desplace */
+        margin-top: 10px; /* Ajustar el margen superior */
+    }
+}
+@media (max-width: 344px) {
+    #usuario .boton,
+    #usuario .boton-bbdd {
+        font-size: 0.55em; /* Reducir el tamaño de la fuente del botón */
+        padding: 2px 4px; /* Reducir el relleno del botón */
+        margin-left: 5px; /* Ajustar el margen izquierdo del botón */
+        display: inline-block; /* Mostrar el botón en línea para evitar que se desplace */
+        margin-top: 10px; /* Ajustar el margen superior */
+    }
+}
+
+

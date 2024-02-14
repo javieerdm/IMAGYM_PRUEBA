@@ -2,26 +2,15 @@
 
 * { margin:0px; padding:0px;}
 
-#articulos {width: 100%; overflow:hidden;}
+#articulos {width: 100%; overflow:hidden;margin-bottom: 20px;}
 
-#derecha {width: 80%; float:left;}
+#derecha {width: 70%; float:left;}
 
 h1 {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 40px;
     font-family: 'Arial', sans-serif; /* Cambio de fuente para modernizar */
     color: #333; /* Color oscuro para el texto */
-}
-
-.volver img:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-}
-
-.volver img {
-    width: 30px;
-    margin-top: 10px;
-    transition: box-shadow 0.3s ease; /* Transición suave para sombra */
 }
 
 #producto {
@@ -76,5 +65,21 @@ p, h5 {
     font-family: 'Arial', sans-serif;
     font-size: 0.9em;
     margin-top: 5px; /* Espacio adicional en la parte superior */
+}
+
+@media screen and (max-width: 768px) {
+    #producto {
+        width: 50%; /* Reducir el ancho de los productos para que haya dos en una fila */
+    }
+
+    #producto1 {
+        width: 95%; /* Ajustar el ancho de la casilla del producto */
+        margin: 10px auto; /* Centrar los productos en pantallas pequeñas */
+    }
+
+    #prenda img {
+        height: auto; /* Permitir que la altura de la imagen se ajuste automáticamente */
+        max-height: 200px; /* Limitar la altura máxima de la imagen */
+    }
 }
 
