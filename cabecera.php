@@ -1,156 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <?php
-	session_start();
+    session_start();
 ?>
-	
 <html lang="es">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabecera de página</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Enlace a tu archivo CSS personalizado -->
+    <link rel="stylesheet" href="css/cabecera.css">
+</head>
+<body>
+<?php
+    include ('conexion.php');
+?>
+<header>
+    <div class="container-fluid bg-light">
+        <div class="row align-items-center">
+            <div class="col-md-4">
+                <h6 id="camion">
+                    <img width='40' src='imagenes/camion.jpg'>&nbsp ENVÍO GRATIS A PARTIR DE 50€
+                </h6>
+            </div>
+            <div class="col-md-4 text-center">
+                <a href="index.php" class="navbar-brand">
+				<img src="./imagenes/logotipo.png" alt="Logo" title="Ir a inicio" class="img-fluid" style="max-width: 200px;">
+                </a>
+            </div>
+            <div class="col-md-4 text-right">
+                <div class="dropdown">
+                    <?php if(!isset($_SESSION["cliente"])): ?>
+                        <a class="nav-link" href="registro.php">Registro</a>
+                    <?php endif; ?>
+                    <?php if(isset($_SESSION["cliente"])): ?>
+                        <?php if($_SESSION["rol"] == 'administrador'): ?>
+                            <a class="nav-link" href="basedatos.php">Base de datos</a>
+                        <?php endif; ?>
+                        <a class="nav-link" href="cerrar.php">Cerrar sesión</a>
+                    <?php else: ?>
+                        <form class="form-inline" action="insertarcliente.php" method="POST">
+                            <input class="form-control mr-2" type="text" name="usu" placeholder="Email">
+                            <input class="form-control mr-2" type="password" name="pass" placeholder="Contraseña">
+                            <button class="btn btn-primary" type="submit">Entrar</button>
+                        </form>
+                    <?php endif; ?>
+                    <form class="form-inline" action="producto.php" method="GET">
+                        <input class="form-control mr-2" type="text" id="busqueda" name="busqueda" placeholder="Buscar productos...">
+                        <button class="btn btn-primary" type="submit">Buscar</button>
+                    </form>
+                    <a class="nav-link" href="contacto.php"><img src="imagenes/sobre.png" alt="Contacto" class="icon"> Contacto</a>
+                    <?php if(isset($_SESSION["codusuario"]) && isset($_SESSION["rol"]) && $_SESSION["rol"] == 'cliente'):$cliente=$_SESSION["codusuario"]; ?>
+                        <a class="nav-link" href="carrito.php"><img src="imagenes/carrito.png" alt="Cesta" class="icon"> Cesta</a>
+                        <a class="nav-link" href="pedidos.php"><img src="imagenes/pedido.jpg" alt="Pedidos" class="icon"> Pedidos</a>
+                        <a class="nav-link" href="favoritos.php"><img src="imagenes/favoritos.png" alt="Favoritos" class="icon"> Favoritos</a>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-		<title>Cabecera de página</title>
-		<link rel="stylesheet" href="css/cabecera.css">
-	</head>	
-	<body>
-	<?php	
-		include ('conexion.php');
-	?>
-		<header>
-			<div id="header">
-				<div id="principio">
-					<h6 id="camion">
-						<img width='40' src='imagenes/camion.jpg'>&nbsp ENVÍO GRATIS A PARTIR DE 50€	
-					</h6>
-				</div>
-				<div id="cabecera_alta">
-				
-					<!-- LOGOTIPO -->
-					
-					<div id="logo">
-						<a href="index.php"><div id="imagen" title="Ir a inicio"></div><a>						
-					</div>
-					<div id="caja2">
-					
-					
-					<!-- LOGIN -->		
-					
-						<div id="usuario">
-							<form action="insertarcliente.php" method="POST">
-								
-							<?php
-								if(!isset($_SESSION["cliente"])){									
-									echo "<input class='usuario' type='text' size='18' name='usu' placeholder='Email'>
-									<input class='usuario' type='password' size='8' name='pass' placeholder='Contraseña'>									
-									<button class='boton' type='submit'>Entrar</button>";
-									
-								}
-								if(isset($_SESSION["cliente"])){
-									if($_SESSION["rol"]=='administrador'){
-										echo "Administrador";
-										echo "<button class='boton'><a href='cerrar.php'>Cerrar sesión</a></button>";
-										echo "<button class='boton-bbdd'><a href='basedatos.php'>Base de datos</a></button>";
-										
-									}																
-									else{
-										echo "Bienvenido " . $_SESSION["cliente"];
-										echo "<button class='boton'><a href='cerrar.php'>Cerrar sesión</a></button>";										
-									}
-								}
-							?>
-							</form>
-						</div>
-						
-						<hr class="linea1">
-						
-						
-					<!--contacto, registro, carrito-->						
-					<form action="producto.php" method="GET">
-   									 <input type="text" id="busqueda" name="busqueda" placeholder="Buscar productos...">
-    								  <button type="submit">Buscar</button>
-									</form>
-					<div id="contacto">
+<!-- Menú horizontal -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-							<nav id="A">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="producto.php">Ver todos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="producto.php?categoria=1">Ropa deportiva</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="producto.php?categoria=4">Suplementos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="producto.php?categoria=2">Material</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="producto.php?categoria=3">Máquinas</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-								<ul>
-
-									<li><a href="contacto.php"><img src="imagenes/sobre.png"> Contacto</a><li>
-									<?php if(!isset($_SESSION["cliente"])): ?>
-               							 <li><a href="registro.php"><img src="imagenes/usuario.png"> Registro</a><li>
-            						<?php endif; ?>
-									<?php
-
-										if(isset($_SESSION["codusuario"]) && isset($_SESSION["rol"]) && $_SESSION["rol"] == 'cliente') {
-									 			$cliente=$_SESSION["codusuario"];
-										
-												
-												
-
-										 		 $consultap="Select ID from facturas where ClienteID='$cliente'";
-										 		 $resultadop=mysqli_query($conexion, $consultap);
-										 		 $registrop=mysqli_fetch_row($resultadop);
-												
-										 		echo "<li><a href='carrito.php'><img src='imagenes/carrito.png'>Cesta </a><li>";												
-										 		echo "<li><a href='pedidos.php'><img src='imagenes/pedido.jpg'>Pedidos</a><li>";
-												echo "<li><a href='favoritos.php'><img src='imagenes/favoritos.png'>Favoritos</a><li>";
-
-										 		
-										}
-									
-									?>
-								</ul>
-							</nav>						
-						</div>
-					</div>
-				</div>
-				
-				<!--Menú horizontal -->
-				
-				<div id="cabecera_baja">
-					<nav>
-						<ul id="B">
-						<div class="menu-desplegable">
-							<a href="javascript:void(0)">
-								<img src="imagenes/menu.png" alt="Menú" />
-							</a>
-							<div class="contenido-desplegable">
-								<!-- Aquí insertas el contenido de tu navegador.php -->
-								<form class="ordenar" method="GET">
-									Buscar por:<br><br>
-									<ul class="ordenar"><a href="producto.php?categoria=1">Ropa Deportiva</a>
-										<li class="ordenar"><a href="producto.php?genero=1">Camisetas</a></li>
-										<li class="ordenar"><a href="producto.php?genero=2">Pantalones</a></li>
-										<li class="ordenar"><a href="producto.php?genero=3">Zapatillas</a></li>
-									</ul>
-									<ul class="ordenar"><a href="producto.php?categoria=2">Material</a>
-										<li class="ordenar"><a href="producto.php?genero=4">Mancuernas</a></li>
-										<li class="ordenar"><a href="producto.php?genero=5">Gomas</a></li>
-										<li class="ordenar"><a href="producto.php?genero=6">Barras</a></li>
-									</ul>
-									<ul class="ordenar"><a href="producto.php?categoria=3">Máquinas</a>
-										<li class="ordenar"><a href="producto.php?genero=7">Cardio</a></li>
-										<li class="ordenar"><a href="producto.php?genero=8">Rack</a></li>
-										<li class="ordenar"><a href="producto.php?genero=9">Musculación</a></li>
-									</ul>
-									<ul class="ordenar"><a href="producto.php?categoria=4">Suplementos</a>
-										<li class="ordenar"><a href="producto.php?genero=10">Proteina</a></li>
-										<li class="ordenar"><a href="producto.php?genero=11">Creatina</a></li>
-										<li class="ordenar"><a href="producto.php?genero=12">Pre-Entreno</a></li>
-									</ul>
-								</form>
-							</div>
-						</div>
-							<li><a href="producto.php">Ver todos</a></li>
-							<li><a href="producto.php?categoria=1">Ropa deportiva</a></li>
-							<li><a href="producto.php?categoria=4">Suplementos</a></li>
-							<li><a href="producto.php?categoria=2">Material </a></li>
-							<li><a href="producto.php?categoria=3">Máquinas</a></li>
-						</ul>
-					</nav>				
-				</div>
-			
-			
-			</div>
-		</header>
-	</body>
+<!-- Enlace a Bootstrap JS y jQuery (al final del body) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>

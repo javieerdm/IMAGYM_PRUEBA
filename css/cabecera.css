@@ -1,419 +1,70 @@
-@charset "UTF-8";
+/* Estilos personalizados para la cabecera */
 
-* { margin:0px; padding:0px;}
-
-#principio p{width:100%; margin:auto; font-size: 0.9em;}
-#principio img{width:25px;}
-#camion {margin-left: 32%;}
-
-#cabecera_alta {width: 100%; height: 80%;}
-#logo {width: 12%; height: 90%; float: left;  margin-left: 10%;}
-#imagen {width: 100%; height:100%; margin: auto; background:url(../imagenes/logotipo.png) center center;
-    background-size: 100% 100%; }
-#caja2 {width: 60%; height: 100%; float: right;}
-
-#usuario {width: 100%; height: 50%; float:right;}
-#usuario form {width:70%; height:100%; float:right; font-size:1.1em;}
-#usuario .boton {margin-top: 10px;
-    margin-left:10px;
-    border-radius: 10px;
-    border: 2px solid #28abe1;
-    font-size: 0.9em;
-    text-align: center;
-    padding: 5px 10px;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    background-color: white;
-    color: black;}
-    #usuario .boton-bbdd {margin-top: 10px;
-        margin-left:10px;
-        border-radius: 10px;
-        border: 2px solid #28abe1;
-        font-size: 0.9em;
-        text-align: center;
-        padding: 5px 10px;
-        text-decoration: none;
-        transition: all 0.2s ease;
-        background-color: white;
-        color: black;}
-#usuario .boton a{text-decoration: none;}
-#usuario .boton:hover {box-shadow: 0 2px 8px; color: #28abe1;}
-#usuario .boton-bbdd a{text-decoration: none;}
-#usuario .boton-bbdd:hover {box-shadow: 0 2px 8px; color: #28abe1;}
-
-.linea1 {width: 90%; margin-left: 2em;}
-#contacto {width: 70%; height: 48%; float: right;}
-
-
-#A {
-    margin: auto;
-    width: 800px;
-    font-family: 'Roboto', sans-serif; /* Cambio de fuente */
+/* Estilos para el logotipo */
+#camion img {
+    width: 30px; /* Ajusta el tamaño del icono de envío gratis */
+    margin-right: 5px; /* Añade espacio entre el icono y el texto */
 }
 
-#A ul a {
-    text-decoration: none;
-    display: block;
-    padding: 0px 5px;
-    margin-top: 5px;
-    font-size: 0.75em; /* Tamaño de fuente más pequeño */
-    color: black;
+/* Estilos para el área de usuario */
+#usuario {
+    margin-top: 10px;
 }
 
-#A ul li a:hover {
-    color: #28abe1;
-    text-decoration: underline;
-}
-#busqueda{
-    width: 35%;
-    height: 50%;
-    margin-left: -130px;
-    margin-top: 20px;
-
-}
-
-#A ul {
-    list-style: none;
-    margin-top: -35px;
-}
-
-#A ul > li {
-    float: left;
+.usuario {
     margin-right: 10px;
+    width: 150px; /* Ajusta el ancho según tu diseño */
 }
 
-#A ul img {
-    width: 25px;
-    height: 25px;
+.boton {
+    padding: 8px 12px; /* Ajusta el padding según tu diseño */
+    border-radius: 5px;
+    font-size: 14px; /* Ajusta el tamaño de fuente según tu diseño */
 }
 
+/* Estilos para el menú horizontal */
 #cabecera_baja {
-    width: 100%;
-    height: 20%;
-    background: #f0f0f0;
+    background-color: #f8f9fa; /* Cambia el color de fondo del menú */
 }
 
 #B {
-    margin-left: 20%;
-    font-family: 'Roboto', sans-serif; /* Cambio de fuente también en #B */
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#B li {
+    display: inline-block;
+    margin-right: 15px; /* Reduce el margen entre elementos */
 }
 
 #B li a {
-    background: #f0f0f0;
+    color: #333; /* Cambia el color de texto de los enlaces */
     text-decoration: none;
-    padding: 5px 15px;
-    display: block;
-    color: black;
-}
-
-#B > li {
-    float: left;
-    list-style: none;
-    font-size: 1.1em;
-    margin-right: 10px;
+    font-size: 14px; /* Ajusta el tamaño de fuente según tu diseño */
 }
 
 #B li a:hover {
-    color: white;
-    background-color: #28abe1;
-    text-decoration: none;
+    color: #007bff; /* Cambia el color al pasar el ratón */
 }
 
-.menu-desplegable {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
+/* Estilos personalizados para la cabecera */
 
-.menu-desplegable a img {
-    width: 30px; /* Tamaño del icono del menú */
+/* Estilos para el logotipo */
+#logo img {
+    max-width: 200px !important; /* Importante para aumentar la especificidad y asegurar que se aplique */
     height: auto;
-    margin-left: -850px; /* Ajusta según tu diseño */
-    margin-bottom: 130px; /* Espacio debajo del icono */
-}
-
-.contenido-desplegable {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9; /* Color de fondo del menú */
-    min-width: 150px; /* Ancho mínimo del menú */
-    box-shadow: 0px 8px 16px 5px rgba(0,0,0,0.5); /* Sombra para dar profundidad */
-    z-index: 100; /* Asegúrate de que el z-index sea mayor que el del resto de elementos */
-    margin-left: -850px; /* Ajusta según tu diseño */
-    top: 20%; /* Posición vertical del menú */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 10px 0; /* Espaciado interno vertical para los elementos del menú */
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.menu-desplegable:hover .contenido-desplegable {
     display: block;
-    opacity: 1;
+    margin: 0 auto;
 }
 
-/* Estilos para los enlaces dentro del menú */
-.ordenar a {
-    text-decoration: none;
-    color: white; /* Color del texto */
-    padding: 10px 15px; /* Espaciado interno para cada enlace */
-    display: block;
-    background-color: #2c1cd7; /* Color de fondo del menú */
-    border-bottom: 1px solid #f9f9f9; /* Separación entre elementos */
-}
-
-.ordenar a:hover {
-    background-color: #6e6969; /* Color de fondo al pasar el ratón */
-    color: #fff; /* Color del texto al pasar el ratón */
-}
-
-/* Efecto de oscurecimiento del fondo cuando el menú está activo */
-body.dimmed {
-    overflow: hidden;
-    position: relative;
-}
-
-body.dimmed::before {
-    content: "";
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
-    z-index: 99; /* Menor que el menú, pero mayor que el resto del contenido */
-}
-
-#header {
-    width: 100%;
-    height: 150px;
-    margin: auto;
-    background-color: #a0c7d8; /* Color más vivo */
-    border-bottom: 2px solid #f0f0f0; /* Borde inferior sutil */
-}
-
-#cabecera_alta, #cabecera_baja {
-    font-family: 'Arial', sans-serif; /* Cambio de fuente para modernizar */
-}
-
-#cabecera_baja a {
-    font-size: 1.15em; /* Tamaño de fuente más grande */
-    padding: 8px 16px; /* Más espacio alrededor de los enlaces */
-    transition: background-color 0.3s, color 0.3s; /* Transición suave para hover */
-}
-
-#cabecera_baja a:hover {
-    background-color: #333; /* Fondo oscuro al pasar el ratón */
-    color: white; /* Texto blanco al pasar el ratón */
-}
-
-.menu-desplegable .contenido-desplegable {
-    background-color: #a0c7d8; /* Color que combina con la cabecera */
-    /* ... otros estilos de menú desplegable ... */
+/* Estilos para los iconos */
+.nav-link .icon {
+    width: 20px; /* Ajusta el ancho de los iconos según sea necesario */
+    height: auto; /* Mantiene la proporción de los iconos */
+    margin-right: 5px; /* Espacio entre el icono y el texto */
 }
 
 
-@media (max-width: 768px) {
-#logo {
-    width: 20%; 
-    margin-left: 5%; 
-  }
-  
-  #busqueda {
-    margin-left: 33px; 
-    margin-top: 10px;
-    margin: 0 auto; 
-
-  }
-  #contacto {
-    width: 100%; /* Ajusta el ancho del área de contacto */
-    margin-top: 40px; /* Añade un margen superior para bajar los íconos de contacto y registro */
-    margin-right: 47px;
-}
-#A ul img {
-    width: 10px; /* O el tamaño que se ajuste a tu diseño */
-    height: auto;
-}
-#A ul li {
-    margin-right: 3px; /* Reduce el margen derecho para que los íconos estén más juntos */
-}
-#usuario .boton {
-    margin-top: 10px;
-    margin-left: 10px;
-    border-radius: 5px; /* Puedes ajustar el radio del borde para hacerlo menos pronunciado */
-    border: 1px solid #28abe1; /* Ajusta el grosor del borde si es necesario */
-    font-size: 0.7em; /* Disminuye el tamaño de la fuente para reducir el tamaño del texto */
-    text-align: center;
-    padding: 2px 6px; /* Reduce el padding para disminuir el tamaño total del botón */
-    text-decoration: none;
-    transition: all 0.2s ease;
-    background-color: white;
-    color: black;
-    cursor: pointer; /* Cambia el cursor a un puntero para indicar que es un botón clickeable */
-}
-#usuario .boton-bbdd {
-    margin-top: 10px;
-    margin-left: 10px;
-    border-radius: 5px; /* Puedes ajustar el radio del borde para hacerlo menos pronunciado */
-    border: 1px solid #28abe1; /* Ajusta el grosor del borde si es necesario */
-    font-size: 0.62em; /* Disminuye el tamaño de la fuente para reducir el tamaño del texto */
-    text-align: center;
-    padding: 2px 6px; /* Reduce el padding para disminuir el tamaño total del botón */
-    text-decoration: none;
-    transition: all 0.2s ease;
-    background-color: white;
-    color: black;
-    cursor: pointer; /* Cambia el cursor a un puntero para indicar que es un botón clickeable */
-}
-
-#B {
-    display: flex; /* Alinea los elementos en línea */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten y no salgan del contenedor */
-    justify-content: center; /* Centra los elementos */
-    padding: 0; /* Elimina el padding si lo hay */
-    margin: 0; /* Elimina el margen si lo hay */
-}
-
-/* Estilos para los elementos de lista dentro de #B */
-#B > li {
-    list-style: none; /* Elimina los estilos de lista por defecto */
-    margin-right: 5px; /* Reduce el margen derecho para acercar los elementos */
-    font-size: 0.7em; /* Ajusta el tamaño del texto si es necesario */
-}
-
-/* Estilos para los enlaces dentro de los elementos de lista de #B */
-#B li a {
-    text-decoration: none; /* Elimina la subrayado del texto */
-    color: black; /* Ajusta el color del texto */
-    padding: 5px; /* Ajusta el relleno para cambiar el tamaño del área cliqueable */
-}
-
-
-
-}
-
-@media (max-width: 375px) {
-    #logo {
-        width: 20%; 
-        margin-left: 5%; 
-    }
-      
-    #busqueda {
-        margin-left: 33px; 
-        margin-top: 10px;
-        margin: 0 auto; 
-    }
-
-    #contacto {
-        width: 100%; /* Ajusta el ancho del área de contacto */
-        margin-top: 40px; /* Añade un margen superior para bajar los íconos de contacto y registro */
-        margin-right: 47px;
-    }
-
-    #A ul img {
-        width: 10px; /* O el tamaño que se ajuste a tu diseño */
-        height: auto;
-    }
-
-    #A ul li {
-        margin-right: 3px; /* Reduce el margen derecho para que los íconos estén más juntos */
-    }
-
-    #usuario .boton {
-        margin-top: 10px;
-        margin-left: 10px;
-        border-radius: 5px; /* Puedes ajustar el radio del borde para hacerlo menos pronunciado */
-        border: 1px solid #28abe1; /* Ajusta el grosor del borde si es necesario */
-        font-size: 0.7em; /* Disminuye el tamaño de la fuente para reducir el tamaño del texto */
-        text-align: center;
-        padding: 2px 6px; /* Reduce el padding para disminuir el tamaño total del botón */
-        text-decoration: none;
-        transition: all 0.2s ease;
-        background-color: white;
-        color: black;
-        cursor: pointer; /* Cambia el cursor a un puntero para indicar que es un botón clickeable */
-    }
-
-    #usuario .boton-bbdd {
-        margin-top: 10px;
-        margin-left: 10px;
-        border-radius: 5px; /* Puedes ajustar el radio del borde para hacerlo menos pronunciado */
-        border: 1px solid #28abe1; /* Ajusta el grosor del borde si es necesario */
-        font-size: 0.62em; /* Disminuye el tamaño de la fuente para reducir el tamaño del texto */
-        text-align: center;
-        padding: 2px 6px; /* Reduce el padding para disminuir el tamaño total del botón */
-        text-decoration: none;
-        transition: all 0.2s ease;
-        background-color: white;
-        color: black;
-        cursor: pointer; /* Cambia el cursor a un puntero para indicar que es un botón clickeable */
-    }
-
-    #B {
-        display: flex; /* Alinea los elementos en línea */
-        flex-wrap: wrap; /* Permite que los elementos se ajusten y no salgan del contenedor */
-        justify-content: center; /* Centra los elementos */
-        padding: 0; /* Elimina el padding si lo hay */
-        margin: 0; /* Elimina el margen si lo hay */
-    }
-
-    /* Estilos para los elementos de lista dentro de #B */
-    #B > li {
-        list-style: none; /* Elimina los estilos de lista por defecto */
-        margin-right: 3px; /* Reduce el margen derecho para acercar los elementos */
-    }
-
-    /* Estilos para los enlaces dentro de los elementos de lista de #B */
-    #B li a {
-        text-decoration: none; /* Elimina la subrayado del texto */
-        color: black; /* Ajusta el color del texto */
-        padding: 5px; /* Ajusta el relleno para cambiar el tamaño del área cliqueable */
-    }
-
-
-}
-@media (max-width: 413px) {
-
-
-    #cabecera_baja a {
-        font-size: 0.9em; /* Reducir el tamaño de la fuente de los enlaces */
-        padding: 5px 10px; /* Reducir el espacio alrededor de los enlaces */
-    }
-
-    #cabecera_baja a:hover {
-        padding: 5px 10px; /* Mantener el mismo espacio alrededor de los enlaces al hacer hover */
-    }
-}
-
-@media (max-width: 372px) {
-    #usuario .boton,
-    #usuario .boton-bbdd {
-        font-size: 0.6em; /* Reducir el tamaño de la fuente del botón */
-        padding: 2px 5px; /* Reducir el relleno del botón */
-        margin-left: 5px; /* Ajustar el margen izquierdo del botón */
-        display: inline-block; /* Mostrar el botón en línea para evitar que se desplace */
-        margin-top: 10px; /* Ajustar el margen superior */
-    }
-}
-@media (max-width: 371px) {
-    #usuario .boton,
-    #usuario .boton-bbdd {
-        font-size: 0.6em; /* Reducir el tamaño de la fuente del botón */
-        padding: 2px 5px; /* Reducir el relleno del botón */
-        margin-left: 5px; /* Ajustar el margen izquierdo del botón */
-        display: inline-block; /* Mostrar el botón en línea para evitar que se desplace */
-        margin-top: 10px; /* Ajustar el margen superior */
-    }
-}
-@media (max-width: 344px) {
-    #usuario .boton,
-    #usuario .boton-bbdd {
-        font-size: 0.55em; /* Reducir el tamaño de la fuente del botón */
-        padding: 2px 4px; /* Reducir el relleno del botón */
-        margin-left: 5px; /* Ajustar el margen izquierdo del botón */
-        display: inline-block; /* Mostrar el botón en línea para evitar que se desplace */
-        margin-top: 10px; /* Ajustar el margen superior */
-    }
-}
 
 
