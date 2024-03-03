@@ -1,52 +1,57 @@
 @charset "UTF-8";
 
-* { margin: 0px; padding: 0px; }
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Agregamos esta línea para incluir el borde en el cálculo del tamaño total del elemento */
+}
 
-#section {width: 100%; height: 673px;}
+#section {
+    width: 100%; 
+    height: auto; /* Cambiamos a auto para que se ajuste al contenido */
+    display: flex; /* Utilizamos flexbox para el diseño */
+    flex-wrap: wrap; /* Permitimos que los elementos se ajusten en dispositivos pequeños */
+}
 
 #contactos {
-    width: 40%;
-    height: 100%;
-    float: left;
-    
+    width: 100%;
+    max-width: 600px; /* Limitamos el ancho para que no ocupe toda la pantalla en dispositivos grandes */
+    margin: auto; /* Centramos el formulario */
 }
 
 #formu {
-    margin: auto;
-    width: 80%;
-    margin-top: 10%; /* Reducción del margen superior */
+    width: 100%;
 }
 
 #formu .cont {
-    margin-left: 30px;
-    margin-bottom: 15px; /* Espaciado entre los campos */
+    margin-bottom: 20px; /* Aumentamos el margen inferior entre los campos del formulario */
 }
 
-#formu input[type="text"], #formu input[type="email"], #formu textarea {
-    width: calc(100% - 60px);
+#formu input[type="text"], 
+#formu input[type="email"], 
+#formu textarea {
+    width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    margin-bottom: 10px;
 }
 
 #formu textarea {
     height: 100px;
-    resize: vertical; /* Permite al usuario ajustar la altura */
+    resize: vertical;
 }
 
 #formu .boton {
     margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block; /* Centrar el botón */
+    display: block; 
     border-radius: 20px;
     border: none;
     font-size: 1em;
     padding: 10px 20px;
     text-decoration: none;
-    background-color: #28abe1; /* Color del botón */
-    color: white; /* Texto blanco */
+    background-color: #28abe1;
+    color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -54,51 +59,29 @@
 #formu .boton:hover {
     background-color: #1a6f93;
 }
-#localizacion {width: 60%; height: 100%; float: left; }
 
-.direccion {font-size: 12px; margin-top: 10%; margin-left: 20px;}
+#localizacion {
+    width: 100%;
+    margin-top: 20px; /* Aumentamos el margen superior */
+}
+
+.direccion {
+    font-size: 12px;
+    margin-top: 10px; /* Aumentamos el margen superior */
+}
 
 iframe {
-    margin-left: 20px;
-    width: 90%; /* Ajuste del ancho */
-    height: 400px; /* Ajuste de la altura */
-    border: none; /* Remover el borde predeterminado */
+    width: 100%;
+    height: 400px;
+    border: none;
 }
 
 @media only screen and (max-width: 768px) {
-    #section {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 60px; /* Asegurarse de que el espacio se mantiene en pantallas pequeñas */
-
-    }
-
     #contactos {
-        order: 1; /* Orden del formulario de contacto */
-        width: 70%;
-        float: none;
-        margin-top: 5px;
-    }
-
-    #formu {
-        margin-top: 10%;
+        order: 1;
     }
 
     #localizacion {
-        order: 2; /* Orden de la sección de localización */
-        width: 70%;
-        float: none;
-        margin-top: 20px; /* Ajuste para que el mapa aparezca más arriba */
-    }
-
-    .direccion {
-        margin-top: 5%;
-    }
-
-    iframe {
-        margin-top: 5px; /* Reducir el margen superior del iframe */
-        width: 90%;
-        height: 80px;
+        order: 2;
     }
 }
-

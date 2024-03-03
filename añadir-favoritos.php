@@ -33,7 +33,7 @@ if (isset($_SESSION["cliente"]) && isset($_GET['ProductoID'])) {
 
     // Ejecutar la consulta
     if ($stmt->execute()) {
-        echo "<script type='text/javascript'>alert('Producto añadido a favoritos con éxito'); window.location.href='producto.php';</script>";						
+        echo "<script type='text/javascript'>alert('Producto añadido a favoritos con éxito'); window.location.href='favoritos.php';</script>";						
     } else {
         echo "Error: " . $stmt->error;
     }
